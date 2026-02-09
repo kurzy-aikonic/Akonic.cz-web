@@ -21,9 +21,9 @@ export default function ObchodniPodminky() {
 
           <div className="prose prose-slate prose-lg dark:prose-invert max-w-none">
             <p className="lead">
-              <strong>Společnosti Radek Aigel, obchodující jako Aikonic</strong>
+              <strong>Aikonic training s.r.o.</strong>
               <br />
-              IČO: 74258575
+              IČO: 24472590
               <br />
               Platné a účinné od: 8. 7. 2025
             </p>
@@ -31,10 +31,10 @@ export default function ObchodniPodminky() {
             <h2>1. Úvodní ustanovení a definice</h2>
             <p>
               1.1. Tyto všeobecné obchodní podmínky („VOP“) upravují práva a
-              povinnosti mezi společností <strong>Radek Aigel</strong>, se sídlem
-              v České republice, obchodující pod značkou <strong>Aikonic</strong>{" "}
-              („Prodávající“), a osobami využívajícími její služby nebo produkty
-              prostřednictvím webových stránek („Zákazník“).
+              povinnosti mezi společností <strong>Aikonic training s.r.o.</strong>,
+              se sídlem v České republice, obchodující pod značkou{" "}
+              <strong>Aikonic</strong> („Prodávající“), a osobami využívajícími její
+              služby nebo produkty prostřednictvím webových stránek („Zákazník“).
             </p>
             <p>1.2. Pojmy použité v těchto VOP mají následující význam:</p>
             <ul>
@@ -64,17 +64,17 @@ export default function ObchodniPodminky() {
             <h2>2. Informace o provozovateli a kontakt</h2>
             <ul>
               <li>
-                <strong>Obchodní firma:</strong> Radek Aigel
+                <strong>Obchodní firma:</strong> Aikonic training s.r.o.
               </li>
               <li>
                 <strong>Obchodní značka:</strong> Aikonic
               </li>
               <li>
-                <strong>IČO:</strong> 74258575
+                <strong>IČO:</strong> 24472590
               </li>
               <li>
                 <strong>Sídlo:</strong> Heydukova 115, 572 01 Polička, Česká
-                republika
+                republika (fakturační adresa)
               </li>
               <li>
                 <strong>E-mail:</strong>{" "}
@@ -84,8 +84,8 @@ export default function ObchodniPodminky() {
                 <strong>Telefon:</strong> +420 723 061 013
               </li>
               <li>
-                <strong>Zápis v registru:</strong> fyzická osoba podnikající dle
-                živnostenského zákona, nezapsaná v obchodním rejstříku.
+                <strong>Zápis v registru:</strong> společnost zapsaná v obchodním
+                rejstříku.
               </li>
             </ul>
 

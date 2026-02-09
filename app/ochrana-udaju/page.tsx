@@ -21,30 +21,30 @@ export default function OchranaUdaju() {
 
           <div className="prose prose-slate prose-lg dark:prose-invert max-w-none">
             <p className="lead">
-              <strong>Pravidla a Zásady Zpracování společnosti Aikonic</strong>
+              <strong>Pravidla a Zásady Zpracování společnosti Aikonic training s.r.o.</strong>
             </p>
 
             <h2>Informace o zpracování a ochraně osobních údajů</h2>
             <p>
               Ochrana osobních údajů objednatele i účastníka je prováděna
-              společností Aikonic ve smyslu ustanovení zákona č. 110/2019 Sb., o
-              zpracování osobních údajů, v aktuálním znění, a rovněž dle Nařízení
-              Evropského parlamentu a Rady (EU) 2016/679 ze dne 27. dubna 2016 o
-              ochraně fyzických osob v souvislosti se zpracováním osobních údajů
-              a o volném pohybu těchto údajů (obecné nařízení o ochraně osobních
-              údajů, dále jen „GDPR").
+              společností Aikonic training s.r.o. ve smyslu ustanovení zákona č.
+              110/2019 Sb., o zpracování osobních údajů, v aktuálním znění, a
+              rovněž dle Nařízení Evropského parlamentu a Rady (EU) 2016/679 ze dne
+              27. dubna 2016 o ochraně fyzických osob v souvislosti se zpracováním
+              osobních údajů a o volném pohybu těchto údajů (obecné nařízení o
+              ochraně osobních údajů, dále jen „GDPR").
             </p>
             <p>
-              V rámci poskytování služeb společností Aikonic budou zpracovány
-              osobní údaje, které jsou nezbytné pro registraci, respektive údaje,
-              které jsou nutné pro řádné poskytnutí služby a případné vydání
-              potvrzení o absolvování či certifikátu. Jedná se zejména o údaje,
-              které identifikují absolventa (objednatele), například: jméno a
-              příjmení, adresa bydliště, datum narození, identifikační číslo,
-              daňové identifikační číslo, adresa elektronické pošty, údaje
-              poskytnuté účastníkem při prezenci včetně podpisu, telefonní číslo
-              a informace o vyžádaných poptávkách a realizovaných objednávkách
-              (dále společně vše jen jako „osobní údaje").
+              V rámci poskytování služeb společností Aikonic training s.r.o. budou
+              zpracovány osobní údaje, které jsou nezbytné pro registraci,
+              respektive údaje, které jsou nutné pro řádné poskytnutí služby a
+              případné vydání potvrzení o absolvování či certifikátu. Jedná se
+              zejména o údaje, které identifikují absolventa (objednatele),
+              například: jméno a příjmení, adresa bydliště, datum narození,
+              identifikační číslo, daňové identifikační číslo, adresa elektronické
+              pošty, údaje poskytnuté účastníkem při prezenci včetně podpisu,
+              telefonní číslo a informace o vyžádaných poptávkách a realizovaných
+              objednávkách (dále společně vše jen jako „osobní údaje").
             </p>
             <p>
               Kontaktní údaje klienta budou dále využity pro zasílání informací
@@ -55,21 +55,21 @@ export default function OchranaUdaju() {
             <p>
               Objednatel bere na vědomí, že je povinen své osobní údaje uvádět
               správně a pravdivě a že je povinen po dobu poskytování služby bez
-              zbytečného odkladu informovat společnost Aikonic o změně ve svých
-              osobních údajích. Společnost Aikonic neručí za případná chybná
-              uvedení osobních údajů objednatele na vydaných dokumentech či
-              certifikátech, která vycházela z objednatelem předaných osobních
-              údajů.
+              zbytečného odkladu informovat společnost Aikonic training s.r.o. o
+              změně ve svých osobních údajích. Společnost Aikonic training s.r.o.
+              neručí za případná chybná uvedení osobních údajů objednatele na
+              vydaných dokumentech či certifikátech, která vycházela z objednatelem
+              předaných osobních údajů.
             </p>
             <p>
               Zpracováním osobních údajů objednatele může společnost Aikonic
-              pověřit třetí osobu, jakožto zpracovatele. Osobní údaje uchovává
-              společnost Aikonic v elektronické podobě v rámci informačního
-              systému a v listinné podobě v rámci objednatelem předaných
-              dokumentů, a to minimálně po dobu, po kterou je povinna uchovávat
-              účetní doklady ve smyslu zákona č. 563/1991 Sb., o účetnictví.
-              Objednatel potvrzuje, že poskytnuté osobní údaje jsou přesné a
-              pravdivé.
+              training s.r.o. pověřit třetí osobu, jakožto zpracovatele. Osobní
+              údaje uchovává společnost Aikonic training s.r.o. v elektronické
+              podobě v rámci informačního systému a v listinné podobě v rámci
+              objednatelem předaných dokumentů, a to minimálně po dobu, po kterou
+              je povinna uchovávat účetní doklady ve smyslu zákona č. 563/1991 Sb.,
+              o účetnictví. Objednatel potvrzuje, že poskytnuté osobní údaje jsou
+              přesné a pravdivé.
             </p>
 
             <h2>Zásady ochrany osobních údajů</h2>
@@ -78,16 +78,17 @@ export default function OchranaUdaju() {
             <p>Správcem osobních údajů je:</p>
             <ul>
               <li>
-                <strong>Obchodní firma:</strong> Radek Aigel
+                <strong>Obchodní firma:</strong> Aikonic training s.r.o.
               </li>
               <li>
                 <strong>Obchodní značka:</strong> Aikonic
               </li>
               <li>
-                <strong>IČO:</strong> 74258575
+                <strong>IČO:</strong> 24472590
               </li>
               <li>
-                <strong>Sídlo:</strong> Heydukova 115, 572 01 Polička
+                <strong>Sídlo:</strong> Heydukova 115, 572 01 Polička (fakturační
+                adresa)
               </li>
               <li>
                 <strong>Kontaktní e-mail:</strong>{" "}
@@ -145,16 +146,16 @@ export default function OchranaUdaju() {
             <ul>
               <li>Poskytovatelům IT služeb a hostingu</li>
               <li>Marketingovým agenturám</li>
-              <li>Dalším zpracovatelům pověřeným společností Aikonic</li>
+              <li>Dalším zpracovatelům pověřeným společností Aikonic training s.r.o.</li>
             </ul>
 
             <h3>7. Zabezpečení údajů</h3>
             <p>
-              Společnost Aikonic se zavázala k zabezpečení osobních údajů.
-              Přijímáme vhodná bezpečnostní opatření, abychom omezili zneužití a
-              neoprávněný přístup k osobním údajům. Tím je zajištěno, že k vašim
-              údajům mají přístup pouze nezbytné osoby, přístup k datům je chráněn
-              a naše bezpečnostní opatření jsou pravidelně kontrolována.
+              Společnost Aikonic training s.r.o. se zavázala k zabezpečení osobních
+              údajů. Přijímáme vhodná bezpečnostní opatření, abychom omezili
+              zneužití a neoprávněný přístup k osobním údajům. Tím je zajištěno, že
+              k vašim údajům mají přístup pouze nezbytné osoby, přístup k datům je
+              chráněn a naše bezpečnostní opatření jsou pravidelně kontrolována.
             </p>
 
             <h3>8. Změny tohoto prohlášení o ochraně osobních údajů</h3>

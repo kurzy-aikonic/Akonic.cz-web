@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { FadeIn } from "./FadeIn";
 import { MagneticButton } from "./MagneticButton";
 
-const FORMSPREE_ID = "";
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mbdalyzl";
 
 
 export function Contact() {
@@ -103,7 +103,7 @@ export function Contact() {
                   Adresa
                 </span>
                 <span className="text-white/90">
-                  Heydukova 115, 572 01 Polička
+                  Heydukova 115, 572 01 Polička (fakturační adresa)
                 </span>
               </div>
             </div>

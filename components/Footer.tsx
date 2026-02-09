@@ -71,7 +71,7 @@ export function Footer() {
                 +420 723 061 013
               </a>
             </li>
-            <li>Heydukova 115, 572 01 Polička</li>
+            <li>Heydukova 115, 572 01 Polička (fakturační adresa)</li>
           </ul>
         </div>
 
