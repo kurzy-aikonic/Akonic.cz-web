@@ -8,16 +8,22 @@ type FadeInProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  /** Na mobilu se první obsah může nezkobrazit kvůli whileInView; pokud true, animace proběhne hned po načtení. */
+  animateOnMount?: boolean;
 };
 
-export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
+export function FadeIn({ children, className, delay = 0, animateOnMount = false }: FadeInProps) {
   return (
     <motion.div
       className={cn(className)}
       initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
-      viewport={{ once: true, amount: 0.2 }}
+      {...(animateOnMount
+        ? { animate: { opacity: 1, y: 0 } }
+        : {
+            whileInView: { opacity: 1, y: 0 },
+            viewport: { once: true, amount: 0.15 },
+          })}
+      transition={{ duration: 0.5, ease: "easeOut", delay }}
     >
       {children}
     </motion.div>

@@ -20,24 +20,24 @@ export function Hero() {
   }, [words.length]);
 
   return (
-    <section className="relative overflow-hidden pb-16 pt-20 md:pb-24 md:pt-28">
+    <section className="relative overflow-hidden pb-16 pt-28 min-h-[100dvh] min-h-[100vh] md:pb-24 md:pt-36">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-12 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl md:h-[420px] md:w-[420px]" />
         <div className="absolute right-10 top-24 h-48 w-48 rounded-full bg-blue-400/20 blur-3xl" />
       </div>
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="mx-auto max-w-6xl px-4 pb-6 md:px-6">
         <div className="max-w-3xl">
-          <FadeIn delay={0.05}>
+          <FadeIn delay={0.05} animateOnMount>
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600 backdrop-blur">
               AI pro firmy — školení a implementace
             </p>
           </FadeIn>
-          <FadeIn delay={0.12}>
+          <FadeIn delay={0.12} animateOnMount>
             <h1 className="text-4xl font-semibold leading-tight text-text md:text-6xl lg:text-7xl">
               Přestaňte pálit peníze za rutinu.
             </h1>
           </FadeIn>
-          <FadeIn delay={0.18}>
+          <FadeIn delay={0.18} animateOnMount>
             <p className="mt-4 text-lg font-medium text-slate-700 md:text-xl">
               Nechte technologie pracovat. Vy vydělávejte.
             </p>

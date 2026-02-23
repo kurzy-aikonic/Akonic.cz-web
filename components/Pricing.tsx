@@ -49,7 +49,7 @@ export function Pricing() {
               <div>
                 <div className="flex flex-wrap items-baseline gap-2">
                   <span className="text-2xl font-bold text-text md:text-3xl">
-                    od 20 000
+                    od 25 000
                   </span>
                   <span className="text-sm text-slate-500">Kč s DPH</span>
                 </div>

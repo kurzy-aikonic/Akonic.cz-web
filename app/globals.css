@@ -5,3 +5,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+}
