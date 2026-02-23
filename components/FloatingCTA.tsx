@@ -29,7 +29,7 @@ export function FloatingCTA() {
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <Link
-            href="/#kontakt"
+            href="/#contact"
             className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700"
           >
             <Calendar className="h-4 w-4" />

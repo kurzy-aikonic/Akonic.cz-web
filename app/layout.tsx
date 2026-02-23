@@ -39,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body className={`${GeistSans.className} bg-background text-text antialiased`}>
-        {children}
+        <div className="min-h-screen overflow-x-hidden pb-24 md:pb-0">
+          {children}
+        </div>
         <CookieConsent />
       </body>
     </html>

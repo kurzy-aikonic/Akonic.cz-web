@@ -1,0 +1,160 @@
+import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
+import { FadeIn } from "../../components/FadeIn";
+import { Button } from "../../components/ui/button";
+import { ArrowRight, Calendar, PieChart } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Finanční gramotnost pro firmy | AIKONIC",
+  description:
+    "Dvoudenní školení finanční gramotnosti pro firmy. Rozpočet, úvěry, investice a osobní finanční plán — to, co vám ve škole neřekli.",
+};
+
+const day1 = [
+  { time: "9:00 – 9:30", title: "Úvod a osobní finance", text: "Proč věnovat čas financím a jak plánování mění život." },
+  { time: "9:30 – 10:30", title: "Princip peněz a historie", text: "Jak peníze fungují dnes a jak inflace ovlivňuje úspory." },
+  { time: "10:45 – 12:00", title: "Základy finanční gramotnosti", text: "Rozpočet, jeho sestavení a případová studie úspěšného plánu." },
+  { time: "13:00 – 14:30", title: "Úvěry a hypotéky", text: "Typy úvěrů, parametry hypoték a dopad na finanční stabilitu." },
+  { time: "14:45 – 16:00", title: "Investice a jejich principy", text: "Strategie, diverzifikace a složený úrok. Rizika a příležitosti." },
+  { time: "16:00 – 17:00", title: "Volná diskuze", text: "Dotazy a sdílení zkušeností účastníků." },
+];
+
+const day2 = [
+  { time: "9:00 – 10:30", title: "Pokročilé investiční strategie", text: "Investiční nástroje, případové studie a trendy na trhu." },
+  { time: "10:45 – 12:00", title: "Pojištění v osobním plánu", text: "Životní a majetkové pojištění. Příklady z praxe." },
+  { time: "13:00 – 14:30", title: "Osobní finanční plánování", text: "Stanovení cílů, rozpočet a investice v praxi." },
+  { time: "14:45 – 16:00", title: "Praktická cvičení a simulace", text: "Simulace rozhodnutí, sestavení plánu ve skupinách, zpětná vazba." },
+  { time: "16:00 – 17:00", title: "Shrnutí a další kroky", text: "Klíčové poznatky a jak pokračovat na cestě k finanční svobodě." },
+];
+
+export default function FinancniGramotnostPage() {
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-background">
+        {/* Hero */}
+        <section className="relative overflow-hidden border-b border-slate-200 pb-16 pt-28 md:pb-24 md:pt-36">
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute left-1/2 top-12 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
+          </div>
+          <div className="mx-auto max-w-4xl px-4 md:px-6">
+            <FadeIn>
+              <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
+                Služby
+              </p>
+              <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl lg:text-6xl">
+                Finanční gramotnost pro firmy
+              </h1>
+              <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">
+                Základ spokojeného života. A to, co vám ve škole neřekli.
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="py-12 md:py-16">
+          <div className="mx-auto max-w-4xl px-4 md:px-6">
+            <FadeIn className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+                Dvoudenní školení pro vaše lidi: od rozpočtu a úvěrů po investice a pojištění. Praktické principy, případové studie a cvičení. Harmonogram lze přizpůsobit potřebám a zájmům účastníků.
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Program */}
+        <section className="py-12 md:py-20">
+          <div className="mx-auto max-w-5xl px-4 md:px-6">
+            <FadeIn className="mb-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+                Program
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold text-text md:text-4xl">
+                Dva dny. Jasná struktura. Měřitelné know-how.
+              </h2>
+            </FadeIn>
+
+            <div className="grid gap-10 lg:grid-cols-2">
+              {/* Den 1 */}
+              <FadeIn delay={0.05}>
+                <article className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+                  <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <Calendar className="h-6 w-6" />
+                    </span>
+                    <h3 className="text-xl font-semibold text-text">Den 1</h3>
+                  </div>
+                  <ul className="mt-6 space-y-4">
+                    {day1.map((block) => (
+                      <li key={block.title} className="border-l-2 border-primary/20 pl-4">
+                        <p className="text-xs font-semibold text-primary">{block.time}</p>
+                        <p className="mt-0.5 font-medium text-text">{block.title}</p>
+                        <p className="mt-1 text-sm text-slate-600">{block.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </FadeIn>
+
+              {/* Den 2 */}
+              <FadeIn delay={0.1}>
+                <article className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+                  <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <PieChart className="h-6 w-6" />
+                    </span>
+                    <h3 className="text-xl font-semibold text-text">Den 2</h3>
+                  </div>
+                  <ul className="mt-6 space-y-4">
+                    {day2.map((block) => (
+                      <li key={block.title} className="border-l-2 border-primary/20 pl-4">
+                        <p className="text-xs font-semibold text-primary">{block.time}</p>
+                        <p className="mt-0.5 font-medium text-text">{block.title}</p>
+                        <p className="mt-1 text-sm text-slate-600">{block.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </FadeIn>
+            </div>
+
+            <FadeIn className="mt-8">
+              <p className="text-center text-sm text-slate-500">
+                Harmonogram lze upravit podle vašich potřeb a zájmů účastníků.
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="border-t border-slate-200 py-16 md:py-24">
+          <div className="mx-auto max-w-4xl px-4 md:px-6">
+            <FadeIn className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-indigo-600 px-6 py-12 text-white shadow-xl md:px-12">
+              <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h2 className="text-2xl font-semibold md:text-3xl">
+                    Další krok: domluvit konzultaci
+                  </h2>
+                  <p className="mt-2 text-white/90">
+                    Napište nám nebo zavolejte — připravíme nabídku na míru.
+                  </p>
+                </div>
+                <Button size="lg" asChild className="bg-white text-text hover:bg-white/90">
+                  <Link href="/#contact">
+                    Domluvit konzultaci
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

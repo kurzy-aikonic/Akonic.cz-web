@@ -9,7 +9,7 @@ import { MagneticButton } from "./MagneticButton";
 
 export function CTA() {
   return (
-    <section id="kontakt" className="py-16 md:py-24">
+    <section className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn
           delay={0.1}
@@ -18,18 +18,17 @@ export function CTA() {
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
-                AI konzultace
+                Konzultace zdarma
               </p>
               <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
                 Jste připraveni získat náskok?
               </h2>
               <p className="mt-3 max-w-xl text-base text-white/80">
-                AI nečeká. Vaše konkurence pravděpodobně také ne. Začněme s
-                transformací vaší firmy ještě dnes.
+                Konkurence už AI nasazuje. Domluvte si konzultaci a posuňte firmu vpřed.
               </p>
             </div>
-            <MagneticButton className="inline-flex">
-              <Button size="lg" asChild className="bg-white text-text">
+            <MagneticButton className="w-full md:w-auto">
+              <Button size="lg" asChild className="w-full md:w-auto min-h-[48px] bg-white text-text">
                 <Link href="/#contact">
                   Domluvit termín
                   <ArrowRight className="h-4 w-4" />

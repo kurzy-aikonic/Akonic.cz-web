@@ -5,7 +5,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white/80">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 text-sm text-slate-600 md:grid-cols-3 md:px-6">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 text-base text-slate-600 md:grid-cols-3 md:px-6">
         <div className="space-y-4">
           <Image
             src="/logo.png"
@@ -14,13 +14,13 @@ export function Footer() {
             height={80}
             className="h-16 w-auto object-contain"
           />
-          <p className="text-sm text-slate-500">
-            AIKONIC - Váš partner pro AI a automatizaci.
+          <p className="text-base text-slate-500">
+            AI a automatizace pro firmy. Školení a implementace.
           </p>
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Rychlé odkazy
           </p>
           <ul className="mt-4 space-y-2">
@@ -30,8 +30,13 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/#sluzby" className="transition hover:text-slate-900">
+              <Link href="/sluzby" className="transition hover:text-slate-900">
                 Služby
+              </Link>
+            </li>
+            <li>
+              <Link href="/#cenik" className="transition hover:text-slate-900">
+                Ceník
               </Link>
             </li>
             <li>
@@ -43,7 +48,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/#kontakt" className="transition hover:text-slate-900">
+              <Link href="/#contact" className="transition hover:text-slate-900">
                 Kontakt
               </Link>
             </li>
@@ -51,10 +56,10 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Kontakt
           </p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-600">
+          <ul className="mt-4 space-y-2 text-base text-slate-600">
             <li>
               <a
                 href="mailto:kurzy@aikonic.cz"
@@ -76,10 +81,10 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Legální & Social
           </p>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-2 text-base">
             <li>
               <Link
                 href="/obchodni-podminky"
@@ -97,7 +102,7 @@ export function Footer() {
               </Link>
             </li>
           </ul>
-          <div className="mt-5 flex items-center gap-3 text-slate-500">
+          <div className="mt-5 flex items-center gap-4 text-slate-500">
             <Link
               href="https://www.linkedin.com/company/108064244/"
               target="_blank"
@@ -105,7 +110,7 @@ export function Footer() {
               aria-label="LinkedIn"
               className="cursor-pointer hover:text-slate-900"
             >
-              <Linkedin className="h-4 w-4" />
+              <Linkedin className="h-6 w-6" />
             </Link>
             <Link
               href="https://www.facebook.com/profile.php?id=61581039984128"
@@ -114,7 +119,7 @@ export function Footer() {
               aria-label="Facebook"
               className="cursor-pointer hover:text-slate-900"
             >
-              <Facebook className="h-4 w-4" />
+              <Facebook className="h-6 w-6" />
             </Link>
             <Link
               href="https://www.instagram.com/aikonic_training/"
@@ -123,13 +128,13 @@ export function Footer() {
               aria-label="Instagram"
               className="cursor-pointer hover:text-slate-900"
             >
-              <Instagram className="h-4 w-4" />
+              <Instagram className="h-6 w-6" />
             </Link>
           </div>
         </div>
       </div>
       <div className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-slate-500 md:flex-row md:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:px-6">
           <span>© 2026 Aikonic. Všechna práva vyhrazena.</span>
           <span>kurzy@aikonic.cz</span>
         </div>

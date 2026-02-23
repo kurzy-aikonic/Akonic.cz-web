@@ -52,7 +52,7 @@ export function Testimonials() {
         <div>
           <FadeIn className="flex flex-col gap-4">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-              A co říkají účastníci našich školení?
+              Reference
             </p>
             <h2 className="text-3xl font-semibold text-text md:text-4xl">
               Průměrné hodnocení 5.0/5 ⭐⭐⭐⭐⭐
@@ -66,7 +66,7 @@ export function Testimonials() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
-                        G
+                        {testimonial.initials}
                       </div>
                       <div className="flex items-center gap-1 text-yellow-400">
                         {Array.from({ length: 5 }).map((_, starIndex) => (

@@ -10,10 +10,11 @@ import { FadeIn } from "./FadeIn";
 import { MagneticButton } from "./MagneticButton";
 
 const navItems = [
-  { label: "Služby", href: "/#sluzby" },
+  { label: "Služby", href: "/sluzby" },
+  { label: "Ceník", href: "/#cenik" },
   { label: "O nás", href: "/#about" },
   { label: "Reference", href: "/#reference" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Kontakt", href: "/#contact" },
 ];
 
 const menuVariants = {

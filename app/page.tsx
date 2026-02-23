@@ -9,6 +9,7 @@ import { Footer } from "../components/Footer";
 import { Contact } from "../components/Contact";
 import { Reveal } from "../components/Reveal";
 import { Process } from "../components/Process";
+import { Pricing } from "../components/Pricing";
 import { FAQ } from "../components/FAQ";
 import { StickyCTA } from "../components/StickyCTA";
 import fs from "fs";
@@ -34,13 +35,16 @@ export default function HomePage() {
       <main>
         <Hero />
         <Reveal>
-          <About />
-        </Reveal>
-        <Reveal>
           <Services />
         </Reveal>
         <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
           <Process />
+        </Reveal>
+        <Reveal>
+          <Pricing />
         </Reveal>
         <Reveal>
           <Gallery images={imageList} />

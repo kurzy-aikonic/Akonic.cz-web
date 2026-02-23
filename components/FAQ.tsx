@@ -9,22 +9,22 @@ const faqs = [
   {
     question: "Je implementace AI bezpečná pro naše data?",
     answer:
-      "Ano. Nastavujeme bezpečnostní pravidla a pracujeme s daty tak, aby odpovídala vašim interním standardům.",
+      "Ano. Pracujeme podle vašich bezpečnostních standardů a datová pravidla nastavíme na míru.",
   },
   {
-    question: "Jak dlouho trvá průměrný projekt?",
+    question: "Jak dlouho trvá typický projekt?",
     answer:
-      "Standardní implementace trvá několik týdnů. Přesný časový rámec určíme po auditu.",
+      "Implementace obvykle několik týdnů. Přesný rozsah určíme po auditu.",
   },
   {
-    question: "Musíme mít technické znalosti?",
+    question: "Potřebujeme technické znalosti?",
     answer:
-      "Ne. Vše vysvětlujeme srozumitelně a zajišťujeme školení, aby tým uměl AI používat.",
+      "Ne. Vše srozumitelně vysvětlíme a tým proškolíme.",
   },
   {
     question: "Kolik to stojí?",
     answer:
-      "Každý projekt je na míru, ale úvodní konzultace je zdarma.",
+      "Vzdělávací kurz AI máme v ceníku: 45 000 Kč s DPH (8 hodin) nebo 85 000 Kč s DPH (2 dny, 16 hodin). Audit, hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme na míru podle rozsahu. Úvodní konzultace je zdarma.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function FAQ() {
             Časté dotazy
           </p>
           <h2 className="text-3xl font-semibold text-text md:text-4xl">
-            Odpovědi na to, co zajímá většinu klientů.
+            Odpovědi na to, na co se ptáte nejčastěji.
           </h2>
         </FadeIn>
 

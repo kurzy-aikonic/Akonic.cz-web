@@ -1,21 +1,26 @@
+import Link from "next/link";
 import { FadeIn } from "./FadeIn";
 
 const steps = [
   {
-    title: "Konzultace & Audit",
-    description: "Zjistíme, kde vám AI ušetří peníze.",
+    title: "Audit a konzultace",
+    description: "Zjistíme, kde AI přinese největší hodnotu.",
+    href: "/audit",
   },
   {
     title: "Návrh řešení",
-    description: "Design na míru vašim procesům.",
+    description: "Řešení šité na míru vaším procesům.",
+    href: undefined,
   },
   {
     title: "Implementace",
-    description: "Rychlé nasazení bez výpadků.",
+    description: "Nasazení bez zbytečných výpadků.",
+    href: undefined,
   },
   {
-    title: "Podpora & Růst",
-    description: "Školení týmu a optimalizace.",
+    title: "Podpora a růst",
+    description: "Školení týmu a průběžná optimalizace.",
+    href: undefined,
   },
 ];
 
@@ -44,6 +49,14 @@ export function Process() {
               </span>
               <h3 className="text-lg font-semibold text-text">{step.title}</h3>
               <p className="mt-2 text-sm text-slate-600">{step.description}</p>
+              {step.href && (
+                <Link
+                  href={step.href}
+                  className="mt-3 inline-flex text-sm font-semibold text-primary transition hover:text-blue-600"
+                >
+                  Více o auditu →
+                </Link>
+              )}
             </div>
           ))}
         </div>

@@ -15,7 +15,7 @@ export function Trust() {
       <FadeIn>
         <div className="flex flex-col gap-2 text-center md:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Důvěřují nám inovativní firmy
+            Důvěřují nám firmy z praxe
           </p>
         </div>
       </FadeIn>

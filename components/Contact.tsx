@@ -54,18 +54,16 @@ export function Contact() {
 
   return (
     <section id="contact" className="bg-slate-900 py-16 md:py-24">
-      <span id="kontakt" className="sr-only" />
       <div className="mx-auto grid max-w-6xl gap-12 px-4 text-white md:grid-cols-2 md:px-6">
         <FadeIn className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
             Kontakt
           </p>
           <h2 className="text-3xl font-semibold md:text-4xl">
-            Ozvěte se nám a posuňme váš digitální produkt dál.
+            Napište nám. Rychle odpovíme a navrhneme další krok.
           </h2>
           <p className="text-base text-white/70">
-            Preferujete rychlou konzultaci nebo detailní zadání? Jsme připraveni
-            na obojí.
+            Konzultace zdarma. Stačí popsat, co potřebujete.
           </p>
           <div className="space-y-4 text-white/80">
             <div className="flex items-start gap-3">
@@ -122,7 +120,7 @@ export function Contact() {
                     Děkujeme! Zpráva byla odeslána.
                   </p>
                   <p className="text-sm text-emerald-100/80">
-                    Ozveme se vám co nejdříve.
+                    Ozveme se co nejdříve.
                   </p>
                 </div>
               </div>
