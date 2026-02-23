@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bot, ClipboardCheck, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
+import { Bot, Briefcase, ClipboardCheck, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const services = [
@@ -26,6 +26,12 @@ const services = [
     description:
       "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",
     icon: ClipboardCheck,
+  },
+  {
+    title: "4h online školení pro obchodníky",
+    description:
+      "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy. Vlastní plán od zítřka.",
+    icon: Briefcase,
   },
 ];
 
@@ -98,7 +104,9 @@ export function Services() {
                           ? "/financni-gramotnost"
                           : service.title === "Audit AI příležitostí"
                             ? "/audit"
-                            : "/#contact"
+                            : service.title === "4h online školení pro obchodníky"
+                              ? "/skoleni-pro-obchodniky"
+                              : "/#contact"
                     }
                       className="mt-5 inline-flex items-center text-sm font-semibold text-primary transition hover:text-blue-700"
                     >

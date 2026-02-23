@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, LayoutList } from "lucide-react";
+import { ClipboardCheck, Clock, LayoutList } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const variants = [
@@ -34,6 +34,37 @@ export function Pricing() {
             zmapuje vaše potřeby a nastaví, jak bude vzdělávání u vás probíhat.
             Na jeho základě pak vyberete konkrétní kurzy podle ceníku níže.
           </p>
+        </FadeIn>
+
+        {/* Audit */}
+        <FadeIn delay={0.06} className="mt-10">
+          <Link
+            href="/audit"
+            className="group flex flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:border-primary/20 hover:shadow-md sm:flex-row sm:items-center sm:justify-between md:p-8"
+          >
+            <div className="flex gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary/15">
+                <ClipboardCheck className="h-6 w-6" />
+              </span>
+              <div>
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="text-2xl font-bold text-text md:text-3xl">
+                    od 20 000
+                  </span>
+                  <span className="text-sm text-slate-500">Kč s DPH</span>
+                </div>
+                <h3 className="mt-2 text-xl font-semibold text-text md:text-2xl">
+                  Audit AI příležitostí
+                </h3>
+                <p className="mt-1 text-sm text-slate-600">
+                  Konkrétní cena podle náročnosti, počtu osob a rozsahu. Nabídku připravíme na míru po úvodní konzultaci.
+                </p>
+              </div>
+            </div>
+            <span className="mt-4 inline-flex items-center text-sm font-semibold text-primary sm:mt-0 group-hover:text-blue-600">
+              Více o auditu →
+            </span>
+          </Link>
         </FadeIn>
 
         <FadeIn delay={0.08} className="mt-10">
@@ -82,7 +113,7 @@ export function Pricing() {
               ))}
             </div>
             <p className="mt-6 border-t border-slate-200 pt-6 text-center text-sm text-slate-600">
-              Individuální projekty (audit, hackathon, finanční školení) podle rozsahu — nabídneme po konzultaci.
+              Hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme podle rozsahu po konzultaci.
             </p>
           </div>
         </FadeIn>

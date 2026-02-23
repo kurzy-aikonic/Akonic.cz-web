@@ -10,7 +10,7 @@ import { Contact } from "../components/Contact";
 import { Reveal } from "../components/Reveal";
 import { Process } from "../components/Process";
 import { Pricing } from "../components/Pricing";
-import { FAQ } from "../components/FAQ";
+import { Statement } from "../components/Statement";
 import { StickyCTA } from "../components/StickyCTA";
 import fs from "fs";
 import path from "path";
@@ -53,7 +53,7 @@ export default function HomePage() {
           <Testimonials />
         </Reveal>
         <CTA />
-        <FAQ />
+        <Statement />
       </main>
       <Contact />
       <Footer />

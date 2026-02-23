@@ -13,21 +13,33 @@ export default function ObchodniPodminky() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-16 bg-white dark:bg-slate-950 min-h-screen">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-12">
-            Všeobecné obchodní podmínky
-          </h1>
+      <main className="min-h-screen bg-background">
+        {/* Hero */}
+        <section className="border-b border-slate-200 pb-12 pt-28 md:pb-16 md:pt-36">
+          <div className="mx-auto max-w-4xl px-4 md:px-6">
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
+              Právní informace
+            </p>
+            <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl">
+              Všeobecné obchodní podmínky
+            </h1>
+          </div>
+        </section>
 
-          <div className="prose prose-slate prose-lg dark:prose-invert max-w-none">
-            <p className="lead">
-              <strong>Aikonic training s.r.o.</strong>
+        <div className="mx-auto max-w-4xl px-4 py-12 md:px-6 md:py-16">
+          {/* Lead / meta */}
+          <div className="mb-12 rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+            <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+            <strong>Aikonic training s.r.o.</strong>
               <br />
               IČO: 24472590
               <br />
               Platné a účinné od: 8. 7. 2025
             </p>
+          </div>
 
+          {/* Obsah */}
+          <div className="prose prose-slate max-w-none prose-headings:font-semibold prose-headings:text-text prose-p:text-slate-600 prose-li:text-slate-600 prose-a:text-primary prose-a:no-underline hover:prose-a:underline [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:scroll-mt-28 [&_h2]:first:mt-0 [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-lg [&_ul]:mt-4 [&_ul]:space-y-1 [&_p]:mt-3 [&_p]:leading-relaxed">
             <h2>1. Úvodní ustanovení a definice</h2>
             <p>
               1.1. Tyto všeobecné obchodní podmínky („VOP“) upravují práva a
