@@ -30,11 +30,27 @@ const menuItemVariants = {
   show: { opacity: 1, y: 0 },
 };
 
+const SCROLL_THRESHOLD = 24;
+
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/70 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 border-b backdrop-blur-md transition-all duration-300 ease-out ${
+        scrolled
+          ? "border-slate-200 bg-white/95 shadow-sm"
+          : "border-slate-200/60 bg-white/70"
+      }`}
+    >
       <div className="container mx-auto flex h-24 items-center justify-between px-6 md:px-8">
         <FadeIn delay={0.02}>
           <Link

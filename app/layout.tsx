@@ -38,8 +38,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
-      <body className={`${GeistSans.className} bg-background text-text antialiased`}>
-        <div className="min-h-screen overflow-x-hidden pb-24 md:pb-0">
+      <body className={`${GeistSans.className} bg-background text-text antialiased overflow-x-hidden`}>
+        <div className="min-h-screen pb-24 md:pb-0">
           {children}
         </div>
         <CookieConsent />
