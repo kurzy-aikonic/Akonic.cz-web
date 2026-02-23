@@ -68,10 +68,10 @@ const trainingTopics = [
 
 export function Services() {
   return (
-    <section id="services" className="py-16 md:py-24">
+    <section id="services" className="py-14 md:py-20">
       <span id="sluzby" className="sr-only" />
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <FadeIn className="flex flex-col gap-4">
+        <FadeIn className="flex flex-col gap-4" animateOnMount>
           <h2 className="text-3xl font-semibold text-text md:text-4xl">
             Co pro vás děláme
           </h2>
@@ -85,7 +85,7 @@ export function Services() {
             const Icon = service.icon;
 
             return (
-              <FadeIn key={service.title} delay={index * 0.08}>
+              <FadeIn key={service.title} delay={index * 0.08} animateOnMount>
                 <article className="group rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-xl">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                     <Icon className="h-6 w-6" />
@@ -108,7 +108,7 @@ export function Services() {
                               ? "/skoleni-pro-obchodniky"
                               : "/#contact"
                     }
-                      className="mt-5 inline-flex items-center text-sm font-semibold text-primary transition hover:text-blue-700"
+                      className="mt-5 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-700 active:opacity-80"
                     >
                       Více info →
                     </Link>
@@ -158,7 +158,7 @@ export function Services() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="mt-16">
+        <FadeIn delay={0.2} className="mt-12">
           <h3 className="text-2xl font-semibold text-text md:text-3xl">
             Co školíme
           </h3>

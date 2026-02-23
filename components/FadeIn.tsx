@@ -16,9 +16,9 @@ export function FadeIn({ children, className, delay = 0, animateOnMount = false 
   return (
     <motion.div
       className={cn(className)}
-      initial={{ opacity: 0, y: 16 }}
+      initial={animateOnMount ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       {...(animateOnMount
-        ? { animate: { opacity: 1, y: 0 } }
+        ? {}
         : {
             whileInView: { opacity: 1, y: 0 },
             viewport: { once: true, amount: 0.15 },

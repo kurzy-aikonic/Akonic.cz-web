@@ -31,7 +31,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="reference" className="py-16 md:py-24">
+    <section id="reference" className="py-14 md:py-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:px-6">
         <Trust />
 

@@ -9,7 +9,7 @@ import { MagneticButton } from "./MagneticButton";
 
 export function CTA() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn
           delay={0.1}

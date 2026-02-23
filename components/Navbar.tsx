@@ -52,7 +52,7 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-8">
-        <FadeIn delay={0.02}>
+        <FadeIn delay={0.02} animateOnMount>
           <Link
             href="/"
             className="flex items-center"
@@ -70,7 +70,7 @@ export function Navbar() {
         </FadeIn>
         <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
           {navItems.map((item, index) => (
-            <FadeIn key={item.label} delay={0.06 + index * 0.05}>
+            <FadeIn key={item.label} delay={0.06 + index * 0.05} animateOnMount>
               <Link
                 href={item.href}
                 className="transition-colors hover:text-text"
@@ -81,7 +81,7 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.2} animateOnMount>
             <MagneticButton className="hidden md:inline-flex">
               <Button className="hidden md:inline-flex" size="default" asChild>
                 <Link href="/#contact">Konzultace</Link>
@@ -118,21 +118,21 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="absolute right-6 top-6 text-slate-900"
+                className="absolute right-4 top-4 flex min-h-[48px] min-w-[48px] items-center justify-center rounded-full text-slate-900 transition hover:bg-slate-100 active:bg-slate-200"
                 aria-label="Zavřít menu"
               >
-                <X className="h-8 w-8" />
+                <X className="h-6 w-6" />
               </button>
 
               <motion.nav
-                className="flex h-full flex-col items-center justify-center gap-8 text-3xl font-bold text-slate-900"
+                className="flex h-full flex-col items-center justify-center gap-2 py-8 text-2xl font-bold text-slate-900 sm:text-3xl"
               >
                 {navItems.map((item) => (
-                  <motion.div key={item.label} variants={menuItemVariants}>
+                  <motion.div key={item.label} variants={menuItemVariants} className="w-full max-w-xs text-center">
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="text-slate-900 transition hover:text-blue-600"
+                      className="block min-h-[48px] w-full py-3 px-4 text-center text-slate-900 transition hover:text-blue-600 active:bg-slate-100 rounded-xl"
                     >
                       {item.label}
                     </Link>

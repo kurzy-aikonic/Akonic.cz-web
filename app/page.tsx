@@ -10,7 +10,6 @@ import { Contact } from "../components/Contact";
 import { Reveal } from "../components/Reveal";
 import { Process } from "../components/Process";
 import { Pricing } from "../components/Pricing";
-import { Statement } from "../components/Statement";
 import { StickyCTA } from "../components/StickyCTA";
 import fs from "fs";
 import path from "path";
@@ -32,14 +31,9 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" role="main" className="min-h-0">
         <Hero />
-        <Reveal>
-          <Services />
-        </Reveal>
-        <Reveal>
-          <About />
-        </Reveal>
+        <Services />
         <Reveal>
           <Process />
         </Reveal>
@@ -53,7 +47,9 @@ export default function HomePage() {
           <Testimonials />
         </Reveal>
         <CTA />
-        <Statement />
+        <Reveal>
+          <About />
+        </Reveal>
       </main>
       <Contact />
       <Footer />

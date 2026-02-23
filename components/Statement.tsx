@@ -22,7 +22,7 @@ const items = [
 
 export function Statement() {
   return (
-    <section className="relative overflow-hidden border-y border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-20 md:py-28">
+    <section className="relative overflow-hidden border-y border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-14 md:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
       </div>
@@ -41,7 +41,7 @@ export function Statement() {
             </p>
           </FadeIn>
         </div>
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => {
             const Icon = item.icon;
             return (

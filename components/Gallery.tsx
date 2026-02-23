@@ -27,12 +27,12 @@ export function Gallery({ images }: GalleryProps) {
   };
 
   return (
-    <section id="galerie" className="py-16 md:py-24">
+    <section id="galerie" className="py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Ukázky naší práce
+              Galerie
             </p>
             <h2 className="text-3xl font-semibold text-text md:text-4xl">
               Ukázky naší práce
@@ -102,10 +102,10 @@ export function Gallery({ images }: GalleryProps) {
               <button
                 type="button"
                 onClick={() => setActive(null)}
-                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow transition hover:text-text"
+                className="absolute right-4 top-4 z-10 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/90 text-slate-700 shadow transition hover:bg-white hover:text-text active:opacity-90"
                 aria-label="Zavřít"
               >
-                <X className="h-4 w-4" />
+                <X className="h-5 w-5" />
               </button>
               <Image
                 src={active}

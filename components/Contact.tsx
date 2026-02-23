@@ -53,7 +53,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-slate-900 py-16 md:py-24">
+    <section id="contact" className="bg-slate-900 py-14 md:py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 text-white md:grid-cols-2 md:px-6">
         <FadeIn className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
@@ -136,7 +136,7 @@ export function Contact() {
                   name="name"
                   type="text"
                   required
-                  className="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
                   placeholder="Vaše jméno"
                 />
               </div>
@@ -150,7 +150,7 @@ export function Contact() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
                   placeholder="email@firma.cz"
                 />
               </div>
@@ -163,7 +163,7 @@ export function Contact() {
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  className="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
                   placeholder="+420 723 061 013"
                 />
               </div>
@@ -179,7 +179,7 @@ export function Contact() {
                   name="message"
                   rows={4}
                   required
-                  className="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[120px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none resize-y"
                   placeholder="Popište nám stručně váš projekt."
                 />
               </div>

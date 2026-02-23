@@ -19,7 +19,7 @@ const variants = [
 
 export function Pricing() {
   return (
-    <section id="cenik" className="py-16 md:py-24">
+    <section id="cenik" className="py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4">
           <h2 className="text-3xl font-semibold text-text md:text-4xl">
@@ -104,7 +104,7 @@ export function Pricing() {
                     </ul>
                     <Link
                       href="/#contact"
-                      className="mt-6 inline-flex items-center text-sm font-semibold text-primary transition hover:text-blue-700"
+                      className="mt-6 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-700 active:opacity-80"
                     >
                       Domluvit termín →
                     </Link>

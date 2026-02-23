@@ -5,7 +5,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white/80">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 text-base text-slate-600 md:grid-cols-3 md:px-6">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 lg:grid-cols-4 md:px-6">
         <div className="space-y-4">
           <Image
             src="/logo.png"
@@ -23,32 +23,32 @@ export function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Rychlé odkazy
           </p>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-0">
             <li>
-              <Link href="/" className="transition hover:text-slate-900">
+              <Link href="/" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Domů
               </Link>
             </li>
             <li>
-              <Link href="/sluzby" className="transition hover:text-slate-900">
+              <Link href="/sluzby" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Služby
               </Link>
             </li>
             <li>
-              <Link href="/#cenik" className="transition hover:text-slate-900">
+              <Link href="/#cenik" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Ceník
               </Link>
             </li>
             <li>
               <Link
                 href="/#reference"
-                className="transition hover:text-slate-900"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
               >
                 Reference
               </Link>
             </li>
             <li>
-              <Link href="/#contact" className="transition hover:text-slate-900">
+              <Link href="/#contact" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Kontakt
               </Link>
             </li>
@@ -59,11 +59,11 @@ export function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Kontakt
           </p>
-          <ul className="mt-4 space-y-2 text-base text-slate-600">
+          <ul className="mt-4 space-y-0 text-base text-slate-600">
             <li>
               <a
                 href="mailto:kurzy@aikonic.cz"
-                className="transition hover:text-slate-900"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
               >
                 kurzy@aikonic.cz
               </a>
@@ -71,12 +71,12 @@ export function Footer() {
             <li>
               <a
                 href="tel:+420723061013"
-                className="transition hover:text-slate-900"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
               >
                 +420 723 061 013
               </a>
             </li>
-            <li>Heydukova 115, 572 01 Polička (fakturační adresa)</li>
+            <li className="py-2.5 -my-2">Heydukova 115, 572 01 Polička (fakturační adresa)</li>
           </ul>
         </div>
 
@@ -84,11 +84,11 @@ export function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Legální & Social
           </p>
-          <ul className="mt-4 space-y-2 text-base">
+          <ul className="mt-4 space-y-0 text-base">
             <li>
               <Link
                 href="/obchodni-podminky"
-                className="transition hover:text-slate-900"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
               >
                 Obchodní podmínky
               </Link>
@@ -96,7 +96,7 @@ export function Footer() {
             <li>
               <Link
                 href="/ochrana-udaju"
-                className="transition hover:text-slate-900"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
               >
                 Ochrana údajů
               </Link>
@@ -108,7 +108,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="cursor-pointer hover:text-slate-900"
+              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
             >
               <Linkedin className="h-6 w-6" />
             </Link>
@@ -117,7 +117,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="cursor-pointer hover:text-slate-900"
+              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
             >
               <Facebook className="h-6 w-6" />
             </Link>
@@ -126,7 +126,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="cursor-pointer hover:text-slate-900"
+              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
             >
               <Instagram className="h-6 w-6" />
             </Link>

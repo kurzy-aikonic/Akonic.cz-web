@@ -26,7 +26,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="proces" className="py-16 md:py-24">
+    <section id="proces" className="py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
@@ -38,7 +38,7 @@ export function Process() {
         </FadeIn>
 
         <div className="relative mt-10 grid gap-6 md:grid-cols-4">
-          <div className="absolute left-4 top-4 hidden h-[calc(100%-2rem)] w-px bg-slate-200 md:left-0 md:top-1/2 md:h-px md:w-full md:-translate-y-1/2" />
+          <div className="absolute left-4 top-4 hidden h-[calc(100%-2rem)] w-px bg-slate-200 md:block md:left-0 md:top-1/2 md:h-px md:w-full md:-translate-y-1/2" />
           {steps.map((step, index) => (
             <div
               key={step.title}
@@ -52,7 +52,7 @@ export function Process() {
               {step.href && (
                 <Link
                   href={step.href}
-                  className="mt-3 inline-flex text-sm font-semibold text-primary transition hover:text-blue-600"
+                  className="mt-3 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-600 active:opacity-80"
                 >
                   Více o auditu →
                 </Link>

@@ -4,10 +4,27 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Snížení výrazného zvýraznění tapu na mobilu */
+@media (hover: none) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @supports (padding: env(safe-area-inset-top)) {
   body {
-    padding-top: env(safe-area-inset-top);
+    padding-top: min(env(safe-area-inset-top), 2rem);
   }
+}
+
+/* Skrýt scrollbar u horizontálního scrollu (galerie) bez ztráty funkce */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
