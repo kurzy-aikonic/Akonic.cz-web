@@ -4,7 +4,7 @@ import { FadeIn } from "./FadeIn";
 const items = [
   {
     icon: Zap,
-    text: "AI Hackathony: 2 dny, které změní procesy.",
+    text: "AI Hackathony: od 4 hodin po libovolný počet dní, vždy na domluvu.",
   },
   {
     icon: TrendingUp,
@@ -25,6 +25,8 @@ export function About() {
     <section id="about" className="relative overflow-hidden border-y border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-14 md:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute right-0 top-1/4 h-64 w-64 rounded-full bg-amber-200/20 blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 h-48 w-48 rounded-full bg-emerald-300/15 blur-3xl" />
       </div>
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
@@ -40,16 +42,16 @@ export function About() {
             </p>
           </FadeIn>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => {
             const Icon = item.icon;
             return (
               <FadeIn key={item.text} delay={index * 0.06}>
-                <div className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white/90 px-5 py-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white/90 p-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md">
+                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${["bg-primary/10 text-primary icon-glow-primary", "bg-emerald-500/10 text-emerald-600 icon-glow-emerald", "bg-violet-500/10 text-violet-600 icon-glow-violet", "bg-amber-500/10 text-amber-600 icon-glow-amber"][index]}`}>
                     <Icon className="h-6 w-6" />
                   </span>
-                  <p className="mt-4 text-sm font-medium leading-snug text-slate-700">
+                  <p className="mt-4 flex-1 text-sm font-medium leading-snug text-slate-700">
                     {item.text}
                   </p>
                 </div>

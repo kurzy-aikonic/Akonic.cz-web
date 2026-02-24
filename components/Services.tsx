@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Bot, Briefcase, ClipboardCheck, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
+import { Bot, Briefcase, ClipboardCheck, Code2, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const services = [
   {
     title: "Intenzivní AI Hackathon",
     description:
-      "Dva dny u vás. Žádná teorie navíc — tým naučíme ovládat AI a během školení vyřešíme reálné firemní úkoly.",
+      "Od 4 hodin po libovolný počet dní — rozsah vždy na domluvu. Žádná teorie, jen intenzivní praxe a práce s AI. Tým naučíme ovládat nástroje a vyřešíme reálné firemní úkoly.",
     icon: Zap,
   },
   {
@@ -22,16 +22,22 @@ const services = [
     icon: Cpu,
   },
   {
-    title: "Audit AI příležitostí",
+    title: "Firemní AI audit",
     description:
       "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",
     icon: ClipboardCheck,
   },
   {
-    title: "4h online školení pro obchodníky",
+    title: "Školení AI pro obchodníky",
     description:
       "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy. Vlastní plán od zítřka.",
     icon: Briefcase,
+  },
+  {
+    title: "Školení Vibe coding — Claude Code, Cursor",
+    description:
+      "Programování s AI v páru. Naučíme vás Claude Code a Cursor od základů po každodenní použití: rychlejší vývoj, méně rutiny, čistší kód. Pro vývojáře i ty, kdo chtějí s kódem začít.",
+    icon: Code2,
   },
 ];
 
@@ -47,7 +53,7 @@ const trainingTopics = [
     title: "Agenti",
     tools: ["Claude Code", "Cursor"],
     description:
-      "AI asistenti, kteří programují s vámi. Claude Code a Cursor: rychlejší vývoj, čistší kód, méně hodin u obrazovky. Pro vývojáře i týmy.",
+      "AI agenti, kteří programují s vámi. Claude Code a Cursor: rychlejší vývoj, čistší kód, méně hodin u obrazovky. Pro vývojáře i týmy.",
     icon: Bot,
   },
   {
@@ -66,52 +72,68 @@ const trainingTopics = [
   },
 ];
 
+const serviceAccents = [
+  "bg-primary/10 text-primary",
+  "bg-emerald-500/10 text-emerald-600",
+  "bg-violet-500/10 text-violet-600",
+  "bg-amber-500/10 text-amber-600",
+  "bg-rose-500/10 text-rose-600",
+];
+
+const iconGlow = [
+  "icon-glow-primary",
+  "icon-glow-emerald",
+  "icon-glow-violet",
+  "icon-glow-amber",
+  "icon-glow-rose",
+];
+
 export function Services() {
   return (
-    <section id="services" className="py-14 md:py-20">
+    <section id="services" className="relative overflow-hidden py-14 md:py-20">
       <span id="sluzby" className="sr-only" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 via-transparent to-transparent" />
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4" animateOnMount>
           <h2 className="text-3xl font-semibold text-text md:text-4xl">
-            Co pro vás děláme
+            Možnosti spolupráce
           </h2>
           <p className="max-w-2xl text-base text-slate-600">
             Vzdělávání, automatizace a finance. Řešení, která platí od prvního dne.
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
-
             return (
               <FadeIn key={service.title} delay={index * 0.08} animateOnMount>
-                <article className="group rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-xl">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <article className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md">
+                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold text-text">
+                  <h3 className="mt-4 text-lg font-semibold text-text">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-sm text-slate-600">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                     {service.description}
                   </p>
-<Link
-                      href={
+                  <Link
+                    href={
                       service.title === "Intenzivní AI Hackathon"
                         ? "/ai-hackathon"
                         : service.title === "Finanční řízení a plánování"
                           ? "/financni-gramotnost"
-                          : service.title === "Audit AI příležitostí"
+                          : service.title === "Firemní AI audit"
                             ? "/audit"
-                            : service.title === "4h online školení pro obchodníky"
+                            : service.title === "Školení AI pro obchodníky"
                               ? "/skoleni-pro-obchodniky"
                               : "/#contact"
                     }
-                      className="mt-5 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-700 active:opacity-80"
-                    >
-                      Více info →
-                    </Link>
+                    className="mt-4 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-700 active:opacity-80"
+                  >
+                    Více info →
+                  </Link>
                 </article>
               </FadeIn>
             );
@@ -120,10 +142,10 @@ export function Services() {
 
         {/* Připravujeme: AI Kroužek */}
         <FadeIn delay={0.12} className="mt-12">
-          <div className="rounded-3xl border-2 border-dashed border-primary/30 bg-gradient-to-br from-primary/5 to-white p-6 md:p-8">
+          <div className="rounded-2xl border-2 border-dashed border-primary/30 bg-white/90 p-6 shadow-sm md:p-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
               <div className="flex gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <span className="icon-glow-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Sparkles className="h-7 w-7" />
                 </span>
                 <div>
@@ -172,8 +194,8 @@ export function Services() {
             const Icon = topic.icon;
             return (
               <FadeIn key={topic.title} delay={0.24 + index * 0.05}>
-                <article className="flex flex-col rounded-2xl border border-slate-200 bg-slate-50/50 p-5 transition hover:border-primary/20 hover:bg-white/80 hover:shadow-md">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md">
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
                     <Icon className="h-5 w-5" />
                   </span>
                   <h4 className="mt-4 font-semibold text-text">
@@ -189,7 +211,7 @@ export function Services() {
                       </span>
                     ))}
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                     {topic.description}
                   </p>
                 </article>

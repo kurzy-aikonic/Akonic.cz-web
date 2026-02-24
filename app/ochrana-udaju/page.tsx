@@ -131,7 +131,7 @@ export default function OchranaUdaju() {
             <p>Vaše osobní údaje zpracováváme za účelem:</p>
             <ul>
               <li>
-                Vyřízení objednávek a poskytování služeb (firemní audit AI
+                Vyřízení objednávek a poskytování služeb (firemní AI audit
                 příležitostí, firemní školení, správa financí)
               </li>
               <li>Zasílání informačních e-mailů a newsletterů</li>

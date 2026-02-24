@@ -10,7 +10,7 @@ import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
 export const metadata: Metadata = {
   title: "Intenzivní AI Hackathon | AIKONIC",
   description:
-    "Týmová práce na konkrétních AI projektech z auditu. Od nápadu k funkčnímu prototypu v jeden den.",
+    "Hackathony od 4 hodin po libovolný počet dní, vždy na domluvu. Intenzivní praxe a práce s AI bez zbytečné teorie.",
 };
 
 const steps = [
@@ -51,7 +51,7 @@ const steps = [
 const outcomes = [
   "2–4 funkční prototypy nebo první verze AI řešení",
   "Detailní implementační plány",
-  "Vyškolení interní šampioni pro každý projekt",
+  "Vyškolení interní ambasadoři pro každý projekt",
   "Momentum pro pokračování AI transformace",
 ];
 
@@ -74,7 +74,7 @@ export default function AIHackathonPage() {
                 Intenzivní AI Hackathon
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">
-                Týmová práce na projektech, které potřebujete dotáhnout do cíle.
+                Od 4 hodin po několik dní — rozsah vždy na domluvu. Žádná teorie, jen intenzivní praxe a práce s AI.
               </p>
             </FadeIn>
           </div>
@@ -83,12 +83,9 @@ export default function AIHackathonPage() {
         {/* Intro */}
         <section className="py-12 md:py-16">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+            <FadeIn className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                AI Hackathon navazuje na audit a představuje praktickou fázi
-                implementace. Účastníci pracují v týmech na konkrétních AI
-                projektech identifikovaných během auditu — od nápadu k funkčnímu
-                prototypu v jeden intenzivní den.
+                Hackathony pořádáme od 4 hodin až po libovolný počet dní — konkrétní rozsah vždy domluvíme podle vašich cílů a možností. Nejde o teorii: jde o intenzivní praxi. Účastníci pracují v týmech na reálných AI projektech, ovládají nástroje v akci a odnášejí si řešení, která mohou hned používat.
               </p>
             </FadeIn>
           </div>
@@ -102,19 +99,19 @@ export default function AIHackathonPage() {
                 Jak to probíhá
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-text md:text-4xl">
-                Jeden den. Jasný cíl. Měřitelné výstupy.
+                Jasný cíl. Intenzivní praxe. Měřitelné výstupy.
               </h2>
             </FadeIn>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((step, index) => (
                 <FadeIn key={step.title} delay={index * 0.05}>
-                  <article className="flex flex-col rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
-                    <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
+                  <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm">
+                    <span className="mb-4 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
                       {index + 1}
                     </span>
                     <h3 className="font-semibold text-text">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
                       {step.text}
                     </p>
                   </article>
@@ -127,12 +124,12 @@ export default function AIHackathonPage() {
         {/* Výsledek */}
         <section className="py-12 md:py-20">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 via-white to-slate-50/80 p-6 shadow-sm md:p-8">
-              <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <FadeIn className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+              <div className="flex items-center gap-4">
+                <span className="icon-glow-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Zap className="h-6 w-6" />
                 </span>
-                <h2 className="text-2xl font-semibold text-text md:text-3xl">
+                <h2 className="text-xl font-semibold text-text md:text-2xl">
                   Výsledek
                 </h2>
               </div>
@@ -154,7 +151,7 @@ export default function AIHackathonPage() {
         {/* CTA */}
         <section className="border-t border-slate-200 py-16 md:py-24">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-indigo-600 px-6 py-12 text-white shadow-xl md:px-12">
+            <FadeIn className="rounded-2xl bg-gradient-to-r from-primary via-blue-600 to-violet-600 px-6 py-12 text-white shadow-xl md:px-12">
               <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
                 <div>
                   <h2 className="text-2xl font-semibold md:text-3xl">

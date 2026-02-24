@@ -30,7 +30,7 @@ export function StickyCTA() {
         >
           <Link
             href="/#contact"
-            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-4 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800 md:w-auto md:rounded-full md:bg-primary md:px-6 md:py-3 md:text-base"
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-4 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800 md:w-auto md:rounded-full md:bg-gradient-to-r md:from-primary md:to-violet-600 md:px-6 md:py-3 md:text-base md:shadow-primary/20"
           >
             <Calendar className="h-4 w-4 md:h-5 md:w-5" />
             Konzultace zdarma

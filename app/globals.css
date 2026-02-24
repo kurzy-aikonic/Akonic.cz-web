@@ -28,3 +28,32 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Záření ikon při hoveru – výrazné, barevné (box-shadow + slabý scale) */
+.icon-glow-primary:hover {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.55), 0 0 32px 12px rgba(37, 99, 235, 0.65) !important;
+  transform: scale(1.06);
+}
+.icon-glow-emerald:hover {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.55), 0 0 32px 12px rgba(16, 185, 129, 0.65) !important;
+  transform: scale(1.06);
+}
+.icon-glow-violet:hover {
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.55), 0 0 32px 12px rgba(124, 58, 237, 0.65) !important;
+  transform: scale(1.06);
+}
+.icon-glow-amber:hover {
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.55), 0 0 32px 12px rgba(245, 158, 11, 0.65) !important;
+  transform: scale(1.06);
+}
+.icon-glow-rose:hover {
+  box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.55), 0 0 32px 12px rgba(244, 63, 94, 0.65) !important;
+  transform: scale(1.06);
+}
+.icon-glow-primary,
+.icon-glow-emerald,
+.icon-glow-violet,
+.icon-glow-amber,
+.icon-glow-rose {
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}

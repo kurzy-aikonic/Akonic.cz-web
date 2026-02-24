@@ -14,20 +14,20 @@ export const metadata: Metadata = {
 };
 
 const day1 = [
-  { time: "9:00 – 9:30", title: "Úvod a osobní finance", text: "Proč věnovat čas financím a jak plánování mění život." },
-  { time: "9:30 – 10:30", title: "Princip peněz a historie", text: "Jak peníze fungují dnes a jak inflace ovlivňuje úspory." },
-  { time: "10:45 – 12:00", title: "Základy finanční gramotnosti", text: "Rozpočet, jeho sestavení a případová studie úspěšného plánu." },
-  { time: "13:00 – 14:30", title: "Úvěry a hypotéky", text: "Typy úvěrů, parametry hypoték a dopad na finanční stabilitu." },
-  { time: "14:45 – 16:00", title: "Investice a jejich principy", text: "Strategie, diverzifikace a složený úrok. Rizika a příležitosti." },
-  { time: "16:00 – 17:00", title: "Volná diskuze", text: "Dotazy a sdílení zkušeností účastníků." },
+  { title: "Úvod a osobní finance", text: "Proč věnovat čas financím a jak plánování mění život." },
+  { title: "Princip peněz a historie", text: "Jak peníze fungují dnes a jak inflace ovlivňuje úspory." },
+  { title: "Základy finanční gramotnosti", text: "Rozpočet, jeho sestavení a případová studie úspěšného plánu." },
+  { title: "Úvěry a hypotéky", text: "Typy úvěrů, parametry hypoték a dopad na finanční stabilitu." },
+  { title: "Investice a jejich principy", text: "Strategie, diverzifikace a složený úrok. Rizika a příležitosti." },
+  { title: "Volná diskuze", text: "Dotazy a sdílení zkušeností účastníků." },
 ];
 
 const day2 = [
-  { time: "9:00 – 10:30", title: "Pokročilé investiční strategie", text: "Investiční nástroje, případové studie a trendy na trhu." },
-  { time: "10:45 – 12:00", title: "Pojištění v osobním plánu", text: "Životní a majetkové pojištění. Příklady z praxe." },
-  { time: "13:00 – 14:30", title: "Osobní finanční plánování", text: "Stanovení cílů, rozpočet a investice v praxi." },
-  { time: "14:45 – 16:00", title: "Praktická cvičení a simulace", text: "Simulace rozhodnutí, sestavení plánu ve skupinách, zpětná vazba." },
-  { time: "16:00 – 17:00", title: "Shrnutí a další kroky", text: "Klíčové poznatky a jak pokračovat na cestě k finanční svobodě." },
+  { title: "Pokročilé investiční strategie", text: "Investiční nástroje, případové studie a trendy na trhu." },
+  { title: "Pojištění v osobním plánu", text: "Životní a majetkové pojištění. Příklady z praxe." },
+  { title: "Osobní finanční plánování", text: "Stanovení cílů, rozpočet a investice v praxi." },
+  { title: "Praktická cvičení a simulace", text: "Simulace rozhodnutí, sestavení plánu ve skupinách, zpětná vazba." },
+  { title: "Shrnutí a další kroky", text: "Klíčové poznatky a jak pokračovat na cestě k finanční svobodě." },
 ];
 
 export default function FinancniGramotnostPage() {
@@ -66,34 +66,36 @@ export default function FinancniGramotnostPage() {
           </div>
         </section>
 
-        {/* Program */}
+        {/* Harmonogram */}
         <section className="py-12 md:py-20">
           <div className="mx-auto max-w-5xl px-4 md:px-6">
             <FadeIn className="mb-10">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-                Program
+                Harmonogram
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-text md:text-4xl">
                 Dva dny. Jasná struktura. Měřitelné know-how.
               </h2>
             </FadeIn>
 
-            <div className="grid gap-10 lg:grid-cols-2">
+            <div className="grid gap-8 lg:grid-cols-2">
               {/* Den 1 */}
               <FadeIn delay={0.05}>
-                <article className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
-                  <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <article className="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm md:rounded-3xl">
+                  <div className="flex items-center gap-4 border-b border-slate-200 bg-slate-50/80 px-6 py-5">
+                    <span className="icon-glow-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <Calendar className="h-6 w-6" />
                     </span>
                     <h3 className="text-xl font-semibold text-text">Den 1</h3>
                   </div>
-                  <ul className="mt-6 space-y-4">
+                  <ul className="divide-y divide-slate-100 p-6">
                     {day1.map((block) => (
-                      <li key={block.title} className="border-l-2 border-primary/20 pl-4">
-                        <p className="text-xs font-semibold text-primary">{block.time}</p>
-                        <p className="mt-0.5 font-medium text-text">{block.title}</p>
-                        <p className="mt-1 text-sm text-slate-600">{block.text}</p>
+                      <li key={block.title} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <div className="min-w-0">
+                          <p className="font-medium text-text">{block.title}</p>
+                          <p className="mt-1 text-sm leading-relaxed text-slate-600">{block.text}</p>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -102,19 +104,21 @@ export default function FinancniGramotnostPage() {
 
               {/* Den 2 */}
               <FadeIn delay={0.1}>
-                <article className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
-                  <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <article className="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm md:rounded-3xl">
+                  <div className="flex items-center gap-4 border-b border-slate-200 bg-slate-50/80 px-6 py-5">
+                    <span className="icon-glow-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <PieChart className="h-6 w-6" />
                     </span>
                     <h3 className="text-xl font-semibold text-text">Den 2</h3>
                   </div>
-                  <ul className="mt-6 space-y-4">
+                  <ul className="divide-y divide-slate-100 p-6">
                     {day2.map((block) => (
-                      <li key={block.title} className="border-l-2 border-primary/20 pl-4">
-                        <p className="text-xs font-semibold text-primary">{block.time}</p>
-                        <p className="mt-0.5 font-medium text-text">{block.title}</p>
-                        <p className="mt-1 text-sm text-slate-600">{block.text}</p>
+                      <li key={block.title} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <div className="min-w-0">
+                          <p className="font-medium text-text">{block.title}</p>
+                          <p className="mt-1 text-sm leading-relaxed text-slate-600">{block.text}</p>
+                        </div>
                       </li>
                     ))}
                   </ul>

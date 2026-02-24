@@ -53,7 +53,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-slate-900 py-14 md:py-20">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-violet-950/80 py-14 md:py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 text-white md:grid-cols-2 md:px-6">
         <FadeIn className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
@@ -67,7 +67,9 @@ export function Contact() {
           </p>
           <div className="space-y-4 text-white/80">
             <div className="flex items-start gap-3">
-              <Mail className="mt-1 h-4 w-4 text-white/60" />
+              <span className="icon-glow-primary inline-flex rounded-full p-1.5">
+                <Mail className="mt-0.5 h-4 w-4 text-white/60" />
+              </span>
               <div>
                 <span className="block text-xs uppercase tracking-[0.3em] text-white/50">
                   Email
@@ -81,7 +83,9 @@ export function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Phone className="mt-1 h-4 w-4 text-white/60" />
+              <span className="icon-glow-primary inline-flex rounded-full p-1.5">
+                <Phone className="mt-0.5 h-4 w-4 text-white/60" />
+              </span>
               <div>
                 <span className="block text-xs uppercase tracking-[0.3em] text-white/50">
                   Telefon
@@ -95,7 +99,9 @@ export function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <MapPin className="mt-1 h-4 w-4 text-white/60" />
+              <span className="icon-glow-primary inline-flex rounded-full p-1.5">
+                <MapPin className="mt-0.5 h-4 w-4 text-white/60" />
+              </span>
               <div>
                 <span className="block text-xs uppercase tracking-[0.3em] text-white/50">
                   Adresa
@@ -112,7 +118,7 @@ export function Contact() {
           {isSuccess ? (
             <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-6 text-emerald-100">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+                <span className="icon-glow-emerald flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
                   <Check className="h-5 w-5" />
                 </span>
                 <div>

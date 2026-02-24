@@ -24,41 +24,56 @@ const steps = [
   },
 ];
 
+const stepStyles = [
+  { bg: "bg-primary/25", border: "border-l-4 border-primary", accent: "text-primary", num: "bg-primary/35 text-primary" },
+  { bg: "bg-emerald-600/25", border: "border-l-4 border-emerald-600", accent: "text-emerald-800", num: "bg-emerald-600/35 text-emerald-800" },
+  { bg: "bg-violet-600/25", border: "border-l-4 border-violet-600", accent: "text-violet-800", num: "bg-violet-600/35 text-violet-800" },
+  { bg: "bg-amber-500/30", border: "border-l-4 border-amber-600", accent: "text-amber-800", num: "bg-amber-500/40 text-amber-800" },
+];
+
+const stepOffset = ["ml-0", "ml-8 md:ml-16", "ml-16 md:ml-32", "ml-24 md:ml-48"];
+
 export function Process() {
   return (
-    <section id="proces" className="py-14 md:py-20">
+    <section id="proces" className="relative overflow-hidden py-14 md:py-20">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-violet-50/50 via-white to-transparent" />
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Jak probíhá spolupráce
-          </p>
           <h2 className="text-3xl font-semibold text-text md:text-4xl">
-            Jasný proces. Měřitelné výsledky.
+            Od auditu k implementaci
           </h2>
+          <p className="max-w-2xl text-base text-slate-600">
+            Spolupráce v několika krocích — od zjištění příležitostí po nasazení a podporu.
+          </p>
         </FadeIn>
 
-        <div className="relative mt-10 grid gap-6 md:grid-cols-4">
-          <div className="absolute left-4 top-4 hidden h-[calc(100%-2rem)] w-px bg-slate-200 md:block md:left-0 md:top-1/2 md:h-px md:w-full md:-translate-y-1/2" />
-          {steps.map((step, index) => (
-            <div
-              key={step.title}
-              className="relative rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm"
-            >
-              <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                {index + 1}
-              </span>
-              <h3 className="text-lg font-semibold text-text">{step.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{step.description}</p>
-              {step.href && (
-                <Link
-                  href={step.href}
-                  className="mt-3 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-600 active:opacity-80"
-                >
-                  Více o auditu →
-                </Link>
-              )}
-            </div>
-          ))}
+        <div className="relative mt-10 flex flex-col gap-1.5">
+          {steps.map((step, index) => {
+            const style = stepStyles[index];
+            return (
+              <FadeIn key={step.title} delay={index * 0.05}>
+                <div className="flex w-full">
+                  <div
+                    className={`group relative flex min-h-12 w-full flex-1 items-center gap-4 rounded-lg py-2.5 px-4 shadow-sm transition-all duration-200 hover:translate-x-1.5 hover:shadow-md hover:shadow-slate-300/40 ${style.bg} ${style.border} ${stepOffset[index]}`}
+                  >
+                    <span className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-sm font-semibold ${style.num}`}>
+                      {index + 1}
+                    </span>
+                    <h3 className="min-w-0 flex-1 truncate text-sm font-semibold text-text">{step.title}</h3>
+                    <p className="hidden min-w-0 flex-shrink-0 text-xs text-slate-600 sm:block sm:max-w-[12rem] sm:truncate md:max-w-xs">{step.description}</p>
+                    {step.href && (
+                      <Link
+                        href={step.href}
+                        className={`shrink-0 text-sm font-semibold ${style.accent} transition hover:opacity-80 active:opacity-80`}
+                      >
+                        Více o auditu →
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>

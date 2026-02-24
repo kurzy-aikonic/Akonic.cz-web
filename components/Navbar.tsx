@@ -91,7 +91,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-700 transition hover:text-text md:hidden"
+            className="icon-glow-primary inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-700 hover:text-text md:hidden"
             aria-label={open ? "Zavřít menu" : "Otevřít menu"}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

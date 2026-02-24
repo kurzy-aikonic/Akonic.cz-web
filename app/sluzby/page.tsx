@@ -10,19 +10,19 @@ import { ArrowRight, ClipboardCheck, Cpu, PieChart, Zap } from "lucide-react";
 export const metadata: Metadata = {
   title: "Služby pro firmy | AIKONIC",
   description:
-    "Audit AI příležitostí, AI Hackathon, finanční gramotnost a automatizace na míru. Začněte auditem — pak vyberete konkrétní kroky.",
+    "Firemní AI audit, AI Hackathon, finanční gramotnost a automatizace na míru. Začněte auditem — pak vyberete konkrétní kroky.",
 };
 
 const services = [
   {
-    title: "Audit AI příležitostí",
+    title: "Firemní AI audit",
     description: "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",
     href: "/audit",
     icon: ClipboardCheck,
   },
   {
     title: "Intenzivní AI Hackathon",
-    description: "Dva dny u vás. Tým naučíme ovládat AI a během školení vyřešíme reálné firemní úkoly.",
+    description: "Od 4 hodin po libovolný počet dní, na domluvu. Žádná teorie — intenzivní praxe a práce s AI.",
     href: "/ai-hackathon",
     icon: Zap,
   },
@@ -72,7 +72,7 @@ export default function SluzbyPage() {
                       href={service.href}
                       className="group flex flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg md:p-8"
                     >
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary/15">
+                      <span className="icon-glow-primary flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/15">
                         <Icon className="h-6 w-6" />
                       </span>
                       <h2 className="mt-5 text-xl font-semibold text-text group-hover:text-primary md:text-2xl">

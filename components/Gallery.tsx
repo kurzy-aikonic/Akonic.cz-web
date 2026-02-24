@@ -27,7 +27,8 @@ export function Gallery({ images }: GalleryProps) {
   };
 
   return (
-    <section id="galerie" className="py-14 md:py-20">
+    <section id="galerie" className="relative overflow-hidden py-14 md:py-20">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-50/80 via-background to-transparent" />
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
@@ -35,14 +36,14 @@ export function Gallery({ images }: GalleryProps) {
               Galerie
             </p>
             <h2 className="text-3xl font-semibold text-text md:text-4xl">
-              Ukázky naší práce
+              Ze školení
             </h2>
           </div>
           <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={() => scrollByCard("left")}
-              className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-600 transition hover:border-slate-300 hover:text-text touch-manipulation"
+              className="icon-glow-primary flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-600 hover:border-slate-300 hover:text-text touch-manipulation"
               aria-label="Posunout doleva"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -50,7 +51,7 @@ export function Gallery({ images }: GalleryProps) {
             <button
               type="button"
               onClick={() => scrollByCard("right")}
-              className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-600 transition hover:border-slate-300 hover:text-text touch-manipulation"
+              className="icon-glow-primary flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-600 hover:border-slate-300 hover:text-text touch-manipulation"
               aria-label="Posunout doprava"
             >
               <ChevronRight className="h-4 w-4" />

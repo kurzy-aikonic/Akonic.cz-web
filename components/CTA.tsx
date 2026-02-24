@@ -13,7 +13,7 @@ export function CTA() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn
           delay={0.1}
-          className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-indigo-600 px-6 py-12 text-white shadow-2xl md:px-12"
+          className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-violet-600 px-6 py-12 text-white shadow-2xl md:px-12"
         >
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>

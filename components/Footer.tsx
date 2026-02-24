@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white/80">
+    <footer className="border-t-2 border-slate-200 bg-gradient-to-b from-white to-slate-50/80">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 lg:grid-cols-4 md:px-6">
         <div className="space-y-4">
           <Image
@@ -108,7 +109,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
+              className="icon-glow-primary flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
             >
               <Linkedin className="h-6 w-6" />
             </Link>
@@ -117,7 +118,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
+              className="icon-glow-primary flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
             >
               <Facebook className="h-6 w-6" />
             </Link>
@@ -126,10 +127,21 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
+              className="icon-glow-primary flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200"
             >
               <Instagram className="h-6 w-6" />
             </Link>
+          </div>
+          <div className="mt-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+              Newsletter
+            </p>
+            <p className="mt-2 text-sm text-slate-600">
+              Novinky a tipy do e-mailu. Jednou za čas, bez spamu.
+            </p>
+            <div className="mt-3">
+              <NewsletterForm />
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { FadeIn } from "./FadeIn";
 const items = [
   {
     icon: Zap,
-    text: "AI Hackathony: 2 dny, které změní procesy.",
+    text: "AI Hackathony: od půldne po několik dní, na míru.",
   },
   {
     icon: TrendingUp,
@@ -47,7 +47,7 @@ export function Statement() {
             return (
               <FadeIn key={item.text} delay={index * 0.06}>
                 <div className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white/90 px-5 py-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <span className="icon-glow-primary flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                     <Icon className="h-6 w-6" />
                   </span>
                   <p className="mt-4 text-sm font-medium leading-snug text-slate-700">

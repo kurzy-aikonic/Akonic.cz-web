@@ -8,7 +8,7 @@ import { Button } from "../../components/ui/button";
 import { ArrowRight, Briefcase, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "4h online školení pro obchodníky | AIKONIC",
+  title: "Školení AI pro obchodníky | AIKONIC",
   description:
     "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy.",
 };
@@ -61,7 +61,7 @@ export default function SkoleniProObchodnikyPage() {
                 Služby
               </p>
               <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl lg:text-6xl">
-                4h online školení pro obchodníky
+                Školení AI pro obchodníky
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">
                 Nový mindset: AI jako parťák pro každodenní obchod. Měřitelný dopad na konverze, cyklus a follow-upy.
@@ -75,7 +75,7 @@ export default function SkoleniProObchodnikyPage() {
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                Cílem tohoto intenzivního 4hodinového školení je rychle změnit pohled obchodníků na práci s AI.
+                Cílem tohoto intenzivního školení je rychle změnit pohled obchodníků na práci s AI.
                 Ukážeme, že nástroje jako ChatGPT, Fireflies nebo Notion nejsou hrozbou, ale pomocníkem, který šetří čas a zlepšuje výsledky.
                 Účastníci získají základy práce s AI, uvidí reálné příklady a vytvoří si vlastní plán zavádění do každodenní rutiny.
               </p>
@@ -137,7 +137,7 @@ export default function SkoleniProObchodnikyPage() {
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 via-white to-slate-50/80 p-6 shadow-sm md:p-8">
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <span className="icon-glow-primary flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Briefcase className="h-6 w-6" />
                 </span>
                 <h2 className="text-2xl font-semibold text-text md:text-3xl">
