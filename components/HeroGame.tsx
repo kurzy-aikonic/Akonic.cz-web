@@ -57,7 +57,12 @@ function useGameLoop(callback: () => void, running: boolean) {
       ref.current = requestAnimationFrame(loop);
     };
     ref.current = requestAnimationFrame(loop);
-    return () => ref.current != null && cancelAnimationFrame(ref.current);
+    return () => {
+      if (ref.current != null) {
+        cancelAnimationFrame(ref.current);
+        ref.current = null;
+      }
+    };
   }, [running]);
 }
 
