@@ -47,7 +47,7 @@ type Enemy = { x: number; y: number; iconIndex: number; alive: boolean };
 type Bullet = { x: number; y: number };
 
 function useGameLoop(callback: () => void, running: boolean) {
-  const ref = React.useRef<number>();
+  const ref = React.useRef<number | null>(null);
   const cb = React.useRef(callback);
   cb.current = callback;
   React.useEffect(() => {
