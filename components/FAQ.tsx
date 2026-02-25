@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "Kolik to stojí?",
     answer:
-      "Vzdělávací kurz AI máme v ceníku: 45 000 Kč s DPH (8 hodin) nebo 90 000 Kč s DPH (2 dny, 16 hodin). Audit, hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme na míru podle rozsahu. Úvodní konzultace je zdarma.",
+      "Vzdělávací kurz AI máme v ceníku: 50 000 Kč s DPH (8 hodin) nebo 90 000 Kč s DPH (2 dny, 16 hodin). Audit, hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme na míru podle rozsahu. Úvodní konzultace je zdarma.",
   },
 ];
 
@@ -54,7 +54,7 @@ export function FAQ() {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between text-left text-base font-semibold text-text"
+                  className="flex min-h-[44px] w-full items-center justify-between text-left text-base font-semibold text-text"
                 >
                   {item.question}
                   <ChevronDown

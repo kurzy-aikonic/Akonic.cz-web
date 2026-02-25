@@ -71,7 +71,7 @@ export function Gallery({ images }: GalleryProps) {
                 data-card
                 className="group relative flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-slate-200 bg-white/80 transition"
               >
-                <div className="h-[220px] w-[280px] sm:h-[260px] sm:w-[340px] lg:h-[300px] lg:w-[420px]">
+                <div className="h-[220px] w-[min(280px,calc(100vw-3rem))] sm:h-[260px] sm:w-[340px] lg:h-[300px] lg:w-[420px]">
                   <Image
                     src={src}
                     alt="Ukázka práce"

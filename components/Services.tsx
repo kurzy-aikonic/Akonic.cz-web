@@ -10,7 +10,7 @@ const services = [
     icon: Zap,
   },
   {
-    title: "Finanční řízení a plánování",
+    title: "Kurz finanční gramotnosti ve firmě",
     description:
       "Kontrola nad cashflow a majetkem. Pro firmy i jednotlivce. Systémy, které hlídají peníze za vás.",
     icon: PieChart,
@@ -88,6 +88,22 @@ const iconGlow = [
   "icon-glow-rose",
 ];
 
+const serviceCardBg = [
+  "bg-primary/5",
+  "bg-emerald-500/5",
+  "bg-violet-500/5",
+  "bg-amber-500/5",
+  "bg-rose-500/5",
+  "bg-blue-600/5",
+];
+
+const trainingCardBg = [
+  "bg-primary/5",
+  "bg-emerald-500/5",
+  "bg-violet-500/5",
+  "bg-amber-500/5",
+];
+
 export function Services() {
   return (
     <section id="services" className="relative overflow-hidden py-14 md:py-20">
@@ -108,9 +124,9 @@ export function Services() {
             const Icon = service.icon;
             return (
               <FadeIn key={service.title} delay={index * 0.08} animateOnMount>
-                <article className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md">
+                <article className={`group flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md ${serviceCardBg[index % serviceCardBg.length]}`}>
                   <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
-                    <Icon className="h-6 w-6" />
+                    <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-text">
                     {service.title}
@@ -122,7 +138,7 @@ export function Services() {
                     href={
                       service.title === "Intenzivní AI Hackathon"
                         ? "/ai-hackathon"
-                        : service.title === "Finanční řízení a plánování"
+                        : service.title === "Kurz finanční gramotnosti ve firmě"
                           ? "/financni-gramotnost"
                           : service.title === "Firemní AI audit"
                             ? "/audit"
@@ -194,7 +210,7 @@ export function Services() {
             const Icon = topic.icon;
             return (
               <FadeIn key={topic.title} delay={0.24 + index * 0.05}>
-                <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md">
+                <article className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md ${trainingCardBg[index % trainingCardBg.length]}`}>
                   <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
                     <Icon className="h-5 w-5" />
                   </span>

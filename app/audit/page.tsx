@@ -72,7 +72,7 @@ export default function AuditPage() {
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
                 Služby
               </p>
-              <h1 id="audit-heading" className="text-4xl font-semibold leading-tight text-text md:text-5xl lg:text-6xl">
+              <h1 id="audit-heading" className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
                 Firemní AI audit
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">

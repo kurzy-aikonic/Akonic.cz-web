@@ -51,7 +51,7 @@ export function Navbar() {
           : "border-slate-200/60 bg-white/70"
       }`}
     >
-      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-8">
+      <div className="container mx-auto flex h-16 md:h-24 items-center justify-between px-4 md:px-8">
         <FadeIn delay={0.02} animateOnMount>
           <Link
             href="/"

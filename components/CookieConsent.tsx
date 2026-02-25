@@ -23,7 +23,7 @@ export function CookieConsent() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed bottom-0 left-0 right-0 z-50"
+          className="fixed bottom-0 left-0 right-0 z-[60]"
           initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
@@ -46,14 +46,14 @@ export function CookieConsent() {
                 <button
                   type="button"
                   onClick={() => handleChoice("false")}
-                  className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-white/80 transition hover:text-white"
+                  className="min-h-[44px] rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-white/80 transition hover:text-white"
                 >
                   Odmítnout
                 </button>
                 <button
                   type="button"
                   onClick={() => handleChoice("true")}
-                  className="rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold text-white shadow transition hover:bg-blue-700"
+                  className="min-h-[44px] rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold text-white shadow transition hover:bg-blue-700"
                 >
                   Přijmout vše
                 </button>

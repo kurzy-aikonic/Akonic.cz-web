@@ -47,9 +47,9 @@ export function About() {
             const Icon = item.icon;
             return (
               <FadeIn key={item.text} delay={index * 0.06}>
-                <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white/90 p-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md">
+                <div className={`flex h-full flex-col items-center rounded-2xl border border-slate-200 p-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md ${["bg-primary/5", "bg-emerald-500/5", "bg-violet-500/5", "bg-amber-500/5"][index]}`}>
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${["bg-primary/10 text-primary icon-glow-primary", "bg-emerald-500/10 text-emerald-600 icon-glow-emerald", "bg-violet-500/10 text-violet-600 icon-glow-violet", "bg-amber-500/10 text-amber-600 icon-glow-amber"][index]}`}>
-                    <Icon className="h-6 w-6" />
+                    <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
                   <p className="mt-4 flex-1 text-sm font-medium leading-snug text-slate-700">
                     {item.text}

@@ -31,7 +31,7 @@ const stepStyles = [
   { bg: "bg-amber-500/30", border: "border-l-4 border-amber-600", accent: "text-amber-800", num: "bg-amber-500/40 text-amber-800" },
 ];
 
-const stepOffset = ["ml-0", "ml-8 md:ml-16", "ml-16 md:ml-32", "ml-24 md:ml-48"];
+const stepOffset = ["ml-0", "sm:ml-8 md:ml-16", "sm:ml-16 md:ml-32", "sm:ml-24 md:ml-48"];
 
 export function Process() {
   return (
@@ -60,7 +60,7 @@ export function Process() {
                       {index + 1}
                     </span>
                     <h3 className="min-w-0 flex-1 truncate text-sm font-semibold text-text">{step.title}</h3>
-                    <p className="hidden min-w-0 flex-shrink-0 text-xs text-slate-600 sm:block sm:max-w-[12rem] sm:truncate md:max-w-xs">{step.description}</p>
+                    <p className="min-w-0 flex-shrink text-xs text-slate-600 sm:flex-shrink-0 sm:max-w-[12rem] sm:truncate md:max-w-xs">{step.description}</p>
                     {step.href && (
                       <Link
                         href={step.href}

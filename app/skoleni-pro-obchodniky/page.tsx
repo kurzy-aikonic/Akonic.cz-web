@@ -11,6 +11,23 @@ export const metadata: Metadata = {
   title: "Školení AI pro obchodníky | AIKONIC",
   description:
     "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy.",
+  keywords: ["AI pro obchodníky", "školení AI obchod", "ChatGPT obchod", "Fireflies", "AI sales", "AIKONIC"],
+  alternates: { canonical: "https://aikonic.cz/skoleni-pro-obchodniky" },
+  openGraph: {
+    title: "Školení AI pro obchodníky | AIKONIC",
+    description: "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion — vyšší konverze a rychlejší obchodní cyklus.",
+    url: "https://aikonic.cz/skoleni-pro-obchodniky",
+    siteName: "AIKONIC",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Školení AI pro obchodníky — AIKONIC" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Školení AI pro obchodníky | AIKONIC",
+    description: "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion — vyšší konverze.",
+    images: ["/og-image.png"],
+  },
 };
 
 const blocks = [
@@ -49,7 +66,7 @@ export default function SkoleniProObchodnikyPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-slate-200 pb-16 pt-28 md:pb-24 md:pt-36">
           <div className="absolute inset-0 -z-10">
@@ -60,7 +77,7 @@ export default function SkoleniProObchodnikyPage() {
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
                 Služby
               </p>
-              <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
                 Školení AI pro obchodníky
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">

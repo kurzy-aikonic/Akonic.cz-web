@@ -54,6 +54,11 @@ export function Trust() {
         .animate-marquee {
           animation: marquee 22s linear infinite;
         }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-marquee {
+            animation: none;
+          }
+        }
       `}</style>
     </div>
   );

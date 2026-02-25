@@ -11,6 +11,8 @@ import { Reveal } from "../components/Reveal";
 import { Process } from "../components/Process";
 import { Pricing } from "../components/Pricing";
 import { StickyCTA } from "../components/StickyCTA";
+import { AiTypingDemo } from "../components/AiTypingDemo";
+import { SavingsCalculator } from "../components/SavingsCalculator";
 import fs from "fs";
 import path from "path";
 
@@ -33,6 +35,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content" role="main" className="min-h-0">
         <Hero />
+        <AiTypingDemo />
         <Services />
         <Reveal>
           <Process />
@@ -44,12 +47,15 @@ export default function HomePage() {
           <Gallery images={imageList} />
         </Reveal>
         <Reveal>
-          <Testimonials />
-        </Reveal>
-        <CTA />
-        <Reveal>
           <About />
         </Reveal>
+        <Reveal>
+          <Testimonials />
+        </Reveal>
+        <Reveal>
+          <SavingsCalculator />
+        </Reveal>
+        <CTA />
       </main>
       <Contact />
       <Footer />

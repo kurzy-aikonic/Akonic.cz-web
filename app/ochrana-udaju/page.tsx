@@ -13,14 +13,14 @@ export default function OchranaUdaju() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}
         <section className="border-b border-slate-200 pb-12 pt-28 md:pb-16 md:pt-36">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
               Právní informace
             </p>
-            <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl">
+            <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl">
               Ochrana osobních údajů
             </h1>
           </div>

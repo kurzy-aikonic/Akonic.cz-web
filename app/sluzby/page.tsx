@@ -11,6 +11,23 @@ export const metadata: Metadata = {
   title: "Služby pro firmy | AIKONIC",
   description:
     "Firemní AI audit, AI Hackathon, finanční gramotnost a automatizace na míru. Začněte auditem — pak vyberete konkrétní kroky.",
+  keywords: ["AI služby pro firmy", "firemní AI audit", "AI hackathon", "automatizace", "AI školení", "AIKONIC"],
+  alternates: { canonical: "https://aikonic.cz/sluzby" },
+  openGraph: {
+    title: "Služby pro firmy | AIKONIC",
+    description: "Firemní AI audit, hackathon, finanční gramotnost a automatizace na míru.",
+    url: "https://aikonic.cz/sluzby",
+    siteName: "AIKONIC",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Služby AIKONIC pro firmy" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Služby pro firmy | AIKONIC",
+    description: "Firemní AI audit, hackathon, finanční gramotnost a automatizace na míru.",
+    images: ["/og-image.png"],
+  },
 };
 
 const services = [
@@ -44,14 +61,14 @@ export default function SluzbyPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" role="main" className="min-h-screen bg-background">
         <section className="relative overflow-hidden border-b border-slate-200 pb-16 pt-28 md:pb-24 md:pt-36">
           <div className="absolute inset-0 -z-10">
             <div className="absolute left-1/2 top-12 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
           </div>
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn>
-              <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
                 Služby pro firmy
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">

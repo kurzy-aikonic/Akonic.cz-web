@@ -23,14 +23,14 @@ const testimonials = [
   },
   {
     name: "Monika Bohacova",
-    role: "Žaluzieee",
+    role: "Žaluzie Bohacova",
     initials: "MB",
     date: "před 1 měsícem",
     text: "Školení bylo velmi přínosné a prakticky zaměřené. Lektor dokázal srozumitelně vysvětlit i složitější principy a ukázal konkrétní příklady z praxe. Oceňuji přehlednost a interaktivitu.",
   },
   {
     name: "Radek Bialek",
-    role: "Žaluzieee",
+    role: "Žaluzie Bohacova",
     initials: "RB",
     date: "před 3 týdny",
     text: "Školení probíhalo svižně a otevřelo mi oči v AI světě. Lektor se snažil vžít do fungování naší firmy a radit nám na míru. Super pro nováčky, ale i pro rozšíření obzorů pokročilých.",
@@ -97,15 +97,15 @@ export function Testimonials() {
                   type="button"
                   onClick={goPrev}
                   aria-label="Předchozí reference"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/90 transition hover:bg-white/10 hover:text-white"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/20 text-white/90 transition hover:bg-white/10 hover:text-white"
                 >
-                  <ChevronLeft className="h-4 w-4" />
+                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </button>
                 <button
                   type="button"
                   onClick={goNext}
                   aria-label="Další reference"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/90 transition hover:bg-white/10 hover:text-white"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/20 text-white/90 transition hover:bg-white/10 hover:text-white"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </button>
@@ -117,10 +117,13 @@ export function Testimonials() {
                     type="button"
                     onClick={() => setIndex(i)}
                     aria-label={`Reference ${i + 1}`}
-                    className={`h-2 rounded-full transition-all ${
-                      i === index ? "w-6 bg-amber-300" : "w-2 bg-white/40 hover:bg-white/60"
-                    }`}
-                  />
+                    className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full transition-all"
+                    aria-current={i === index ? "true" : undefined}
+                  >
+                    <span className={`h-2 rounded-full transition-all pointer-events-none ${
+                      i === index ? "w-6 bg-amber-300" : "w-2 bg-white/40"
+                    }`} />
+                  </button>
                 ))}
               </div>
             </div>

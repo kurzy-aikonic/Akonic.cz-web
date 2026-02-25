@@ -8,9 +8,26 @@ import { Button } from "../../components/ui/button";
 import { ArrowRight, Calendar, PieChart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Finanční gramotnost pro firmy | AIKONIC",
+  title: "Kurz finanční gramotnosti ve firmě | AIKONIC",
   description:
     "Dvoudenní školení finanční gramotnosti pro firmy. Rozpočet, úvěry, investice a osobní finanční plán — to, co vám ve škole neřekli.",
+  keywords: ["finanční gramotnost", "kurz financí pro firmy", "firemní finance", "školení financí", "AIKONIC"],
+  alternates: { canonical: "https://aikonic.cz/financni-gramotnost" },
+  openGraph: {
+    title: "Kurz finanční gramotnosti ve firmě | AIKONIC",
+    description: "Dvoudenní školení finanční gramotnosti. Rozpočet, úvěry, investice a osobní finanční plán.",
+    url: "https://aikonic.cz/financni-gramotnost",
+    siteName: "AIKONIC",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Finanční gramotnost — AIKONIC" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kurz finanční gramotnosti ve firmě | AIKONIC",
+    description: "Dvoudenní školení finanční gramotnosti pro firmy.",
+    images: ["/og-image.png"],
+  },
 };
 
 const day1 = [
@@ -34,7 +51,7 @@ export default function FinancniGramotnostPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-slate-200 pb-16 pt-28 md:pb-24 md:pt-36">
           <div className="absolute inset-0 -z-10">
@@ -45,7 +62,7 @@ export default function FinancniGramotnostPage() {
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
                 Služby
               </p>
-              <h1 className="text-4xl font-semibold leading-tight text-text md:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
                 Finanční gramotnost pro firmy
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">

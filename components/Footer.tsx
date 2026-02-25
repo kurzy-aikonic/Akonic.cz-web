@@ -1,12 +1,38 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
+import * as React from "react";
+
+function KonamiHint() {
+  const [show, setShow] = React.useState(false);
+
+  return (
+    <span className="relative">
+      <button
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+        onClick={() => setShow((v) => !v)}
+        className="cursor-default select-none text-xs text-slate-400 transition hover:text-slate-600"
+        aria-label="Nápověda ke Konami kódu"
+      >
+        🎮 Znáš Konami kód?
+      </button>
+      {show && (
+        <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-mono font-semibold text-slate-700 shadow-md">
+          ↑ ↑ ↓ ↓ ← → ← → B A
+        </span>
+      )}
+    </span>
+  );
+}
 
 export function Footer() {
   return (
     <footer className="border-t-2 border-slate-200 bg-gradient-to-b from-white to-slate-50/80">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 lg:grid-cols-4 md:px-6">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 md:px-6 lg:grid-cols-4">
         <div className="space-y-4">
           <Image
             src="/logo.png"
@@ -148,6 +174,7 @@ export function Footer() {
       <div className="border-t border-slate-200">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:px-6">
           <span>© 2026 Aikonic. Všechna práva vyhrazena.</span>
+          <KonamiHint />
           <span>kurzy@aikonic.cz</span>
         </div>
       </div>

@@ -2,6 +2,13 @@ import Link from "next/link";
 import { ClipboardCheck, Clock, LayoutList, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
+const pricingCardBg = [
+  "bg-primary/5",
+  "bg-sky-500/5",
+  "bg-indigo-500/5",
+  "bg-violet-500/5",
+];
+
 const priceItems = [
   {
     icon: ClipboardCheck,
@@ -51,11 +58,11 @@ export function Pricing() {
             Ceník
           </h2>
           <p className="max-w-2xl text-base text-slate-600">
-            Školení stavíme na{" "}
+            Doporučujeme před samotným školením provést{" "}
             <Link href="/audit" className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 transition hover:text-blue-600 hover:decoration-primary">
-              prvotním auditu
+              firemní AI audit
             </Link>
-            , který zmapuje vaše potřeby. Na jeho základě vyberete konkrétní kurzy nebo hackathon podle ceníku níže.
+            , který zmapuje vaše procesy, odhalí konkrétní příležitosti a pomůže vybrat kurzy nebo hackathon přesně podle potřeb vašeho týmu.
           </p>
         </FadeIn>
 
@@ -66,7 +73,7 @@ export function Pricing() {
               <>
                 <div className="flex flex-1 gap-4 min-h-0">
                   <span className="icon-glow-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/15">
-                    <Icon className="h-6 w-6" />
+                    <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-baseline gap-2">
@@ -94,7 +101,7 @@ export function Pricing() {
               <FadeIn key={item.title} delay={0.05 + index * 0.05}>
                 <Link
                   href={item.href}
-                  className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:border-primary/20 hover:shadow-md"
+                  className={`group flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition hover:border-primary/20 hover:shadow-md ${pricingCardBg[index % pricingCardBg.length]}`}
                 >
                   {content}
                 </Link>

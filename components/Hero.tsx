@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { FadeIn } from "./FadeIn";
 import { MagneticButton } from "./MagneticButton";
-import { HeroGame } from "./HeroGame";
+import { HeroGameWidget } from "./HeroGameWidget";
 
 
 export function Hero() {
@@ -37,7 +37,7 @@ export function Hero() {
             </p>
           </FadeIn>
           <FadeIn delay={0.12} animateOnMount>
-            <h1 className="text-4xl font-semibold leading-tight text-text md:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-6xl lg:text-7xl">
               Firemní AI vzdělávání na míru.
             </h1>
           </FadeIn>
@@ -70,7 +70,7 @@ export function Hero() {
           </FadeIn>
           </div>
           <FadeIn delay={0.15} animateOnMount className="lg:row-span-2 lg:mt-10 lg:self-start">
-            <HeroGame />
+            <HeroGameWidget />
           </FadeIn>
           <div className="min-w-0 space-y-0">
           <FadeIn delay={0.3}>

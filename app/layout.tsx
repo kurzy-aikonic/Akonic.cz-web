@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { CookieConsent } from "../components/CookieConsent";
+import { KonamiEaster } from "../components/KonamiEaster";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aikonic.cz"),
   title: "AIKONIC | AI Školení, Hackathony & Správa financí",
   description:
     "Zvyšte zisk firmy díky AI a automatizaci. Pořádáme intenzivní hackathony, školíme týmy a pomáháme s finančním řízením. Polička & Celá ČR.",
@@ -15,6 +17,9 @@ export const metadata: Metadata = {
     "Automatizace",
     "Radek Aigel",
   ],
+  alternates: {
+    canonical: "https://aikonic.cz",
+  },
   openGraph: {
     title: "AIKONIC | AI Školení, Hackathony & Správa financí",
     description:
@@ -23,6 +28,21 @@ export const metadata: Metadata = {
     siteName: "AIKONIC",
     locale: "cs_CZ",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AIKONIC — AI Školení a Hackathony",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AIKONIC | AI Školení, Hackathony & Správa financí",
+    description:
+      "Zvyšte zisk firmy díky AI a automatizaci. Pořádáme intenzivní hackathony, školíme týmy a pomáháme s finančním řízením.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -46,6 +66,7 @@ export default function RootLayout({
           {children}
         </div>
         <CookieConsent />
+        <KonamiEaster />
       </body>
     </html>
   );

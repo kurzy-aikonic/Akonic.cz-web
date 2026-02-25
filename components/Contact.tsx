@@ -12,6 +12,7 @@ const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mbdalyzl";
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
+  const [errorMsg, setErrorMsg] = React.useState("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -19,6 +20,7 @@ export function Contact() {
 
     setIsSubmitting(true);
     setIsSuccess(false);
+    setErrorMsg("");
 
     if (!FORMSPREE_ID) {
       setTimeout(() => {
@@ -46,7 +48,11 @@ export function Contact() {
       if (response.ok) {
         form.reset();
         setIsSuccess(true);
+      } else {
+        setErrorMsg("Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na kurzy@aikonic.cz.");
       }
+    } catch {
+      setErrorMsg("Nepodařilo se spojit se serverem. Zkontrolujte připojení a zkuste znovu.");
     } finally {
       setIsSubmitting(false);
     }
@@ -189,6 +195,11 @@ export function Contact() {
                   placeholder="Popište nám stručně váš projekt."
                 />
               </div>
+              {errorMsg && (
+                <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200" role="alert">
+                  {errorMsg}
+                </p>
+              )}
               <MagneticButton className="inline-flex w-full">
                 <Button
                   type="submit"
