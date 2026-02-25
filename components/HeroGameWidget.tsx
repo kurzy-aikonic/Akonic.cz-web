@@ -3,32 +3,43 @@
 import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { HeroGame } from "./HeroGame";
+import dynamic from "next/dynamic";
 
-function SpaceIcon({ className }: { className?: string }) {
+const HeroGame = dynamic(() => import("./HeroGame").then(m => ({ default: m.HeroGame })), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-[400px] w-[312px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white/95">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-primary" />
+    </div>
+  ),
+});
+
+function SpaceIcon({ open }: { open: boolean }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      className={className}
-      aria-hidden="true"
-    >
-      {/* Invader body */}
-      <rect x="8" y="8" width="8" height="6" rx="1" fill="currentColor" opacity="0.9" />
-      {/* Eyes */}
-      <rect x="9.5" y="9.5" width="2" height="2" rx="0.5" fill="white" />
-      <rect x="12.5" y="9.5" width="2" height="2" rx="0.5" fill="white" />
-      {/* Antennae */}
-      <rect x="9" y="6" width="1.5" height="2" rx="0.5" fill="currentColor" opacity="0.7" />
-      <rect x="13.5" y="6" width="1.5" height="2" rx="0.5" fill="currentColor" opacity="0.7" />
-      {/* Legs */}
-      <rect x="7" y="14" width="2" height="2" rx="0.5" fill="currentColor" opacity="0.7" />
-      <rect x="10.5" y="14" width="3" height="1.5" rx="0.5" fill="currentColor" opacity="0.5" />
-      <rect x="15" y="14" width="2" height="2" rx="0.5" fill="currentColor" opacity="0.7" />
-      {/* Side arms */}
-      <rect x="5.5" y="10" width="2.5" height="1.5" rx="0.5" fill="currentColor" opacity="0.6" />
-      <rect x="16" y="10" width="2.5" height="1.5" rx="0.5" fill="currentColor" opacity="0.6" />
-    </svg>
+    <>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className={`h-5 w-5 invader-wrap transition-colors duration-200 ${open ? "text-white" : "text-primary"}`}
+        aria-hidden="true"
+      >
+        {/* Body */}
+        <rect x="8" y="8" width="8" height="6" rx="1" fill="currentColor" opacity="0.9" />
+        {/* Eyes */}
+        <rect x="9.5" y="9.5" width="2" height="2" rx="0.5" fill="white" className="invader-eye" />
+        <rect x="12.5" y="9.5" width="2" height="2" rx="0.5" fill="white" className="invader-eye" />
+        {/* Antennae */}
+        <rect x="9" y="6" width="1.5" height="2" rx="0.5" fill="currentColor" opacity="0.75" className="invader-ant-l" />
+        <rect x="13.5" y="6" width="1.5" height="2" rx="0.5" fill="currentColor" opacity="0.75" className="invader-ant-r" />
+        {/* Legs */}
+        <rect x="7" y="14" width="2" height="2" rx="0.5" fill="currentColor" opacity="0.75" className="invader-leg-l" />
+        <rect x="10.5" y="14" width="3" height="1.5" rx="0.5" fill="currentColor" opacity="0.45" />
+        <rect x="15" y="14" width="2" height="2" rx="0.5" fill="currentColor" opacity="0.75" className="invader-leg-r" />
+        {/* Side arms */}
+        <rect x="5.5" y="10" width="2.5" height="1.5" rx="0.5" fill="currentColor" opacity="0.6" className="invader-arm-l" />
+        <rect x="16" y="10" width="2.5" height="1.5" rx="0.5" fill="currentColor" opacity="0.6" className="invader-arm-r" />
+      </svg>
+    </>
   );
 }
 
@@ -51,11 +62,7 @@ export function HeroGameWidget() {
             : "border-slate-200 bg-white/90 text-slate-700 hover:border-primary/30 hover:text-primary"
         }`}
       >
-        <SpaceIcon
-          className={`h-5 w-5 transition-colors duration-200 ${
-            open ? "text-white" : "text-primary"
-          }`}
-        />
+        <SpaceIcon open={open} />
         <span>{open ? "Zavřít hru" : "Hrát mini-hru"}</span>
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}

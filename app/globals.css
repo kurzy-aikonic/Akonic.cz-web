@@ -57,3 +57,57 @@ html {
 .icon-glow-rose {
   transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
+
+/* Space Invader animace (HeroGameWidget) */
+@keyframes invader-bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes invader-blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+@keyframes invader-antenna-l {
+  0%, 100% { transform: rotate(0deg); transform-origin: bottom center; }
+  40% { transform: rotate(-18deg); transform-origin: bottom center; }
+}
+@keyframes invader-antenna-r {
+  0%, 100% { transform: rotate(0deg); transform-origin: bottom center; }
+  40% { transform: rotate(18deg); transform-origin: bottom center; }
+}
+@keyframes invader-leg-l {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+@keyframes invader-leg-r {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+@keyframes invader-arm-l {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1.5px); }
+}
+@keyframes invader-arm-r {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.5px); }
+}
+@keyframes invader-glow {
+  0%, 100% { filter: drop-shadow(0 0 2px currentColor); }
+  50% { filter: drop-shadow(0 0 5px currentColor); }
+}
+.invader-wrap {
+  animation: invader-bob 1.1s ease-in-out infinite, invader-glow 2.2s ease-in-out infinite;
+}
+.invader-eye  { animation: invader-blink 3.5s ease-in-out infinite; }
+.invader-ant-l { animation: invader-antenna-l 1.1s ease-in-out infinite; }
+.invader-ant-r { animation: invader-antenna-r 1.1s ease-in-out infinite; }
+.invader-leg-l { animation: invader-leg-l 1.1s ease-in-out infinite; }
+.invader-leg-r { animation: invader-leg-r 1.1s ease-in-out infinite 0.55s; }
+.invader-arm-l { animation: invader-arm-l 1.1s ease-in-out infinite; }
+.invader-arm-r { animation: invader-arm-r 1.1s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .invader-wrap, .invader-eye, .invader-ant-l, .invader-ant-r,
+  .invader-leg-l, .invader-leg-r, .invader-arm-l, .invader-arm-r {
+    animation: none;
+  }
+}

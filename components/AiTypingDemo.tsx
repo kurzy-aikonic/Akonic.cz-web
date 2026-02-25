@@ -6,7 +6,19 @@ import { FadeIn } from "./FadeIn";
 const QA = [
   {
     q: "Jak AI pomůže mému obchodnímu týmu?",
-    a: "Automatizuje follow-upy, připraví nabídky za minuty a analyzuje konverzace. Obchodníci se soustředí na vztahy — rutinu přenechají AI.",
+    a: "Automatizuje follow-upy, připraví nabídky za minuty a analyzuje záznamy ze schůzek. Obchodníci se soustředí na vztahy — rutinu přenechají AI.",
+  },
+  {
+    q: "Jaké jazykové modely školíte?",
+    a: "ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google) i Copilot (Microsoft). Každý má jiné silné stránky — naučíme vás vybrat ten správný pro každý úkol.",
+  },
+  {
+    q: "Co je vibe coding a k čemu je?",
+    a: "Vibe coding je způsob tvorby aplikací pomocí AI — popisujete, co chcete, a AI píše kód za vás. Cursor, GitHub Copilot nebo Replit Agent zvládnou prototyp za hodiny bez znalosti programování.",
+  },
+  {
+    q: "Jak AI konkrétně pomůže obchodníkovi?",
+    a: "Fireflies.ai přepíše a shrne každou schůzku. ChatGPT připraví personalizovaný follow-up e-mail. Notion AI udržuje CRM poznámky aktuální. Obchodník ušetří 2–3 hodiny denně.",
   },
   {
     q: "Kolik hodin týdně ušetří AI v HR?",
@@ -17,8 +29,20 @@ const QA = [
     a: "Ne. Školíme práci s ChatGPT, Notion AI, Fireflies a dalšími nástroji bez jediného řádku kódu. Výsledky od prvního dne.",
   },
   {
+    q: "Jak AI pomůže s tvorbou obsahu a marketingem?",
+    a: "ChatGPT nebo Claude napíše texty na web, sociální sítě i newslettery. Midjourney nebo DALL-E vytvoří vizuály. Celý obsah, který dříve zabral den, zvládnete za hodinu.",
+  },
+  {
     q: "Jak dlouho trvá AI hackathon?",
     a: "Od 4 hodin po libovolný počet dní — vždy na domluvu. Tým odchází s funkčním prototypem, ne jen prezentací.",
+  },
+  {
+    q: "Jak AI pomůže projektovému manažerovi?",
+    a: "Notion AI nebo ClickUp AI automaticky generuje zápisy z meetingů, rozpisuje úkoly a hlídá termíny. PM má vždy přehled — bez manuálního zapisování.",
+  },
+  {
+    q: "Jaký je rozdíl mezi ChatGPT a Claudem?",
+    a: "ChatGPT vyniká v kreativitě a práci s kódem. Claude zpracuje delší dokumenty a drží kontext lépe v dlouhých konverzacích. Pro analýzu smluv nebo reportů je Claude často přesnější.",
   },
 ];
 
@@ -122,7 +146,7 @@ export function AiTypingDemo() {
                   AI
                 </span>
                 <p
-                  className="min-h-[4.5em] text-sm leading-relaxed text-slate-300"
+                  className="min-h-[5.5em] text-sm leading-relaxed text-slate-300"
                   aria-live="polite"
                 >
                   {aText}

@@ -39,6 +39,7 @@ export function Footer() {
             alt="AIKONIC logo"
             width={240}
             height={80}
+            sizes="200px"
             className="h-16 w-auto object-contain"
           />
           <p className="text-base text-slate-500">

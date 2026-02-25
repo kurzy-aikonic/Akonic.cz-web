@@ -10,12 +10,6 @@ const services = [
     icon: Zap,
   },
   {
-    title: "Kurz finanční gramotnosti ve firmě",
-    description:
-      "Kontrola nad cashflow a majetkem. Pro firmy i jednotlivce. Systémy, které hlídají peníze za vás.",
-    icon: PieChart,
-  },
-  {
     title: "Automatizace na míru",
     description:
       "Vlastní AI agenty a propojení systémů. Rutinu přenecháme strojům; vy se věnujete tomu, co přináší hodnotu.",
@@ -38,6 +32,12 @@ const services = [
     description:
       "Programování s AI v páru. Naučíme vás Claude Code a Cursor od základů po každodenní použití: rychlejší vývoj, méně rutiny, čistší kód. Pro vývojáře i ty, kdo chtějí s kódem začít.",
     icon: Code2,
+  },
+  {
+    title: "Kurz finanční gramotnosti ve firmě",
+    description:
+      "Kontrola nad cashflow a majetkem. Pro firmy i jednotlivce. Systémy, které hlídají peníze za vás.",
+    icon: PieChart,
   },
 ];
 

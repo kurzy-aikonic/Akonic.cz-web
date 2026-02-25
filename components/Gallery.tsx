@@ -71,13 +71,14 @@ export function Gallery({ images }: GalleryProps) {
                 data-card
                 className="group relative flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-slate-200 bg-white/80 transition"
               >
-                <div className="h-[220px] w-[min(280px,calc(100vw-3rem))] sm:h-[260px] sm:w-[340px] lg:h-[300px] lg:w-[420px]">
+                <div className="relative h-[220px] w-[min(280px,calc(100vw-3rem))] sm:h-[260px] sm:w-[340px] lg:h-[300px] lg:w-[420px]">
                   <Image
                     src={src}
-                    alt="Ukázka práce"
-                    width={1200}
-                    height={900}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    alt={`Fotografie ze školení ${index + 1}`}
+                    fill
+                    sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) 340px, 420px"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
               </motion.button>
@@ -110,9 +111,10 @@ export function Gallery({ images }: GalleryProps) {
               </button>
               <Image
                 src={active}
-                alt="Ukázka práce"
+                alt="Fotografie ze školení — detail"
                 width={1600}
                 height={1200}
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="h-auto w-full object-cover"
               />
             </motion.div>

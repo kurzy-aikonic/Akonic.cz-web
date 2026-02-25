@@ -30,10 +30,17 @@ export const metadata: Metadata = {
   },
 };
 
+const blockColors = [
+  { card: "bg-primary/5", num: "bg-primary/10 text-primary" },
+  { card: "bg-amber-500/5", num: "bg-amber-500/10 text-amber-600" },
+  { card: "bg-violet-500/5", num: "bg-violet-500/10 text-violet-600" },
+  { card: "bg-emerald-500/5", num: "bg-emerald-500/10 text-emerald-600" },
+];
+
 const blocks = [
   {
     title: "Mindset a role AI v obchodu",
-    text: "AI jako každodenní obchodní parťák: příprava na schůzky, follow-upy, argumentace. Diskuse o vašich výzvách a workshop — každý si vytvoří vlastní „AI scénář“ pro praxi.",
+    text: "AI jako každodenní obchodní parťák: příprava na schůzky, follow-upy, argumentace. Diskuse o vašich výzvách a workshop — každý si vytvoří vlastní AI scénář pro praxi.",
   },
   {
     title: "ChatGPT jako obchodní asistent",
@@ -41,7 +48,7 @@ const blocks = [
   },
   {
     title: "Nástroje, které šetří čas",
-    text: "Fireflies — záznam a sumarizace schůzek. Miro — vizualizace strategie a obchodních toků. Notion — playbook, deník a dashboard. Ukázka „jeden den s AI obchodníkem“ a workshop: vlastní AI dashboard v Notionu.",
+    text: "Fireflies — záznam a sumarizace schůzek. Miro — vizualizace strategie a obchodních toků. Notion — playbook, deník a dashboard. Ukázka jeden den s AI obchodníkem a workshop: vlastní AI dashboard v Notionu.",
   },
   {
     title: "Vlastní AI BOOST plán",
@@ -70,11 +77,13 @@ export default function SkoleniProObchodnikyPage() {
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-slate-200 pb-16 pt-28 md:pb-24 md:pt-36">
           <div className="absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-12 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
+            <div className="absolute left-1/4 top-16 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
+            <div className="absolute right-1/4 top-24 h-64 w-64 rounded-full bg-amber-300/25 blur-3xl" />
+            <div className="absolute bottom-0 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-violet-400/15 blur-3xl" />
           </div>
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn>
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600">
+              <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600 backdrop-blur">
                 Služby
               </p>
               <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
@@ -90,8 +99,8 @@ export default function SkoleniProObchodnikyPage() {
         {/* Intro */}
         <section className="py-12 md:py-16">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
-              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+            <FadeIn className="rounded-3xl border border-slate-200 bg-primary/5 p-6 shadow-sm md:p-8">
+              <p className="text-base leading-relaxed text-slate-700 md:text-lg">
                 Cílem tohoto intenzivního školení je rychle změnit pohled obchodníků na práci s AI.
                 Ukážeme, že nástroje jako ChatGPT, Fireflies nebo Notion nejsou hrozbou, ale pomocníkem, který šetří čas a zlepšuje výsledky.
                 Účastníci získají základy práce s AI, uvidí reálné příklady a vytvoří si vlastní plán zavádění do každodenní rutiny.
@@ -101,7 +110,7 @@ export default function SkoleniProObchodnikyPage() {
         </section>
 
         {/* Program */}
-        <section className="py-12 md:py-20">
+        <section className="bg-gradient-to-b from-slate-50/60 via-transparent to-transparent py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <FadeIn className="mb-10">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
@@ -112,20 +121,23 @@ export default function SkoleniProObchodnikyPage() {
               </h2>
             </FadeIn>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {blocks.map((block, index) => (
-                <FadeIn key={block.title} delay={index * 0.05}>
-                  <article className="flex flex-col rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
-                    <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
-                      {index + 1}
-                    </span>
-                    <h3 className="font-semibold text-text">{block.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                      {block.text}
-                    </p>
-                  </article>
-                </FadeIn>
-              ))}
+            <div className="grid gap-6 sm:grid-cols-2">
+              {blocks.map((block, index) => {
+                const colors = blockColors[index % blockColors.length];
+                return (
+                  <FadeIn key={block.title} delay={index * 0.05}>
+                    <article className={`flex flex-col rounded-2xl border border-slate-200 ${colors.card} p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md`}>
+                      <span className={`mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl ${colors.num} text-sm font-semibold`}>
+                        {index + 1}
+                      </span>
+                      <h3 className="font-semibold text-text">{block.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                        {block.text}
+                      </p>
+                    </article>
+                  </FadeIn>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -133,14 +145,14 @@ export default function SkoleniProObchodnikyPage() {
         {/* Nástroje */}
         <section className="py-12 md:py-16">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
+            <FadeIn className="rounded-3xl border border-slate-200 bg-violet-500/5 p-6 shadow-sm md:p-8">
               <h2 className="text-xl font-semibold text-text md:text-2xl">
                 Používané nástroje a aktivity
               </h2>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
+              <ul className="mt-4 space-y-3 text-sm text-slate-600">
                 {tools.map((tool) => (
-                  <li key={tool} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <li key={tool} className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500" aria-hidden="true" />
                     {tool}
                   </li>
                 ))}
@@ -152,13 +164,13 @@ export default function SkoleniProObchodnikyPage() {
         {/* Výsledek */}
         <section className="py-12 md:py-20">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 via-white to-slate-50/80 p-6 shadow-sm md:p-8">
+            <FadeIn className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 via-white to-amber-500/5 p-6 shadow-sm md:p-8">
               <div className="flex items-center gap-3">
                 <span className="icon-glow-primary flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Briefcase className="h-6 w-6" />
+                  <Briefcase className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <h2 className="text-2xl font-semibold text-text md:text-3xl">
-                  Výsledek
+                  Co obchodníci získají
                 </h2>
               </div>
               <ul className="mt-6 space-y-3">
@@ -167,7 +179,7 @@ export default function SkoleniProObchodnikyPage() {
                     key={item}
                     className="flex items-start gap-3 text-slate-700"
                   >
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -179,20 +191,23 @@ export default function SkoleniProObchodnikyPage() {
         {/* CTA */}
         <section className="border-t border-slate-200 py-16 md:py-24">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-indigo-600 px-6 py-12 text-white shadow-xl md:px-12">
+            <FadeIn className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-violet-600 px-6 py-12 text-white shadow-2xl md:px-12">
               <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
                 <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
+                    Další krok
+                  </p>
                   <h2 className="text-2xl font-semibold md:text-3xl">
-                    Další krok: domluvit konzultaci
+                    Domluvit konzultaci
                   </h2>
-                  <p className="mt-2 text-white/90">
+                  <p className="mt-2 text-white/80">
                     Napište nám nebo zavolejte — připravíme nabídku na míru.
                   </p>
                 </div>
-                <Button size="lg" asChild className="bg-white text-text hover:bg-white/90">
+                <Button size="lg" asChild className="min-h-[48px] shrink-0 bg-white text-text hover:bg-white/90">
                   <Link href="/#contact">
-                    Domluvit konzultaci
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    Kontaktovat nás
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
               </div>

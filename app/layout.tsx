@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { CookieConsent } from "../components/CookieConsent";
-import { KonamiEaster } from "../components/KonamiEaster";
+import { ClientOnlyWidgets } from "../components/ClientOnlyWidgets";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aikonic.cz"),
@@ -65,8 +64,7 @@ export default function RootLayout({
         <div className="min-h-screen pb-24 md:pb-0">
           {children}
         </div>
-        <CookieConsent />
-        <KonamiEaster />
+        <ClientOnlyWidgets />
       </body>
     </html>
   );

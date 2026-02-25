@@ -16,7 +16,7 @@ import { SavingsCalculator } from "../components/SavingsCalculator";
 import fs from "fs";
 import path from "path";
 
-const galleryExtensions = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+const galleryExtensions = new Set([".webp", ".jpg", ".jpeg", ".png"]);
 
 function getGalleryImages() {
   const galleryDir = path.join(process.cwd(), "public", "gallery");

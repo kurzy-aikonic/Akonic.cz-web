@@ -63,6 +63,7 @@ export function Navbar() {
               alt="AIKONIC logo"
               width={240}
               height={80}
+              sizes="(max-width: 768px) 120px, 200px"
               className="h-10 w-auto object-contain md:h-16"
               priority
             />

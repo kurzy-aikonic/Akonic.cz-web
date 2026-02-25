@@ -47,7 +47,8 @@ export function Process() {
           </p>
         </FadeIn>
 
-        <div className="relative mt-10 flex flex-col gap-1.5">
+        {/* Desktop — staircase layout */}
+        <div className="relative mt-10 hidden flex-col gap-1.5 sm:flex">
           {steps.map((step, index) => {
             const style = stepStyles[index];
             return (
@@ -60,11 +61,39 @@ export function Process() {
                       {index + 1}
                     </span>
                     <h3 className="min-w-0 flex-1 truncate text-sm font-semibold text-text">{step.title}</h3>
-                    <p className="min-w-0 flex-shrink text-xs text-slate-600 sm:flex-shrink-0 sm:max-w-[12rem] sm:truncate md:max-w-xs">{step.description}</p>
+                    <p className="min-w-0 flex-shrink-0 max-w-[12rem] truncate text-xs text-slate-600 md:max-w-xs">{step.description}</p>
                     {step.href && (
                       <Link
                         href={step.href}
                         className={`shrink-0 text-sm font-semibold ${style.accent} transition hover:opacity-80 active:opacity-80`}
+                      >
+                        Více o auditu →
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </FadeIn>
+            );
+          })}
+        </div>
+
+        {/* Mobile — simple numbered list */}
+        <div className="mt-8 flex flex-col gap-3 sm:hidden">
+          {steps.map((step, index) => {
+            const style = stepStyles[index];
+            return (
+              <FadeIn key={step.title} delay={index * 0.05}>
+                <div className={`flex items-start gap-3 rounded-xl p-4 ${style.bg} ${style.border}`}>
+                  <span className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-sm font-semibold ${style.num}`}>
+                    {index + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-text">{step.title}</h3>
+                    <p className="mt-0.5 text-xs text-slate-600">{step.description}</p>
+                    {step.href && (
+                      <Link
+                        href={step.href}
+                        className={`mt-1 inline-block text-xs font-semibold ${style.accent} transition hover:opacity-80`}
                       >
                         Více o auditu →
                       </Link>
