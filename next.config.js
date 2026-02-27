@@ -4,6 +4,24 @@ const path = require("path");
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
+  // Povolit Sanity Dashboard načítat Studio v iframu
+  async headers() {
+    return [
+      {
+        source: "/studio/:path*",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "ALLOW-FROM https://www.sanity.io",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'self' https://www.sanity.io https://*.sanity.io",
+          },
+        ],
+      },
+    ];
+  },
   // Override Next.js internal React with our canary version that has useEffectEvent
   // This is needed for Sanity Studio compatibility
   webpack: (config) => {
