@@ -11,14 +11,19 @@ import { client } from "../../../sanity/lib/client";
 import { NEWSLETTER_QUERY, NEWSLETTER_SLUGS_QUERY } from "../../../sanity/lib/queries";
 
 export const revalidate = 60;
+export const dynamicParams = true;
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  const slugs = await client
-    .withConfig({ useCdn: false })
-    .fetch(NEWSLETTER_SLUGS_QUERY);
-  return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
+  try {
+    const slugs = await client
+      .withConfig({ useCdn: false })
+      .fetch(NEWSLETTER_SLUGS_QUERY);
+    return (slugs ?? []).map((s: { slug: string }) => ({ slug: s.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
