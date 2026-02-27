@@ -11,14 +11,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/client": "^7.16.0",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/vision": "^5.12.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.0.0",
     "geist": "^1.3.0",
     "lucide-react": "^0.468.0",
     "next": "^15.5.11",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next-sanity": "^11.6.12",
+    "react": "^19.3.0-canary-98ce535f-20260226",
+    "react-dom": "^19.3.0-canary-98ce535f-20260226",
+    "sanity": "^5.12.0",
+    "styled-components": "^6.3.11",
     "tailwind-merge": "^2.5.4"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

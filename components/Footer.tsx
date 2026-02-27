@@ -76,6 +76,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/newsletter" className="block py-2.5 -my-2 transition hover:text-slate-900">
+                Newsletter
+              </Link>
+            </li>
+            <li>
               <Link href="/#contact" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Kontakt
               </Link>
