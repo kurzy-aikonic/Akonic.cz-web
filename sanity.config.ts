@@ -4,15 +4,12 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
-
 export default defineConfig({
   name: "aikonic",
   title: "AIKONIC — Správa obsahu",
 
-  projectId,
-  dataset,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "960ksck8",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
 
   plugins: [
     structureTool({ structure }),
