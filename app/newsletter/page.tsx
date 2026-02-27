@@ -3,10 +3,10 @@ import Link from "next/link";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
-import { Button } from "../../components/ui/button";
 import { ArrowRight, MailOpen } from "lucide-react";
 import { client } from "../../sanity/lib/client";
 import { NEWSLETTERS_QUERY } from "../../sanity/lib/queries";
+import { NewsletterFormInline } from "../../components/NewsletterFormInline";
 
 export const metadata: Metadata = {
   title: "Newsletter | AIKONIC",
@@ -62,13 +62,8 @@ export default async function NewsletterPage() {
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">
                 Tipy na AI nástroje, případové studie a novinky ze světa umělé inteligence — přímo do vaší schránky.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button asChild size="lg" className="min-h-[48px]">
-                  <Link href="/#newsletter">
-                    Přihlásit se k odběru
-                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </Button>
+              <div className="mt-8 max-w-lg">
+                <NewsletterFormInline />
               </div>
             </FadeIn>
           </div>
@@ -89,9 +84,9 @@ export default async function NewsletterPage() {
                   <p className="max-w-sm text-slate-600">
                     Zatím zde nic není. Přihlaste se k odběru a buďte první, kdo dostane nové vydání.
                   </p>
-                  <Button asChild className="mt-2 min-h-[44px]">
-                    <Link href="/#newsletter">Přihlásit se k odběru</Link>
-                  </Button>
+                  <div className="mt-4 w-full max-w-md">
+                    <NewsletterFormInline />
+                  </div>
                 </div>
               </FadeIn>
             ) : (
@@ -143,7 +138,7 @@ export default async function NewsletterPage() {
         <section className="border-t border-slate-200 py-16 md:py-24">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-violet-600 px-6 py-12 text-white shadow-2xl md:px-12">
-              <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-col gap-6">
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                     Zůstaňte v obraze
@@ -155,12 +150,9 @@ export default async function NewsletterPage() {
                     AI tipy, novinky a případové studie — jednou za čas, bez spamu.
                   </p>
                 </div>
-                <Button size="lg" asChild className="min-h-[48px] shrink-0 bg-white text-text hover:bg-white/90">
-                  <Link href="/#newsletter">
-                    Přihlásit se
-                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </Button>
+                <div className="max-w-lg [&_input]:border-white/30 [&_input]:bg-white/10 [&_input]:text-white [&_input]:placeholder:text-white/50 [&_input]:focus:border-white [&_input]:focus:ring-white/20 [&_p]:text-white/60 [&_button]:bg-white [&_button]:text-primary [&_button]:hover:bg-white/90">
+                  <NewsletterFormInline />
+                </div>
               </div>
             </FadeIn>
           </div>
