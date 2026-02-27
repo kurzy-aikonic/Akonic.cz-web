@@ -31,7 +31,7 @@ function KonamiHint() {
 
 export function Footer() {
   return (
-    <footer className="border-t-2 border-slate-200 bg-gradient-to-b from-white to-slate-50/80">
+    <footer className="border-t-2 border-slate-200 bg-gradient-to-b from-white to-slate-50/80 pb-safe">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 md:px-6 lg:grid-cols-4">
         <div className="space-y-4">
           <Image

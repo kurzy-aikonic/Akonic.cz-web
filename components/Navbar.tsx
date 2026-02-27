@@ -14,6 +14,7 @@ const navItems = [
   { label: "Ceník", href: "/#cenik" },
   { label: "O nás", href: "/#about" },
   { label: "Reference", href: "/#reference" },
+  { label: "Newsletter", href: "/newsletter" },
   { label: "Kontakt", href: "/#contact" },
 ];
 
@@ -69,16 +70,15 @@ export function Navbar() {
             />
           </Link>
         </FadeIn>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-          {navItems.map((item, index) => (
-            <FadeIn key={item.label} delay={0.06 + index * 0.05} animateOnMount>
-              <Link
-                href={item.href}
-                className="transition-colors hover:text-text"
-              >
-                {item.label}
-              </Link>
-            </FadeIn>
+        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex lg:gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="transition-colors hover:text-text"
+            >
+              {item.label}
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-3">
@@ -126,14 +126,17 @@ export function Navbar() {
               </button>
 
               <motion.nav
-                className="flex h-full flex-col items-center justify-center gap-2 py-8 text-2xl font-bold text-slate-900 sm:text-3xl"
+                variants={menuVariants}
+                initial="hidden"
+                animate="show"
+                className="flex h-full flex-col items-center justify-center gap-1 py-8 text-2xl font-bold text-slate-900 sm:text-3xl"
               >
                 {navItems.map((item) => (
                   <motion.div key={item.label} variants={menuItemVariants} className="w-full max-w-xs text-center">
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block min-h-[48px] w-full py-3 px-4 text-center text-slate-900 transition hover:text-blue-600 active:bg-slate-100 rounded-xl"
+                      className="block min-h-[52px] w-full rounded-xl px-4 py-3 text-center text-slate-900 transition hover:bg-slate-50 hover:text-blue-600 active:bg-slate-100"
                     >
                       {item.label}
                     </Link>

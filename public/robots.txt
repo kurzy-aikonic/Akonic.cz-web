@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sanity Studio — neindexovat
+Disallow: /studio/
+
+Sitemap: https://aikonic.cz/sitemap.xml

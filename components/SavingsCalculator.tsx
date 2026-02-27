@@ -120,13 +120,13 @@ export function SavingsCalculator() {
                 <label className="mb-3 block text-sm font-semibold text-slate-700">
                   Oddělení
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
                   {DEPARTMENTS.map((d, i) => (
                     <button
                       key={d.label}
                       onClick={() => setDeptIdx(i)}
                       aria-pressed={i === deptIdx}
-                      className={`min-h-[44px] rounded-xl border px-3.5 py-2 text-sm font-medium transition ${
+                      className={`min-h-[44px] rounded-xl border px-3 py-2 text-sm font-medium transition ${
                         i === deptIdx
                           ? "border-primary bg-primary text-white shadow-sm"
                           : "border-slate-200 bg-white text-slate-600 hover:border-primary/40 hover:text-primary"

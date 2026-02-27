@@ -98,13 +98,13 @@ export function Gallery({ images }: GalleryProps) {
           >
             <motion.div
               layoutId={active}
-              className="relative w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+              className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl md:rounded-3xl"
               onClick={(event) => event.stopPropagation()}
             >
               <button
                 type="button"
                 onClick={() => setActive(null)}
-                className="absolute right-4 top-4 z-10 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/90 text-slate-700 shadow transition hover:bg-white hover:text-text active:opacity-90"
+                className="absolute right-3 top-3 z-10 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/90 text-slate-700 shadow transition hover:bg-white hover:text-text active:opacity-90 md:right-4 md:top-4"
                 aria-label="Zavřít"
               >
                 <X className="h-5 w-5" />
@@ -115,7 +115,7 @@ export function Gallery({ images }: GalleryProps) {
                 width={1600}
                 height={1200}
                 sizes="(max-width: 768px) 100vw, 80vw"
-                className="h-auto w-full object-cover"
+                className="h-auto max-h-[85vh] w-full object-contain"
               />
             </motion.div>
           </motion.div>

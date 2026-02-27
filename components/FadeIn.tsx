@@ -7,7 +7,7 @@ type FadeInProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  /** Na mobilu se první obsah může nezobrazit kvůli IntersectionObserver; pokud true, animace proběhne hned po načtení. */
+  /** Pokud true, animace proběhne hned po načtení (pro prvky above the fold). */
   animateOnMount?: boolean;
 };
 
@@ -16,10 +16,16 @@ export function FadeIn({ children, className, delay = 0, animateOnMount = false 
   const [visible, setVisible] = React.useState(animateOnMount);
 
   React.useEffect(() => {
-    if (animateOnMount) return;
+    if (animateOnMount) {
+      // Krátký timeout aby se animace spustila po hydrataci
+      const t = setTimeout(() => setVisible(true), 10);
+      return () => clearTimeout(t);
+    }
     const el = ref.current;
     if (!el) return;
 
+    // threshold: 0 — element se zobrazí jakmile se dotkne viewportu
+    // rootMargin: "0px 0px -40px 0px" — spustí se 40px před spodním okrajem
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -27,7 +33,7 @@ export function FadeIn({ children, className, delay = 0, animateOnMount = false 
           observer.disconnect();
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -39,8 +45,8 @@ export function FadeIn({ children, className, delay = 0, animateOnMount = false 
       className={cn(className)}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "none" : "translateY(16px)",
-        transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
+        transform: visible ? "none" : "translateY(14px)",
+        transition: `opacity 0.45s ease-out ${delay}s, transform 0.45s ease-out ${delay}s`,
         willChange: visible ? "auto" : "opacity, transform",
       }}
     >

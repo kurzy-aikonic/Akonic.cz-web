@@ -5,6 +5,24 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Zabrání horizontálnímu přetékání na mobilu */
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Respektovat prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Snížení výrazného zvýraznění tapu na mobilu */
@@ -14,9 +32,10 @@ html {
   }
 }
 
-@supports (padding: env(safe-area-inset-top)) {
-  body {
-    padding-top: min(env(safe-area-inset-top), 2rem);
+/* Safe area pro iOS notch — pouze pro fixed/sticky prvky, ne body */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }
 

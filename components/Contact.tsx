@@ -147,8 +147,9 @@ export function Contact() {
                   id="contact-name"
                   name="name"
                   type="text"
+                  autoComplete="name"
                   required
-                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
                   placeholder="Vaše jméno"
                 />
               </div>
@@ -162,7 +163,7 @@ export function Contact() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
                   placeholder="email@firma.cz"
                 />
               </div>
@@ -175,7 +176,7 @@ export function Contact() {
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
                   placeholder="+420 723 061 013"
                 />
               </div>
@@ -191,7 +192,7 @@ export function Contact() {
                   name="message"
                   rows={4}
                   required
-                  className="w-full min-h-[120px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none resize-y"
+                  className="w-full min-h-[120px] resize-y rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
                   placeholder="Popište nám stručně váš projekt."
                 />
               </div>
