@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Všeobecné obchodní podmínky | AIKONIC",
   description:
     "Všeobecné obchodní podmínky společnosti Aikonic pro poskytování služeb.",
+  alternates: { canonical: "https://aikonic.cz/obchodni-podminky" },
 };
 
 export default function ObchodniPodminky() {

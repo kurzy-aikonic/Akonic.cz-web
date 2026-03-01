@@ -202,7 +202,7 @@ export default async function NewsletterDetailPage({ params }: Props) {
                   </p>
                 </div>
                 <Button size="lg" asChild className="min-h-[48px] shrink-0 bg-white text-text hover:bg-white/90">
-                  <Link href="/#newsletter">
+                  <Link href="/newsletter">
                     Přihlásit se
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>

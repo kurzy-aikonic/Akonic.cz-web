@@ -13,6 +13,18 @@ interface GalleryProps {
 export function Gallery({ images }: GalleryProps) {
   const [active, setActive] = React.useState<string | null>(null);
   const trackRef = React.useRef<HTMLDivElement | null>(null);
+  const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
+
+  // Focus trap a Escape pro lightbox
+  React.useEffect(() => {
+    if (!active) return;
+    closeBtnRef.current?.focus();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(null);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [active]);
 
   const scrollByCard = (direction: "left" | "right") => {
     const container = trackRef.current;
@@ -100,8 +112,12 @@ export function Gallery({ images }: GalleryProps) {
               layoutId={active}
               className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl md:rounded-3xl"
               onClick={(event) => event.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Fotografie ze školení — detail"
             >
               <button
+                ref={closeBtnRef}
                 type="button"
                 onClick={() => setActive(null)}
                 className="absolute right-3 top-3 z-10 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/90 text-slate-700 shadow transition hover:bg-white hover:text-text active:opacity-90 md:right-4 md:top-4"

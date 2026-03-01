@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Ochrana osobních údajů | AIKONIC",
   description:
     "Informace o zpracování a ochraně osobních údajů v souladu s GDPR.",
+  alternates: { canonical: "https://aikonic.cz/ochrana-udaju" },
 };
 
 export default function OchranaUdaju() {

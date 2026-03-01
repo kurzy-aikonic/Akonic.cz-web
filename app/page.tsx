@@ -13,6 +13,7 @@ import { Pricing } from "../components/Pricing";
 import { StickyCTA } from "../components/StickyCTA";
 import { AiTypingDemo } from "../components/AiTypingDemo";
 import { SavingsCalculator } from "../components/SavingsCalculator";
+import { FAQ } from "../components/FAQ";
 import fs from "fs";
 import path from "path";
 
@@ -54,6 +55,9 @@ export default function HomePage() {
         </Reveal>
         <Reveal>
           <SavingsCalculator />
+        </Reveal>
+        <Reveal>
+          <FAQ />
         </Reveal>
         <CTA />
       </main>
