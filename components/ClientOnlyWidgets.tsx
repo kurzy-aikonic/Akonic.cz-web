@@ -12,11 +12,17 @@ const KonamiEaster = dynamic(
   { ssr: false }
 );
 
+const GoogleAnalytics = dynamic(
+  () => import("./GoogleAnalytics").then(m => ({ default: m.GoogleAnalytics })),
+  { ssr: false }
+);
+
 export function ClientOnlyWidgets() {
   return (
     <>
       <CookieConsent />
       <KonamiEaster />
+      <GoogleAnalytics />
     </>
   );
 }

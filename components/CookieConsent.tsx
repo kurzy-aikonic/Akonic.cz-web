@@ -16,6 +16,8 @@ export function CookieConsent() {
 
   const handleChoice = (value: "true" | "false") => {
     window.localStorage.setItem("cookie-consent", value);
+    // Notifikuj ostatní komponenty ve stejné záložce
+    window.dispatchEvent(new StorageEvent("storage", { key: "cookie-consent", newValue: value }));
     setVisible(false);
   };
 
