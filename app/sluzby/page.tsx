@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
-import { ArrowRight, ClipboardCheck, Cpu, PieChart, Zap } from "lucide-react";
+import { ArrowRight, Building2, ClipboardCheck, Cpu, PieChart, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Služby pro firmy | AIKONIC",
@@ -31,6 +31,17 @@ export const metadata: Metadata = {
 };
 
 const services = [
+  {
+    title: "AI do firmy",
+    description:
+      "Implementace AI a automatizace v administrativě, obchodu a provozu. Konzultace zdarma, pilot, dlouhodobá spolupráce.",
+    href: "/ai-do-firmy",
+    icon: Building2,
+    cardBg: "bg-blue-600/5",
+    iconBg: "bg-blue-600/10 text-blue-600",
+    iconGlow: "icon-glow-primary",
+    hoverBorder: "hover:border-blue-500/30",
+  },
   {
     title: "Firemní AI audit",
     description: "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",

@@ -1,8 +1,14 @@
 import Link from "next/link";
-import { Bot, Briefcase, ClipboardCheck, Code2, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
+import { Bot, Briefcase, Building2, ClipboardCheck, Code2, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const services = [
+  {
+    title: "AI do firmy",
+    description:
+      "Implementace AI a automatizace přímo do vašich procesů — administrativa, obchod, provoz. Od první úspory času po dlouhodobou spolupráci. Konzultace zdarma.",
+    icon: Building2,
+  },
   {
     title: "Intenzivní AI Hackathon",
     description:
@@ -136,15 +142,17 @@ export function Services() {
                   </p>
                   <Link
                     href={
-                      service.title === "Intenzivní AI Hackathon"
-                        ? "/ai-hackathon"
-                        : service.title === "Kurz finanční gramotnosti ve firmě"
-                          ? "/financni-gramotnost"
-                          : service.title === "Firemní AI audit"
-                            ? "/audit"
-                            : service.title === "Školení AI pro obchodníky"
-                              ? "/skoleni-pro-obchodniky"
-                              : "/#contact"
+                      service.title === "AI do firmy"
+                        ? "/ai-do-firmy"
+                        : service.title === "Intenzivní AI Hackathon"
+                          ? "/ai-hackathon"
+                          : service.title === "Kurz finanční gramotnosti ve firmě"
+                            ? "/financni-gramotnost"
+                            : service.title === "Firemní AI audit"
+                              ? "/audit"
+                              : service.title === "Školení AI pro obchodníky"
+                                ? "/skoleni-pro-obchodniky"
+                                : "/#contact"
                     }
                     className="mt-4 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-700 active:opacity-80"
                   >
