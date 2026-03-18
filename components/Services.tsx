@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bot, Briefcase, Building2, ClipboardCheck, Code2, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
+import { Bot, Briefcase, Building2, CalendarDays, CalendarRange, ClipboardCheck, Code2, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const services = [
@@ -8,6 +8,18 @@ const services = [
     description:
       "Implementace AI a automatizace přímo do vašich procesů — administrativa, obchod, provoz. Od první úspory času po dlouhodobou spolupráci. Konzultace zdarma.",
     icon: Building2,
+  },
+  {
+    title: "Jednodenní školení — AI nalejvárna",
+    description:
+      "Celodenní interaktivní bootcamp: od srozumitelného úvodu k AI až po promptování, vaše data, první automatizace a osobního asistenta. Práce na reálných úkolech — účastníci odcházejí s nastavením, které použijí hned druhý den.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Dvoudenní školení — nalejvárna a realizační den",
+    description:
+      "První den stejná intenzivní AI nalejvárna jako u jednodenní varianty. Druhý den týmy dotahují konkrétní projekty (ideálně z auditu) až k prototypu — facilitace, sdílení pokroku, testování u uživatelů.",
+    icon: CalendarRange,
   },
   {
     title: "Intenzivní AI Hackathon",
@@ -144,7 +156,11 @@ export function Services() {
                     href={
                       service.title === "AI do firmy"
                         ? "/ai-do-firmy"
-                        : service.title === "Intenzivní AI Hackathon"
+                        : service.title === "Jednodenní školení — AI nalejvárna"
+                          ? "/jednodenni-skoleni-ai"
+                          : service.title === "Dvoudenní školení — nalejvárna a realizační den"
+                            ? "/dvoudenni-skoleni-ai"
+                          : service.title === "Intenzivní AI Hackathon"
                           ? "/ai-hackathon"
                           : service.title === "Kurz finanční gramotnosti ve firmě"
                             ? "/financni-gramotnost"

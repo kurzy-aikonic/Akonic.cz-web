@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
-import { ArrowRight, Building2, ClipboardCheck, Cpu, PieChart, Zap } from "lucide-react";
+import { ArrowRight, Building2, CalendarDays, CalendarRange, ClipboardCheck, Cpu, PieChart, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Služby pro firmy | AIKONIC",
@@ -51,6 +51,28 @@ const services = [
     iconBg: "bg-primary/10 text-primary",
     iconGlow: "icon-glow-primary",
     hoverBorder: "hover:border-primary/20",
+  },
+  {
+    title: "Jednodenní školení — AI nalejvárna",
+    description:
+      "Celodenní bootcamp: promptování, vaše data, automatizace, osobní asistent. Praxe na reálných úkolech.",
+    href: "/jednodenni-skoleni-ai",
+    icon: CalendarDays,
+    cardBg: "bg-cyan-500/5",
+    iconBg: "bg-cyan-600/10 text-cyan-700",
+    iconGlow: "icon-glow-primary",
+    hoverBorder: "hover:border-cyan-500/30",
+  },
+  {
+    title: "Dvoudenní školení — nalejvárna a realizační den",
+    description:
+      "Den první: AI nalejvárna. Den druhý: týmy dotahují projekty z auditu k prototypu — facilitace, testování, závěrečné prezentace.",
+    href: "/dvoudenni-skoleni-ai",
+    icon: CalendarRange,
+    cardBg: "bg-indigo-500/5",
+    iconBg: "bg-indigo-600/10 text-indigo-700",
+    iconGlow: "icon-glow-violet",
+    hoverBorder: "hover:border-indigo-400/30",
   },
   {
     title: "Intenzivní AI Hackathon",
