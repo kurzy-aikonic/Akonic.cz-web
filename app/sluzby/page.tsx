@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
-import { ArrowRight, Building2, CalendarDays, CalendarRange, ClipboardCheck, Cpu, PieChart, Zap } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, CalendarDays, CalendarRange, ClipboardCheck, Code2, Cpu, PieChart, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Služby pro firmy | AIKONIC",
@@ -37,20 +37,10 @@ const services = [
       "Implementace AI a automatizace v administrativě, obchodu a provozu. Konzultace zdarma, pilot, dlouhodobá spolupráce.",
     href: "/ai-do-firmy",
     icon: Building2,
-    cardBg: "bg-blue-600/5",
-    iconBg: "bg-blue-600/10 text-blue-600",
-    iconGlow: "icon-glow-primary",
-    hoverBorder: "hover:border-blue-500/30",
-  },
-  {
-    title: "Firemní AI audit",
-    description: "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",
-    href: "/audit",
-    icon: ClipboardCheck,
     cardBg: "bg-primary/5",
     iconBg: "bg-primary/10 text-primary",
     iconGlow: "icon-glow-primary",
-    hoverBorder: "hover:border-primary/20",
+    hoverBorder: "hover:border-primary/25",
   },
   {
     title: "Jednodenní školení — AI nalejvárna",
@@ -58,10 +48,10 @@ const services = [
       "Celodenní bootcamp: promptování, vaše data, automatizace, osobní asistent. Praxe na reálných úkolech.",
     href: "/jednodenni-skoleni-ai",
     icon: CalendarDays,
-    cardBg: "bg-cyan-500/5",
-    iconBg: "bg-cyan-600/10 text-cyan-700",
-    iconGlow: "icon-glow-primary",
-    hoverBorder: "hover:border-cyan-500/30",
+    cardBg: "bg-emerald-500/5",
+    iconBg: "bg-emerald-500/10 text-emerald-600",
+    iconGlow: "icon-glow-emerald",
+    hoverBorder: "hover:border-emerald-400/30",
   },
   {
     title: "Dvoudenní školení — nalejvárna a realizační den",
@@ -69,10 +59,10 @@ const services = [
       "Den první: AI nalejvárna. Den druhý: týmy dotahují projekty z auditu k prototypu — facilitace, testování, závěrečné prezentace.",
     href: "/dvoudenni-skoleni-ai",
     icon: CalendarRange,
-    cardBg: "bg-indigo-500/5",
-    iconBg: "bg-indigo-600/10 text-indigo-700",
+    cardBg: "bg-violet-500/5",
+    iconBg: "bg-violet-500/10 text-violet-600",
     iconGlow: "icon-glow-violet",
-    hoverBorder: "hover:border-indigo-400/30",
+    hoverBorder: "hover:border-violet-400/30",
   },
   {
     title: "Intenzivní AI Hackathon",
@@ -85,7 +75,47 @@ const services = [
     hoverBorder: "hover:border-amber-400/30",
   },
   {
-    title: "Finanční gramotnost pro firmy",
+    title: "Automatizace na míru",
+    description: "Vlastní AI agenty a propojení systémů. Rutinu přenecháme strojům; vy se věnujete tomu, co přináší hodnotu.",
+    href: "/#contact",
+    icon: Cpu,
+    cardBg: "bg-rose-500/5",
+    iconBg: "bg-rose-500/10 text-rose-600",
+    iconGlow: "icon-glow-rose",
+    hoverBorder: "hover:border-rose-400/30",
+  },
+  {
+    title: "Firemní AI audit",
+    description: "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",
+    href: "/audit",
+    icon: ClipboardCheck,
+    cardBg: "bg-primary/5",
+    iconBg: "bg-primary/10 text-primary",
+    iconGlow: "icon-glow-primary",
+    hoverBorder: "hover:border-primary/25",
+  },
+  {
+    title: "Školení AI pro obchodníky",
+    description: "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy.",
+    href: "/skoleni-pro-obchodniky",
+    icon: Briefcase,
+    cardBg: "bg-blue-600/5",
+    iconBg: "bg-blue-600/10 text-blue-600",
+    iconGlow: "icon-glow-primary",
+    hoverBorder: "hover:border-blue-500/30",
+  },
+  {
+    title: "Školení Vibe coding — Claude Code, Cursor",
+    description: "Programování s AI v páru. Claude Code a Cursor od základů po každodenní použití: rychlejší vývoj, méně rutiny, čistší kód.",
+    href: "/#contact",
+    icon: Code2,
+    cardBg: "bg-violet-500/5",
+    iconBg: "bg-violet-500/10 text-violet-600",
+    iconGlow: "icon-glow-violet",
+    hoverBorder: "hover:border-violet-400/30",
+  },
+  {
+    title: "Kurz finanční gramotnosti ve firmě",
     description: "Dvoudenní školení: rozpočet, úvěry, investice a pojištění. Praktické principy a cvičení na míru.",
     href: "/financni-gramotnost",
     icon: PieChart,
@@ -93,16 +123,6 @@ const services = [
     iconBg: "bg-emerald-500/10 text-emerald-600",
     iconGlow: "icon-glow-emerald",
     hoverBorder: "hover:border-emerald-400/30",
-  },
-  {
-    title: "Automatizace na míru",
-    description: "Vlastní AI agenty a propojení systémů. Rutinu přenecháme strojům; vy se věnujete tomu, co přináší hodnotu.",
-    href: "/#contact",
-    icon: Cpu,
-    cardBg: "bg-violet-500/5",
-    iconBg: "bg-violet-500/10 text-violet-600",
-    iconGlow: "icon-glow-violet",
-    hoverBorder: "hover:border-violet-400/30",
   },
 ];
 
@@ -133,30 +153,34 @@ export default function SluzbyPage() {
           </div>
         </section>
 
-        {/* Karty služeb */}
-        <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-5xl px-4 md:px-6">
-            <div className="grid gap-6 sm:grid-cols-2">
+        {/* Karty služeb — stejný pořad a flow jako Možnosti spolupráce na homepage */}
+        <section className="py-16 md:py-24" aria-labelledby="sluzby-karty-heading">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <h2 id="sluzby-karty-heading" className="sr-only">
+              Přehled služeb
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <FadeIn key={service.title} delay={index * 0.06} className="h-full">
+                  <FadeIn key={service.title} delay={index * 0.05} className="h-full">
                     <Link
                       href={service.href}
-                      className={`group flex h-full flex-col rounded-3xl border border-slate-200 ${service.cardBg} p-6 shadow-sm transition hover:-translate-y-1 ${service.hoverBorder} hover:shadow-lg md:p-8`}
+                      className={`group relative flex h-full min-h-[180px] flex-col overflow-hidden rounded-2xl border border-slate-200 p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 ${service.cardBg} ${service.hoverBorder} hover:shadow-xl md:p-8`}
                     >
-                      <span className={`${service.iconGlow} ${service.iconBg} flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-200 group-hover:scale-110`}>
+                      <span className="card-shimmer" aria-hidden="true" />
+                      <span className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 ${service.iconGlow} ${service.iconBg}`}>
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </span>
-                      <h2 className="mt-5 text-xl font-semibold text-text md:text-2xl">
+                      <h3 className="relative z-10 mt-5 text-xl font-semibold text-text md:text-2xl">
                         {service.title}
-                      </h2>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                      </h3>
+                      <p className="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                         {service.description}
                       </p>
-                      <span className="mt-5 inline-flex items-center text-sm font-semibold text-primary">
+                      <span className="relative z-10 mt-5 inline-flex items-center text-sm font-semibold text-primary transition duration-300 group-hover:translate-x-0.5">
                         Více informací
-                        <ArrowRight className="ml-1 h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
+                        <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
                       </span>
                     </Link>
                   </FadeIn>

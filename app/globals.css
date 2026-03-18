@@ -77,6 +77,40 @@ body {
   transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
 
+/* Shimmer na kartách služeb – první najetí myší */
+@keyframes card-shimmer {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(200%) skewX(-12deg); }
+}
+.card-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.card-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 60%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-12deg);
+  transition: none;
+}
+.group:hover .card-shimmer::after {
+  animation: card-shimmer 0.6s ease-out forwards;
+}
+
 /* Space Invader animace (HeroGameWidget) */
 @keyframes invader-bob {
   0%, 100% { transform: translateY(0px); }

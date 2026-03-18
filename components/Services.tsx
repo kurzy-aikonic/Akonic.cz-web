@@ -137,44 +137,42 @@ export function Services() {
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const href =
+              service.title === "AI do firmy"
+                ? "/ai-do-firmy"
+                : service.title === "Jednodenní školení — AI nalejvárna"
+                  ? "/jednodenni-skoleni-ai"
+                  : service.title === "Dvoudenní školení — nalejvárna a realizační den"
+                    ? "/dvoudenni-skoleni-ai"
+                    : service.title === "Intenzivní AI Hackathon"
+                      ? "/ai-hackathon"
+                      : service.title === "Kurz finanční gramotnosti ve firmě"
+                        ? "/financni-gramotnost"
+                        : service.title === "Firemní AI audit"
+                          ? "/audit"
+                          : service.title === "Školení AI pro obchodníky"
+                            ? "/skoleni-pro-obchodniky"
+                            : "/#contact";
             return (
-              <FadeIn key={service.title} delay={index * 0.08} animateOnMount>
-                <article className={`group flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md ${serviceCardBg[index % serviceCardBg.length]}`}>
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
-                    <Icon className="h-6 w-6" aria-hidden="true" />
+              <FadeIn key={service.title} delay={index * 0.08} animateOnMount className="h-full">
+                <Link
+                  href={href}
+                  className={`group relative flex h-full min-h-[140px] flex-col overflow-hidden rounded-2xl border border-slate-200 p-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2 md:p-6 ${serviceCardBg[index % serviceCardBg.length]}`}
+                >
+                  <span className="card-shimmer" aria-hidden="true" />
+                  <div className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
+                    <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-text">
+                  <h3 className="relative z-10 mt-3 line-clamp-2 text-base font-semibold leading-snug text-text md:text-lg">
                     {service.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
-                    {service.description}
-                  </p>
-                  <Link
-                    href={
-                      service.title === "AI do firmy"
-                        ? "/ai-do-firmy"
-                        : service.title === "Jednodenní školení — AI nalejvárna"
-                          ? "/jednodenni-skoleni-ai"
-                          : service.title === "Dvoudenní školení — nalejvárna a realizační den"
-                            ? "/dvoudenni-skoleni-ai"
-                          : service.title === "Intenzivní AI Hackathon"
-                          ? "/ai-hackathon"
-                          : service.title === "Kurz finanční gramotnosti ve firmě"
-                            ? "/financni-gramotnost"
-                            : service.title === "Firemní AI audit"
-                              ? "/audit"
-                              : service.title === "Školení AI pro obchodníky"
-                                ? "/skoleni-pro-obchodniky"
-                                : "/#contact"
-                    }
-                    className="mt-4 inline-flex min-h-[44px] items-center py-2 text-sm font-semibold text-primary transition hover:text-blue-700 active:opacity-80"
-                  >
+                  <span className="relative z-10 mt-auto inline-flex min-h-[44px] items-center pt-4 text-sm font-semibold text-primary transition duration-300 group-hover:translate-x-0.5 group-hover:text-blue-700">
                     Více info →
-                  </Link>
-                </article>
+                  </span>
+                </Link>
               </FadeIn>
             );
           })}
