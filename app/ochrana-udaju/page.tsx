@@ -179,6 +179,101 @@ export default function OchranaUdaju() {
               Kromě toho vás budeme informovat, kdykoliv to bude možné.
             </p>
 
+            <h2 id="cookies">Cookies a podobné technologie</h2>
+            <p>
+              V souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679
+              (GDPR), zákonem č. 110/2019 Sb., o zpracování osobních údajů, a
+              pravidly pro elektronické komunikace (implementace směrnice o
+              soukromí v elektronických komunikacích) vás informujeme o používání
+              cookies a obdobných technologií na tomto webu.
+            </p>
+            <h3>Co jsou cookies</h3>
+            <p>
+              Cookies jsou malé textové soubory ukládané do vašeho prohlížeče.
+              Umožňují webu zapamatovat si vaše volby a zlepšovat funkčnost.
+              Kromě cookies můžeme v prohlížeči ukládat údaje v{" "}
+              <strong>localStorage</strong> (např. uložení vašeho rozhodnutí o
+              cookies), což má obdobný účel jako technické cookies.
+            </p>
+            <h3>Kategorie cookies na tomto webu</h3>
+            <ul>
+              <li>
+                <strong>Nezbytné (technické) cookies / úložiště</strong> — bez
+                nich nelze zajistit základní funkce (např. uložení nastavení
+                souhlasu s cookies). Právní základ: oprávněný zájem správce a/nebo
+                provedení opatření před uzavřením smlouvy dle čl. 6 odst. 1 písm. f)
+                GDPR (provoz webu). Doba uchování: dokud neodstraníte údaje v
+                prohlížeči nebo nepřekročí maximální dobu uvedenou níže.
+              </li>
+              <li>
+                <strong>Analytické (statistické) cookies</strong> — slouží k měření
+                návštěvnosti a chování uživatelů na webu (např. Google Analytics).
+                <strong> Tyto cookies se ukládají pouze pokud nám udělíte
+                souhlas</strong> prostřednictvím cookie lišty. Právní základ: váš
+                souhlas dle čl. 6 odst. 1 písm. a) GDPR a § 89 zákona č. 127/2005
+                Sb. Souhlas můžete kdykoli odvolat — viz níže.
+              </li>
+            </ul>
+            <h3>Přehled používaných technologií</h3>
+            <div className="not-prose my-6 overflow-x-auto rounded-xl border border-slate-200 text-sm">
+              <table className="w-full min-w-[520px] border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="p-3 font-semibold text-text">Název / technologie</th>
+                    <th className="p-3 font-semibold text-text">Typ</th>
+                    <th className="p-3 font-semibold text-text">Účel</th>
+                    <th className="p-3 font-semibold text-text">Doba</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-600">
+                  <tr className="border-b border-slate-100">
+                    <td className="p-3 font-medium text-text">aikonic-cookie-preferences (localStorage)</td>
+                    <td className="p-3">Nezbytné</td>
+                    <td className="p-3">Uložení vašeho výběru souhlasu s cookies (nezbytné vs. analytické).</td>
+                    <td className="p-3">Do smazání v prohlížeči nebo změny nastavení</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="p-3 font-medium text-text">Google Analytics (gtag.js)</td>
+                    <td className="p-3">Analytické</td>
+                    <td className="p-3">
+                      Statistika návštěvnosti webu. Zpracovatel: Google Ireland
+                      Limited. Může docházet k přenosu údajů do USA a dalších
+                      třetích zemí dle podmínek Google.
+                    </td>
+                    <td className="p-3">
+                      Dle nastavení Google (typicky až 24 měsíců u některých
+                      identifikátorů) — pouze po udělení souhlasu
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-medium text-text">Soubory cookie GA (_ga, _ga_*, příp. další)</td>
+                    <td className="p-3">Analytické</td>
+                    <td className="p-3">Identifikace relací a měření návštěvnosti v rámci Google Analytics.</td>
+                    <td className="p-3">Dle politiky Google, pouze po souhlasu</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-slate-600">
+              Aktuální seznam a podrobnosti o zpracování u Google najdete v dokumentaci
+              Google Analytics a v zásadách ochrany soukromí společnosti Google.
+            </p>
+            <h3>Jak udělujete nebo odmítáte souhlas</h3>
+            <p>
+              Při první návštěvě se zobrazí banner, kde můžete{" "}
+              <strong>odmítnout analytické cookies</strong>, <strong>přijmout vše</strong>{" "}
+              nebo v části „Podrobné nastavení“ individuálně zapnout či vypnout
+              analytické cookies a uložit výběr. Odmítnutí ani přijetí nesmí být složitější než druhá
+              varianta — tlačítka jsou vedle sebe se stejnou výrazností.
+            </p>
+            <h3>Odvolání souhlasu a změna nastavení</h3>
+            <p>
+              Své rozhodnutí můžete kdykoli změnit kliknutím na odkaz{" "}
+              <strong>„Nastavení cookies“</strong> v patičce webu — znovu se zobrazí
+              banner a můžete upravit souhlas. Odvoláním souhlasu nejsou dotčena
+              zpracování provedená před jeho odvoláním.
+            </p>
+
             <h3>9. Práva subjektů údajů</h3>
             <p>Máte právo:</p>
             <ul>

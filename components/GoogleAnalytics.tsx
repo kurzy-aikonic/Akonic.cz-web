@@ -2,29 +2,32 @@
 
 import * as React from "react";
 import Script from "next/script";
+import {
+  COOKIE_CONSENT_UPDATED_EVENT,
+  readCookiePreferences,
+  type CookiePreferencesV1,
+} from "../lib/cookie-consent";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export function GoogleAnalytics() {
-  const [consent, setConsent] = React.useState<boolean | null>(null);
+  const [analyticsAllowed, setAnalyticsAllowed] = React.useState<boolean | null>(null);
 
   React.useEffect(() => {
-    const stored = window.localStorage.getItem("cookie-consent");
-    if (stored !== null) {
-      setConsent(stored === "true");
-    }
+    const prefs = readCookiePreferences();
+    setAnalyticsAllowed(prefs?.analytics === true);
 
-    // Sleduj změny consentu (když uživatel klikne na banner)
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "cookie-consent") {
-        setConsent(e.newValue === "true");
+    const onConsent = (e: Event) => {
+      const ce = e as CustomEvent<CookiePreferencesV1>;
+      if (ce.detail?.analytics !== undefined) {
+        setAnalyticsAllowed(ce.detail.analytics);
       }
     };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
+    window.addEventListener(COOKIE_CONSENT_UPDATED_EVENT, onConsent);
+    return () => window.removeEventListener(COOKIE_CONSENT_UPDATED_EVENT, onConsent);
   }, []);
 
-  if (!GA_ID || consent !== true) return null;
+  if (!GA_ID || analyticsAllowed !== true) return null;
 
   return (
     <>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
 import * as React from "react";
+import { openCookieBanner } from "../lib/cookie-consent";
 
 function KonamiHint() {
   const [show, setShow] = React.useState(false);
@@ -133,6 +134,15 @@ export function Footer() {
               >
                 Ochrana údajů
               </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => openCookieBanner()}
+                className="block w-full py-2.5 -my-2 text-left text-base transition hover:text-slate-900"
+              >
+                Nastavení cookies
+              </button>
             </li>
           </ul>
           <div className="mt-5 flex items-center gap-4 text-slate-500">
