@@ -273,6 +273,12 @@ export default function OchranaUdaju() {
               banner a můžete upravit souhlas. Odvoláním souhlasu nejsou dotčena
               zpracování provedená před jeho odvoláním.
             </p>
+            <p>
+              <strong>Obnova souhlasu:</strong> uložené rozhodnutí je platné{" "}
+              <strong>30 kalendářních dnů</strong> ode dne uložení. Po uplynutí této
+              doby se cookie lišta znovu zobrazí a analytické cookies se nespouštějí,
+              dokud znovu nevyberete možnost v banneru.
+            </p>
 
             <h3>9. Práva subjektů údajů</h3>
             <p>Máte právo:</p>

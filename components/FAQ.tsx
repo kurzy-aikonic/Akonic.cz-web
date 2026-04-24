@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "Kolik to stojí?",
     answer:
-      "Vzdělávací kurz AI máme v ceníku: 50 000 Kč s DPH (8 hodin) nebo 90 000 Kč s DPH (2 dny, 16 hodin). Audit, hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme na míru podle rozsahu. Úvodní konzultace je zdarma.",
+      "Vzdělávací kurz AI máme v ceníku: 60 000 Kč s DPH (8 hodin) nebo 115 000 Kč s DPH (2 dny, 16 hodin). Firemní AI audit od 35 000 Kč s DPH. Hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme na míru podle rozsahu. Úvodní konzultace je zdarma.",
   },
 ];
 

@@ -11,6 +11,28 @@ const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 60_000; // 1 minuta
 
+function isAllowedRequestOrigin(request: Request): boolean {
+  if (process.env.NODE_ENV !== "production") return true;
+  const allowed = new Set<string>([
+    "https://aikonic.cz",
+    "https://www.aikonic.cz",
+  ]);
+  const vercel = process.env.VERCEL_URL;
+  if (vercel) {
+    allowed.add(`https://${vercel}`);
+  }
+  const origin = request.headers.get("origin");
+  if (origin) return allowed.has(origin);
+  const referer = request.headers.get("referer");
+  if (!referer) return false;
+  try {
+    const u = new URL(referer);
+    return allowed.has(`${u.protocol}//${u.host}`);
+  } catch {
+    return false;
+  }
+}
+
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
@@ -24,6 +46,9 @@ function isRateLimited(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
+  if (!isAllowedRequestOrigin(request)) {
+    return NextResponse.json({ error: "Nepovolený požadavek." }, { status: 403 });
+  }
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   if (isRateLimited(ip)) {

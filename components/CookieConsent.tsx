@@ -189,6 +189,7 @@ export function CookieConsent() {
               </div>
               <p className="mt-3 text-center text-xs text-slate-500">
                 Svůj souhlas můžete kdykoli změnit v patičce webu v odkazu „Nastavení cookies“.
+                Platnost uloženého výběru je 30 dnů — poté se banner zobrazí znovu.
               </p>
             </div>
           </motion.div>

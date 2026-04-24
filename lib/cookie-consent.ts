@@ -7,6 +7,10 @@ export const COOKIE_PREFERENCES_KEY = "aikonic-cookie-preferences";
 /** @deprecated migrace ze starého formátu */
 const LEGACY_CONSENT_KEY = "cookie-consent";
 
+/** Po této době od posledního uložení je souhlas neplatný — banner se znovu zobrazí, GA se vypne do nového rozhodnutí. */
+export const CONSENT_VALIDITY_DAYS = 30;
+const CONSENT_TTL_MS = CONSENT_VALIDITY_DAYS * 24 * 60 * 60 * 1000;
+
 export const COOKIE_BANNER_OPEN_EVENT = "aikonic-open-cookie-banner";
 export const COOKIE_CONSENT_UPDATED_EVENT = "aikonic-cookie-consent-updated";
 
@@ -26,14 +30,40 @@ export function isCookiePreferencesV1(x: unknown): x is CookiePreferencesV1 {
   return o.v === 1 && o.necessary === true && typeof o.analytics === "boolean" && typeof o.updatedAt === "string";
 }
 
-/** Načte uložené preference nebo migruje starý klíč `cookie-consent`. */
+function isConsentExpired(prefs: CookiePreferencesV1): boolean {
+  const t = new Date(prefs.updatedAt).getTime();
+  if (Number.isNaN(t)) return true;
+  return Date.now() - t > CONSENT_TTL_MS;
+}
+
+function clearStoredConsent(): void {
+  if (typeof window === "undefined") return;
+  window.localStorage.removeItem(COOKIE_PREFERENCES_KEY);
+  window.localStorage.removeItem(LEGACY_CONSENT_KEY);
+}
+
+/**
+ * Načte platné preference nebo migruje starý klíč `cookie-consent`.
+ * Po uplynutí {@link CONSENT_VALIDITY_DAYS} dnů od `updatedAt` úložiště vymaže a vrátí `null` (znovu zobrazení lišty).
+ */
 export function readCookiePreferences(): CookiePreferencesV1 | null {
   if (typeof window === "undefined") return null;
   try {
     const raw = window.localStorage.getItem(COOKIE_PREFERENCES_KEY);
     if (raw) {
       const parsed = JSON.parse(raw) as unknown;
-      if (isCookiePreferencesV1(parsed)) return parsed;
+      if (isCookiePreferencesV1(parsed)) {
+        if (isConsentExpired(parsed)) {
+          clearStoredConsent();
+          window.dispatchEvent(
+            new CustomEvent<CookiePreferencesV1>(COOKIE_CONSENT_UPDATED_EVENT, {
+              detail: { v: 1, necessary: true, analytics: false, updatedAt: new Date().toISOString() },
+            })
+          );
+          return null;
+        }
+        return parsed;
+      }
     }
   } catch {
     /* ignore */

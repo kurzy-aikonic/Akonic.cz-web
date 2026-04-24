@@ -13,7 +13,7 @@ const priceItems = [
   {
     icon: ClipboardCheck,
     title: "Firemní AI audit",
-    price: "od 30 000",
+    price: "od 35 000",
     priceNote: "Kč s DPH",
     description: "Konkrétní cena podle náročnosti, počtu osob a rozsahu. Nabídku připravíme na míru po úvodní konzultaci.",
     href: "/audit",
@@ -22,7 +22,7 @@ const priceItems = [
   {
     icon: Clock,
     title: "Vzdělávací kurz AI (1 den)",
-    price: "50 000",
+    price: "60 000",
     priceNote: "Kč s DPH",
     description: "8 hodin. Prezenční nebo online. Dovednosti a pochopení principů AI v praxi.",
     href: "/#contact",
@@ -31,7 +31,7 @@ const priceItems = [
   {
     icon: LayoutList,
     title: "Vzdělávací kurz AI (2 dny)",
-    price: "90 000",
+    price: "115 000",
     priceNote: "Kč s DPH",
     description: "16 hodin. Prezenční nebo online. Hlubší náhled a více prostoru pro cvičení.",
     href: "/#contact",
