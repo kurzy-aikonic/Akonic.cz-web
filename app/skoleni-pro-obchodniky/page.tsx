@@ -6,29 +6,28 @@ import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
 import { ArrowRight, Briefcase, CheckCircle2 } from "lucide-react";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Školení AI pro obchodníky | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "Školení AI pro obchodníky",
   description:
     "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy.",
   keywords: ["AI pro obchodníky", "školení AI obchod", "ChatGPT obchod", "Fireflies", "AI sales", "AIKONIC"],
-  alternates: { canonical: "https://aikonic.cz/skoleni-pro-obchodniky" },
-  openGraph: {
-    title: "Školení AI pro obchodníky | AIKONIC",
-    description: "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion — vyšší konverze a rychlejší obchodní cyklus.",
-    url: "https://aikonic.cz/skoleni-pro-obchodniky",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Školení AI pro obchodníky — AIKONIC" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Školení AI pro obchodníky | AIKONIC",
-    description: "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion — vyšší konverze.",
-    images: ["/og-image.png"],
-  },
-};
+  path: "/skoleni-pro-obchodniky",
+  ogDescription: "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion — vyšší konverze a rychlejší obchodní cyklus.",
+});
+
+const jsonLd = [
+  serviceJsonLd({
+    name: "Školení AI pro obchodníky",
+    description: "AI jako parťák v obchodu — ChatGPT, Fireflies, Notion, Miro pro vyšší konverzi a rychlejší cyklus.",
+    path: "/skoleni-pro-obchodniky",
+  }),
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "Školení AI pro obchodníky", path: "/skoleni-pro-obchodniky" },
+  ]),
+];
 
 const blockColors = [
   { card: "bg-primary/5", num: "bg-primary/10 text-primary" },
@@ -72,6 +71,10 @@ const outcomes = [
 export default function SkoleniProObchodnikyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}

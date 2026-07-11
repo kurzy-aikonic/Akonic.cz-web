@@ -58,8 +58,10 @@ function formatKc(value: number): string {
 }
 
 function AnimatedNumber({ target }: { target: number }) {
-  const [displayed, setDisplayed] = React.useState(0);
-  const prevTarget = React.useRef(0);
+  // Inicializace na `target` — v SSR/prvním renderu ukazuje reálnou hodnotu,
+  // ne "0" vedle už spočítané roční úspory (viz aikonic-navrh-uprav-2.md, 1.4).
+  const [displayed, setDisplayed] = React.useState(target);
+  const prevTarget = React.useRef(target);
 
   React.useEffect(() => {
     const start = prevTarget.current;

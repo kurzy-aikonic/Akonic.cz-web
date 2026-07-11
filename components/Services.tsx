@@ -1,61 +1,54 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Bot, Briefcase, Building2, CalendarDays, CalendarRange, ClipboardCheck, Code2, Cpu, MessageSquare, PieChart, Sparkles, Workflow, Zap } from "lucide-react";
+import { Bot, Check, ClipboardCheck, GraduationCap, MessageSquare, PieChart, Sparkles, Workflow, Cpu } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const services = [
+/**
+ * 3 produktové pilíře na homepage (viz aikonic-navrh-uprav-2.md, 1.2).
+ * Kompletní grid všech 9 služeb je na `/sluzby`.
+ */
+const pillars = [
   {
-    title: "AI do firmy",
-    description:
-      "Implementace AI a automatizace přímo do vašich procesů — administrativa, obchod, provoz. Od první úspory času po dlouhodobou spolupráci. Konzultace zdarma.",
-    icon: Building2,
+    title: "Školení a hackathony",
+    description: "Od jednodenní nalejvárny po vícedenní hackathon — vždy s praxí na vašich úkolech.",
+    href: "/sluzby",
+    image: "/gallery/ai-skoleni-workshop-01.webp",
+    icon: GraduationCap,
+    benefits: [
+      "Jednodenní i dvoudenní AI nalejvárna",
+      "Intenzivní hackathon na míru",
+      "Praxe na vašich reálných úkolech",
+      "Programy pro obchod i vývojáře (vibe coding)",
+    ],
+    cta: "Vybrat školení →",
   },
   {
-    title: "Jednodenní školení — AI nalejvárna",
-    description:
-      "Celodenní interaktivní bootcamp: od srozumitelného úvodu k AI až po promptování, vaše data, první automatizace a osobního asistenta. Práce na reálných úkolech — účastníci odcházejí s nastavením, které použijí hned druhý den.",
-    icon: CalendarDays,
-  },
-  {
-    title: "Dvoudenní školení — nalejvárna a realizační den",
-    description:
-      "První den stejná intenzivní AI nalejvárna jako u jednodenní varianty. Druhý den týmy dotahují konkrétní projekty (ideálně z auditu) až k prototypu — facilitace, sdílení pokroku, testování u uživatelů.",
-    icon: CalendarRange,
-  },
-  {
-    title: "Intenzivní AI Hackathon",
-    description:
-      "Od 4 hodin po libovolný počet dní — rozsah vždy na domluvu. Žádná teorie, jen intenzivní praxe a práce s AI. Tým naučíme ovládat nástroje a vyřešíme reálné firemní úkoly.",
-    icon: Zap,
-  },
-  {
-    title: "Automatizace na míru",
-    description:
-      "Vlastní AI agenty a propojení systémů. Rutinu přenecháme strojům; vy se věnujete tomu, co přináší hodnotu.",
-    icon: Cpu,
-  },
-  {
-    title: "Firemní AI audit",
-    description:
-      "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: plán s prioritami a termíny.",
+    title: "AI audit a implementace",
+    description: "Zjistíme, kde AI přinese největší hodnotu, a nasadíme ji přímo do vašich procesů.",
+    href: "/audit",
+    image: "/gallery/ai-audit-konzultace-01.webp",
     icon: ClipboardCheck,
+    benefits: [
+      "Systematická analýza procesů",
+      "Konkrétní plán s prioritami a termíny",
+      "Implementace a automatizace na míru",
+      "Úvodní konzultace zdarma",
+    ],
+    cta: "Zjistit víc o auditu →",
   },
   {
-    title: "Školení AI pro obchodníky",
-    description:
-      "AI jako parťák v obchodu. ChatGPT, Fireflies, Notion, Miro — vyšší konverze, rychlejší cyklus, lepší follow-upy. Vlastní plán od zítřka.",
-    icon: Briefcase,
-  },
-  {
-    title: "Školení Vibe coding — Claude Code, Cursor",
-    description:
-      "Programování s AI v páru. Naučíme vás Claude Code a Cursor od základů po každodenní použití: rychlejší vývoj, méně rutiny, čistší kód. Pro vývojáře i ty, kdo chtějí s kódem začít.",
-    icon: Code2,
-  },
-  {
-    title: "Kurz finanční gramotnosti ve firmě",
-    description:
-      "Kontrola nad cashflow a majetkem. Pro firmy i jednotlivce. Systémy, které hlídají peníze za vás.",
+    title: "Finanční vzdělávání",
+    description: "Dvoudenní kurz finanční gramotnosti pro firmy i jednotlivce.",
+    href: "/financni-gramotnost",
+    image: "/gallery/ai-financni-skoleni-01.webp",
     icon: PieChart,
+    benefits: [
+      "Rozpočet, cashflow a úvěry",
+      "Investice a osobní finanční plán",
+      "Dvoudenní praktický kurz",
+      "Pro firmy i jednotlivce",
+    ],
+    cta: "Zjistit víc o kurzu →",
   },
 ];
 
@@ -90,37 +83,9 @@ const trainingTopics = [
   },
 ];
 
-const serviceAccents = [
-  "bg-primary/10 text-primary",
-  "bg-emerald-500/10 text-emerald-600",
-  "bg-violet-500/10 text-violet-600",
-  "bg-amber-500/10 text-amber-600",
-  "bg-rose-500/10 text-rose-600",
-];
-
-const iconGlow = [
-  "icon-glow-primary",
-  "icon-glow-emerald",
-  "icon-glow-violet",
-  "icon-glow-amber",
-  "icon-glow-rose",
-];
-
-const serviceCardBg = [
-  "bg-primary/5",
-  "bg-emerald-500/5",
-  "bg-violet-500/5",
-  "bg-amber-500/5",
-  "bg-rose-500/5",
-  "bg-blue-600/5",
-];
-
-const trainingCardBg = [
-  "bg-primary/5",
-  "bg-emerald-500/5",
-  "bg-violet-500/5",
-  "bg-amber-500/5",
-];
+const serviceAccent = "bg-primary/10 text-primary";
+const iconGlow = "icon-glow-primary";
+const trainingCardBg = "bg-slate-50";
 
 export function Services() {
   return (
@@ -129,49 +94,62 @@ export function Services() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 via-transparent to-transparent" />
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4" animateOnMount>
-          <h2 className="text-3xl font-semibold text-text md:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Možnosti spolupráce
+          </p>
+          <h2 className="text-3xl font-semibold text-text md:text-4xl">
+            Jak s vámi můžeme pracovat
           </h2>
           <p className="max-w-2xl text-base text-slate-600">
-            Vzdělávání, automatizace a finance. Řešení, která platí od prvního dne.
+            Tři cesty, jak s vámi můžeme pracovat. Detailní přehled všech služeb najdete{" "}
+            <Link href="/sluzby" className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 hover:text-blue-600">
+              na stránce Služby
+            </Link>
+            .
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const href =
-              service.title === "AI do firmy"
-                ? "/ai-do-firmy"
-                : service.title === "Jednodenní školení — AI nalejvárna"
-                  ? "/jednodenni-skoleni-ai"
-                  : service.title === "Dvoudenní školení — nalejvárna a realizační den"
-                    ? "/dvoudenni-skoleni-ai"
-                    : service.title === "Intenzivní AI Hackathon"
-                      ? "/ai-hackathon"
-                      : service.title === "Kurz finanční gramotnosti ve firmě"
-                        ? "/financni-gramotnost"
-                        : service.title === "Firemní AI audit"
-                          ? "/audit"
-                          : service.title === "Školení AI pro obchodníky"
-                            ? "/skoleni-pro-obchodniky"
-                            : "/#contact";
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {pillars.map((pillar, index) => {
+            const Icon = pillar.icon;
             return (
-              <FadeIn key={service.title} delay={index * 0.08} animateOnMount className="h-full">
+              <FadeIn key={pillar.title} delay={index * 0.1} animateOnMount className="h-full">
                 <Link
-                  href={href}
-                  className={`group relative flex h-full min-h-[140px] flex-col overflow-hidden rounded-2xl border border-slate-200 p-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2 md:p-6 ${serviceCardBg[index % serviceCardBg.length]}`}
+                  href={pillar.href}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2"
                 >
-                  <span className="card-shimmer" aria-hidden="true" />
-                  <div className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  <div className="relative h-44 w-full overflow-hidden">
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent" />
+                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 text-primary shadow-sm">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
                   </div>
-                  <h3 className="relative z-10 mt-3 line-clamp-2 text-base font-semibold leading-snug text-text md:text-lg">
-                    {service.title}
-                  </h3>
-                  <span className="relative z-10 mt-auto inline-flex min-h-[44px] items-center pt-4 text-sm font-semibold text-primary transition duration-300 group-hover:translate-x-0.5 group-hover:text-blue-700">
-                    Více info →
-                  </span>
+                  <div className="flex flex-1 flex-col p-5 md:p-6">
+                    <h3 className="text-xl font-semibold text-text">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                      {pillar.description}
+                    </p>
+                    <ul className="mt-4 space-y-1.5">
+                      {pillar.benefits.map((benefit) => (
+                        <li key={benefit} className="flex items-start gap-2 text-sm text-slate-600">
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-auto inline-flex min-h-[44px] items-center pt-5 text-sm font-semibold text-primary transition duration-300 group-hover:translate-x-0.5 group-hover:text-blue-700">
+                      {pillar.cta}
+                    </span>
+                  </div>
                 </Link>
               </FadeIn>
             );
@@ -188,38 +166,43 @@ export function Services() {
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                    Připravujeme
+                    Sesterský projekt
                   </p>
                   <h3 className="mt-1 text-xl font-semibold text-text md:text-2xl">
                     AI Kroužek pro děti
                   </h3>
                   <p className="mt-3 max-w-xl text-base text-slate-600">
-                    Baví vaše děti technologie a AI? Dáme jim bezpečný prostor, kde se to naučí používat s hlavou. Otevíráme online třídu — pravidelně jednou týdně. Přihlaste dítě a my vás budeme informovat o startu.
+                    Online AI kroužek pro děti 10–17 let — tvoří vlastní hry a appky s AI. Vede ho náš lektorský tým.
                   </p>
                   <ul className="mt-4 space-y-1.5 text-sm text-slate-600">
                     <li className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      Online 1× týdně, pravidelné lekce
+                      Online, jednou za 14 dní
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      Přihlášení dítěte přes kontaktní formulář
+                      Vlastní registrace na webu kroužku
                     </li>
                   </ul>
                 </div>
               </div>
-              <Link
-                href="/#contact"
+              <a
+                href="https://krouzekumeleinteligence.cz"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex shrink-0 justify-center rounded-xl bg-primary px-5 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-600 w-full md:w-auto min-h-[44px] items-center"
               >
-                Chci nahlásit dítě
-              </Link>
+                Přejít na web kroužku →
+              </a>
             </div>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.2} className="mt-12">
-          <h3 className="text-2xl font-semibold text-text md:text-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            Nástroje
+          </p>
+          <h3 className="mt-2 text-2xl font-semibold text-text md:text-3xl">
             Co školíme
           </h3>
           <p className="mt-2 max-w-2xl text-base text-slate-600">
@@ -232,8 +215,8 @@ export function Services() {
             const Icon = topic.icon;
             return (
               <FadeIn key={topic.title} delay={0.24 + index * 0.05}>
-                <article className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md ${trainingCardBg[index % trainingCardBg.length]}`}>
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${serviceAccents[index % serviceAccents.length]} ${iconGlow[index % iconGlow.length]}`}>
+                <article className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition duration-200 hover:border-primary/20 hover:shadow-md ${trainingCardBg}`}>
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${serviceAccent} ${iconGlow}`}>
                     <Icon className="h-5 w-5" />
                   </span>
                   <h4 className="mt-4 font-semibold text-text">

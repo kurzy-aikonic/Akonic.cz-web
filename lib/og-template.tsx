@@ -1,11 +1,14 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
-export const alt = "AIKONIC — Firemní AI školení a hackathony";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const ogImageSize = { width: 1200, height: 630 };
+export const ogImageContentType = "image/png";
 
-export default function OgImage() {
+/**
+ * Sdílená šablona pro dynamicky generované OG/Twitter obrázky podstránek.
+ * Používá se z jednotlivých `app/**\/opengraph-image.tsx` (edge runtime).
+ * Vzor převzat z `app/opengraph-image.tsx` (homepage), parametrizovaný nadpisem a tagy.
+ */
+export function renderOgImage(heading: string, subheading: string, tags: string[] = []) {
   return new ImageResponse(
     (
       <div
@@ -23,7 +26,6 @@ export default function OgImage() {
           overflow: "hidden",
         }}
       >
-        {/* Dekorativní kruhy */}
         <div
           style={{
             position: "absolute",
@@ -47,15 +49,7 @@ export default function OgImage() {
           }}
         />
 
-        {/* Logo / název */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            marginBottom: 40,
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
           <div
             style={{
               width: 56,
@@ -72,74 +66,57 @@ export default function OgImage() {
           >
             A
           </div>
-          <span
-            style={{
-              fontSize: 32,
-              fontWeight: 700,
-              color: "white",
-              letterSpacing: "0.1em",
-            }}
-          >
+          <span style={{ fontSize: 32, fontWeight: 700, color: "white", letterSpacing: "0.1em" }}>
             AIKONIC
           </span>
         </div>
 
-        {/* Hlavní nadpis */}
         <div
           style={{
-            fontSize: 64,
+            fontSize: heading.length > 28 ? 52 : 64,
             fontWeight: 800,
             color: "white",
-            lineHeight: 1.1,
+            lineHeight: 1.15,
             marginBottom: 24,
-            maxWidth: 800,
+            maxWidth: 900,
           }}
         >
-          AI pro vaši{" "}
-          <span
-            style={{
-              background: "linear-gradient(90deg, #6366f1, #10b981)",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            firmu
-          </span>
+          {heading}
         </div>
 
-        {/* Podtitulek */}
         <div
           style={{
-            fontSize: 28,
+            fontSize: 26,
             color: "rgba(255,255,255,0.7)",
-            maxWidth: 700,
+            maxWidth: 760,
             lineHeight: 1.4,
             marginBottom: 48,
           }}
         >
-          Školení, hackathony a automatizace — Polička & celá ČR
+          {subheading}
         </div>
 
-        {/* Tagy */}
-        <div style={{ display: "flex", gap: 12 }}>
-          {["AI Školení", "Hackathony", "Audit", "Automatizace"].map((tag) => (
-            <div
-              key={tag}
-              style={{
-                padding: "8px 20px",
-                borderRadius: 100,
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "rgba(255,255,255,0.8)",
-                fontSize: 18,
-                background: "rgba(255,255,255,0.05)",
-              }}
-            >
-              {tag}
-            </div>
-          ))}
-        </div>
+        {tags.length > 0 && (
+          <div style={{ display: "flex", gap: 12 }}>
+            {tags.map((tag) => (
+              <div
+                key={tag}
+                style={{
+                  padding: "8px 20px",
+                  borderRadius: 100,
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: 18,
+                  background: "rgba(255,255,255,0.05)",
+                }}
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     ),
-    { ...size }
+    { ...ogImageSize }
   );
 }

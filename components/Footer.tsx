@@ -33,8 +33,8 @@ function KonamiHint() {
 export function Footer() {
   return (
     <footer className="border-t-2 border-slate-200 bg-gradient-to-b from-white to-slate-50/80 pb-safe">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 md:px-6 lg:grid-cols-4">
-        <div className="space-y-4">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 md:px-6 lg:grid-cols-5">
+        <div className="space-y-4 lg:col-span-1">
           <Image
             src="/logo.png"
             alt="AIKONIC logo"
@@ -77,6 +77,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/blog" className="block py-2.5 -my-2 transition hover:text-slate-900">
+                Blog
+              </Link>
+            </li>
+            <li>
               <Link href="/newsletter" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Newsletter
               </Link>
@@ -85,6 +90,45 @@ export function Footer() {
               <Link href="/#contact" className="block py-2.5 -my-2 transition hover:text-slate-900">
                 Kontakt
               </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+            Pro koho
+          </p>
+          <ul className="mt-4 space-y-0">
+            <li>
+              <Link href="/ai-do-firmy" className="block py-2.5 -my-2 transition hover:text-slate-900">
+                Pro firmy
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/skoleni-pro-obchodniky"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
+              >
+                Pro obchodní týmy
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/skoleni-vibe-coding"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
+              >
+                Pro vývojáře
+              </Link>
+            </li>
+            <li>
+              <a
+                href="https://krouzekumeleinteligence.cz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
+              >
+                Pro děti
+              </a>
             </li>
           </ul>
         </div>
@@ -188,8 +232,10 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:px-6">
-          <span>© 2026 Aikonic. Všechna práva vyhrazena.</span>
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-center text-sm text-slate-500 md:flex-row md:text-left md:px-6">
+          <span>
+            © 2026 Aikonic training s.r.o., IČO 24472590. Všechna práva vyhrazena.
+          </span>
           <KonamiHint />
           <span>kurzy@aikonic.cz</span>
         </div>

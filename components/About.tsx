@@ -4,15 +4,15 @@ import { FadeIn } from "./FadeIn";
 const items = [
   {
     icon: Zap,
-    text: "AI Hackathony: od 4 hodin po libovolný počet dní, vždy na domluvu.",
+    text: "Za jeden den odejdete s funkčním prototypem, ne jen prezentací.",
   },
   {
     icon: TrendingUp,
-    text: "Finance: přehled a kontrola na jednom místě.",
+    text: "Finanční gramotnost: srozumitelný přehled a jistota v rozhodování.",
   },
   {
     icon: Users,
-    text: "Školíme lidi, ne roboty. Osobní přístup.",
+    text: "Školíme lidi, ne roboty. Osobní přístup po celou dobu spolupráce.",
   },
   {
     icon: Target,
@@ -25,8 +25,6 @@ export function About() {
     <section id="about" className="relative overflow-hidden border-y border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-14 md:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute right-0 top-1/4 h-64 w-64 rounded-full bg-amber-200/20 blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 h-48 w-48 rounded-full bg-emerald-300/15 blur-3xl" />
       </div>
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
@@ -47,8 +45,8 @@ export function About() {
             const Icon = item.icon;
             return (
               <FadeIn key={item.text} delay={index * 0.06}>
-                <div className={`flex h-full flex-col items-center rounded-2xl border border-slate-200 p-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md ${["bg-primary/5", "bg-emerald-500/5", "bg-violet-500/5", "bg-amber-500/5"][index]}`}>
-                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${["bg-primary/10 text-primary icon-glow-primary", "bg-emerald-500/10 text-emerald-600 icon-glow-emerald", "bg-violet-500/10 text-violet-600 icon-glow-violet", "bg-amber-500/10 text-amber-600 icon-glow-amber"][index]}`}>
+                <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md">
+                  <span className="icon-glow-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
                   <p className="mt-4 flex-1 text-sm font-medium leading-snug text-slate-700">

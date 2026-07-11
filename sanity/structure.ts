@@ -1,10 +1,20 @@
 import type { StructureResolver } from "sanity/structure";
-import { EnvelopeIcon, CogIcon } from "@sanity/icons";
+import { EnvelopeIcon, CogIcon, DocumentTextIcon } from "@sanity/icons";
 
 export const structure: StructureResolver = (S) =>
   S.list()
     .title("AIKONIC — Obsah")
     .items([
+      // Blog
+      S.listItem()
+        .title("Blog")
+        .icon(DocumentTextIcon)
+        .child(
+          S.documentTypeList("blogPost")
+            .title("Články na blogu")
+            .defaultOrdering([{ field: "publishedAt", direction: "desc" }])
+        ),
+
       // Newsletter
       S.listItem()
         .title("Newslettery")

@@ -10,8 +10,44 @@ interface GalleryProps {
   images: string[];
 }
 
+const INITIAL_VISIBLE = 8;
+
+/** Popisné alt texty podle názvu souboru (viz aikonic-navrh-uprav-2.md, 3.4). */
+const ALT_TEXTS: Record<string, string> = {
+  "ai-skoleni-workshop-01.webp": "Účastníci firemního AI školení pracují na promptech",
+  "ai-skoleni-workshop-02.webp": "Skupinová práce na AI workshopu ve firmě",
+  "ai-skoleni-workshop-03.webp": "Praktické cvičení s AI nástroji na školení",
+  "ai-skoleni-workshop-04.webp": "Lektor vede praktickou část AI školení",
+  "ai-audit-konzultace-01.webp": "Konzultace v rámci firemního AI auditu",
+  "ai-financni-skoleni-01.webp": "Účastníci na kurzu finanční gramotnosti",
+  "ai-skoleni-diskuze-01.webp": "Diskuze účastníků během AI školení",
+  "ai-skoleni-diskuze-02.webp": "Tým řeší konkrétní zadání na AI školení",
+  "ai-skoleni-diskuze-03.webp": "Rozhovor lektora s účastníkem školení",
+  "ai-skoleni-prezentace-01.webp": "Prezentace výstupů z AI školení",
+  "ai-skoleni-prezentace-02.webp": "Lektor prezentuje AI nástroje účastníkům",
+  "ai-skoleni-prezentace-03.webp": "Shrnutí poznatků na konci AI školení",
+  "ai-skoleni-ucastnici-01.webp": "Účastníci firemního AI školení",
+  "ai-skoleni-ucastnici-02.webp": "Tým během praktické části AI kurzu",
+  "ai-skoleni-ucastnici-03.webp": "Účastníci sledují ukázku AI nástroje",
+  "ai-skoleni-notebook-01.webp": "Práce s AI nástrojem na notebooku během školení",
+  "ai-skoleni-notebook-02.webp": "Účastník testuje AI nástroj na vlastním úkolu",
+  "ai-skoleni-tym-01.webp": "Tým na firemním AI školení",
+  "ai-skoleni-tym-02.webp": "Skupina účastníků AI hackathonu",
+  "ai-skoleni-tym-03.webp": "Týmová práce na projektu během AI školení",
+  "ai-skoleni-skupina-01.webp": "Skupinová fotografie účastníků AI školení",
+  "ai-skoleni-skupina-02.webp": "Účastníci a lektor po skončení školení",
+  "ai-skoleni-detail-01.webp": "Detail z firemního AI školení",
+};
+
+function altForImage(src: string): string {
+  const filename = decodeURIComponent(src.split("/").pop() ?? "");
+  return ALT_TEXTS[filename] ?? "Fotografie z firemního AI školení AIKONIC";
+}
+
 export function Gallery({ images }: GalleryProps) {
   const [active, setActive] = React.useState<string | null>(null);
+  const [showAll, setShowAll] = React.useState(false);
+  const visibleImages = showAll ? images : images.slice(0, INITIAL_VISIBLE);
   const trackRef = React.useRef<HTMLDivElement | null>(null);
   const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
 
@@ -50,6 +86,9 @@ export function Gallery({ images }: GalleryProps) {
             <h2 className="text-3xl font-semibold text-text md:text-4xl">
               Ze školení
             </h2>
+            <p className="max-w-xl text-base text-slate-600">
+              Reálné fotky z firemních školení a hackathonů — žádné stock ilustrace.
+            </p>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -74,7 +113,7 @@ export function Gallery({ images }: GalleryProps) {
           ref={trackRef}
           className="mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 scrollbar-hide"
         >
-          {images.map((src, index) => (
+          {visibleImages.map((src, index) => (
             <FadeIn key={src} delay={index * 0.04}>
               <motion.button
                 type="button"
@@ -86,7 +125,7 @@ export function Gallery({ images }: GalleryProps) {
                 <div className="relative h-[220px] w-[min(280px,calc(100vw-3rem))] sm:h-[260px] sm:w-[340px] lg:h-[300px] lg:w-[420px]">
                   <Image
                     src={src}
-                    alt={`Fotografie ze školení ${index + 1}`}
+                    alt={altForImage(src)}
                     fill
                     sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) 340px, 420px"
                     className="object-cover transition duration-500 group-hover:scale-105"
@@ -97,6 +136,18 @@ export function Gallery({ images }: GalleryProps) {
             </FadeIn>
           ))}
         </div>
+
+        {images.length > INITIAL_VISIBLE && (
+          <FadeIn className="mt-6 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              className="inline-flex min-h-[44px] items-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-primary/30 hover:text-primary"
+            >
+              {showAll ? "Zobrazit méně" : `Zobrazit více (${images.length - INITIAL_VISIBLE})`}
+            </button>
+          </FadeIn>
+        )}
       </div>
 
       <AnimatePresence>
@@ -127,7 +178,7 @@ export function Gallery({ images }: GalleryProps) {
               </button>
               <Image
                 src={active}
-                alt="Fotografie ze školení — detail"
+                alt={altForImage(active)}
                 width={1600}
                 height={1200}
                 sizes="(max-width: 768px) 100vw, 80vw"

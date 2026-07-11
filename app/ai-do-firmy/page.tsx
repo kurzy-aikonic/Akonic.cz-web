@@ -15,9 +15,10 @@ import {
   MessageCircleQuestion,
   Sparkles,
 } from "lucide-react";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI do firmy — implementace a automatizace | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "AI do firmy — implementace a automatizace",
   description:
     "Zavedeme AI a automatizaci do vašich procesů: administrativa, obchod, provoz. Konzultace zdarma, první výsledky v krátkém horizontu, spolupráce na míru.",
   keywords: [
@@ -27,17 +28,21 @@ export const metadata: Metadata = {
     "AI implementace",
     "AIKONIC",
   ],
-  alternates: { canonical: "https://aikonic.cz/ai-do-firmy" },
-  openGraph: {
-    title: "AI do firmy — implementace a automatizace | AIKONIC",
-    description:
-      "Od auditu bolavých míst po funkční řešení. Úspora času, rychlejší obchod, jednodušší administrativa.",
-    url: "https://aikonic.cz/ai-do-firmy",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-  },
-};
+  path: "/ai-do-firmy",
+  ogDescription: "Od auditu bolavých míst po funkční řešení. Úspora času, rychlejší obchod, jednodušší administrativa.",
+});
+
+const jsonLd = [
+  serviceJsonLd({
+    name: "AI do firmy — implementace a automatizace",
+    description: "Implementace AI a automatizace přímo do firemních procesů — administrativa, obchod, provoz.",
+    path: "/ai-do-firmy",
+  }),
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "AI do firmy", path: "/ai-do-firmy" },
+  ]),
+];
 
 const painPoints = [
   {
@@ -185,6 +190,10 @@ const summaryPoints = [
 export default function AiDoFirmyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}

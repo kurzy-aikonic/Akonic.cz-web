@@ -12,9 +12,9 @@ import { MagneticButton } from "./MagneticButton";
 const navItems = [
   { label: "Služby", href: "/sluzby" },
   { label: "Ceník", href: "/#cenik" },
+  { label: "Blog", href: "/blog" },
   { label: "O nás", href: "/#about" },
   { label: "Reference", href: "/#reference" },
-  { label: "Newsletter", href: "/newsletter" },
   { label: "Kontakt", href: "/#contact" },
 ];
 
@@ -85,7 +85,7 @@ export function Navbar() {
           <FadeIn delay={0.2} animateOnMount>
             <MagneticButton className="hidden md:inline-flex">
               <Button className="hidden md:inline-flex" size="default" asChild>
-                <Link href="/#contact">Konzultace</Link>
+                <Link href="/#contact">Konzultace zdarma</Link>
               </Button>
             </MagneticButton>
           </FadeIn>

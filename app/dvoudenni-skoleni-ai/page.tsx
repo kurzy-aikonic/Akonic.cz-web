@@ -10,9 +10,10 @@ import {
   CheckCircle2,
   Users,
 } from "lucide-react";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Dvoudenní školení — AI nalejvárna a realizační den | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "Dvoudenní školení — AI nalejvárna a realizační den",
   description:
     "Dva dny: celodenní AI bootcamp s praxí na vašich úkolech a druhý den týmová práce na konkrétních projektech až k prototypu. Ideálně po firemním auditu.",
   keywords: [
@@ -22,24 +23,22 @@ export const metadata: Metadata = {
     "realizační workshop AI",
     "AIKONIC",
   ],
-  alternates: { canonical: "https://aikonic.cz/dvoudenni-skoleni-ai" },
-  openGraph: {
-    title: "Dvoudenní školení — AI nalejvárna a realizační den | AIKONIC",
-    description:
-      "Den první: teorie v praxi, asistenti a automatizace. Den druhý: týmy dotahují vybrané projekty k funkčnímu výsledku.",
-    url: "https://aikonic.cz/dvoudenni-skoleni-ai",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Dvoudenní školení AI — AIKONIC" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dvoudenní školení AI | AIKONIC",
-    description: "Bootcamp + týmový realizační den na vašich projektech.",
-    images: ["/og-image.png"],
-  },
-};
+  path: "/dvoudenni-skoleni-ai",
+  ogDescription: "Den první: teorie v praxi, asistenti a automatizace. Den druhý: týmy dotahují vybrané projekty k funkčnímu výsledku.",
+});
+
+const jsonLd = [
+  serviceJsonLd({
+    name: "Dvoudenní školení — AI nalejvárna a realizační den",
+    description: "Dva dny: AI bootcamp a realizační den, kdy týmy dotahují konkrétní projekty k prototypu.",
+    path: "/dvoudenni-skoleni-ai",
+    price: 115000,
+  }),
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "Dvoudenní školení AI", path: "/dvoudenni-skoleni-ai" },
+  ]),
+];
 
 const day1Colors = [
   { card: "bg-primary/5", num: "bg-primary/10 text-primary" },
@@ -145,6 +144,10 @@ const flowNote = [
 export default function DvoudenniSkoleniAiPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
         <section

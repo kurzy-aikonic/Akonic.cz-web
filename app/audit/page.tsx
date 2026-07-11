@@ -6,24 +6,29 @@ import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
 import { ArrowRight, CheckCircle2, ClipboardCheck } from "lucide-react";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Firemní AI audit | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "Firemní AI audit",
   description:
     "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: detailní plán s prioritami a termíny.",
   keywords: ["firemní AI audit", "audit AI", "AI v organizaci", "AI konzultace", "AIKONIC"],
-  openGraph: {
-    title: "Firemní AI audit | AIKONIC",
+  path: "/audit",
+});
+
+const jsonLd = [
+  serviceJsonLd({
+    name: "Firemní AI audit",
     description:
       "Systematická analýza procesů a identifikace míst, kde AI přinese měřitelnou hodnotu. Výstup: detailní plán s prioritami a termíny.",
-    url: "https://aikonic.cz/audit",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Firemní AI audit — AIKONIC" }],
-  },
-  alternates: { canonical: "https://aikonic.cz/audit" },
-};
+    path: "/audit",
+    minPrice: 35000,
+  }),
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "Firemní AI audit", path: "/audit" },
+  ]),
+];
 
 const steps = [
   {
@@ -73,6 +78,10 @@ const outcomes = [
 export default function AuditPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" className="min-h-screen bg-background" role="main">
         {/* Hero */}

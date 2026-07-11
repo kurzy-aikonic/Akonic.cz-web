@@ -4,34 +4,34 @@ import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
-import { ArrowRight, CalendarDays, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Bot, CheckCircle2, Code2 } from "lucide-react";
 import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Jednodenní školení — AI nalejvárna",
+  title: "Školení Vibe coding — Claude Code a Cursor",
   description:
-    "Celodenní AI bootcamp: od teorie k praxi, promptování, vaše data, automatizace a osobní asistent. Intenzivní program pro týmy, které chtějí AI opravdu používat.",
+    "Školení Claude Code a Cursor pro vývojáře i začátečníky. Naučíme vás psát a upravovat kód s AI v páru — rychlejší vývoj, méně rutiny, čistší kód.",
   keywords: [
-    "jednodenní školení AI",
-    "AI bootcamp",
-    "firemní školení AI",
-    "promptování školení",
+    "školení Claude Code",
+    "kurz Cursor",
+    "vibe coding školení",
+    "AI pro vývojáře",
+    "Claude Code kurz",
     "AIKONIC",
   ],
-  path: "/jednodenni-skoleni-ai",
-  ogDescription: "Interaktivní celodenní program: praxe na vašich úkolech, asistent na míru, první automatizace.",
+  path: "/skoleni-vibe-coding",
+  ogDescription: "Claude Code a Cursor od základů po každodenní použití — pro vývojáře i ty, kdo chtějí s kódem začít.",
 });
 
 const jsonLd = [
   serviceJsonLd({
-    name: "Jednodenní školení — AI nalejvárna",
-    description: "Celodenní AI bootcamp s praxí na vlastních úkolech, promptováním a osobním asistentem.",
-    path: "/jednodenni-skoleni-ai",
-    price: 60000,
+    name: "Školení Vibe coding — Claude Code a Cursor",
+    description: "Programování s AI v páru — Claude Code a Cursor od základů po každodenní použití.",
+    path: "/skoleni-vibe-coding",
   }),
   breadcrumbJsonLd([
     { name: "Domů", path: "/" },
-    { name: "Jednodenní školení AI", path: "/jednodenni-skoleni-ai" },
+    { name: "Vibe coding", path: "/skoleni-vibe-coding" },
   ]),
 ];
 
@@ -40,51 +40,41 @@ const blockColors = [
   { card: "bg-violet-500/5", num: "bg-violet-500/10 text-violet-600" },
   { card: "bg-amber-500/5", num: "bg-amber-500/10 text-amber-600" },
   { card: "bg-emerald-500/5", num: "bg-emerald-500/10 text-emerald-600" },
-  { card: "bg-rose-500/5", num: "bg-rose-500/10 text-rose-600" },
-  { card: "bg-blue-500/5", num: "bg-blue-500/10 text-blue-600" },
 ];
 
 const blocks = [
   {
-    title: "AI bez mlžení",
-    text: "Stručný přehled toho, kde se technologie dnes pohybuje — bez hodin teorie. Hned si vyzkoušíte základní nástroje a pochopíte, jak s AI komunikovat tak, aby rozuměla vašemu záměru.",
+    title: "Základy vibe codingu",
+    text: "Co to znamená programovat s AI v páru, jak formulovat zadání a jak číst a usměrňovat návrhy, které agent generuje.",
   },
   {
-    title: "Promptování, které drží",
-    text: "Celý blok věnovaný zadávání úkolů: od jednoduchých pravidel po techniky pro přesné a opakovatelné výsledky. Desítky krátkých cvičení na úkolech z vaší praxe.",
+    title: "Claude Code v praxi",
+    text: "Práce s repozitářem, plánování větších úprav, refaktoring a debugging s AI agentem přímo v terminálu.",
   },
   {
-    title: "Vaše dokumenty a úložiště",
-    text: "Napojíme práci s AI na vaše reálné podklady — soubory, struktury, procesy. Ne obecné ukázky, ale materiály, se kterými denně pracujete.",
+    title: "Cursor od základů po pokročilé",
+    text: "Editor navržený pro AI-first vývoj — kontext, pravidla projektu, agentní režim a rychlé iterace nad vlastním kódem.",
   },
   {
-    title: "První automatizace",
-    text: "Krok za krokem sestavíte jednoduché automatizace opakujících se úkonů. Uvidíte, kde AI šetří čas a kde je potřeba lidský dohled.",
-  },
-  {
-    title: "Osobní AI asistent",
-    text: "Každý účastník si během dne nastaví vlastního asistenta sladěného s rolí a typickými úkoly — s jasným návazkem po školení.",
-  },
-  {
-    title: "Ověření a plán",
-    text: "Závěr dne: otestujete řešení na skutečných úkolech a odnesete si konkrétní plán, jak s AI pokračovat v následujících týdnech.",
+    title: "Vlastní projekt jako cvičení",
+    text: "Na reálném úkolu z vaší praxe si vyzkoušíte celý cyklus: zadání, generování, review, úprava a nasazení.",
   },
 ];
 
 const focusPoints = [
-  "Krátké vstupy, maximum praxe na vašich projektech a úkolech",
-  "Nastavení nástrojů a postupů použitelných hned následující pracovní den",
-  "Skupinový formát s prostorem pro dotazy a individuální práci",
+  "Pro vývojáře, kteří chtějí zrychlit každodenní práci",
+  "Pro začátečníky, kteří se chtějí naučit stavět s AI vlastní nástroje",
+  "Praxe na vašich repozitářích a úkolech, ne na obecných ukázkách",
 ];
 
 const outcomes = [
-  "Alespoň dva konkrétní pracovní problémy vyřešené během dne s pomocí AI",
-  "Funkční osobní AI asistent u každého účastníka",
-  "Přehled nástrojů a postupů připravený k okamžitému použití",
-  "Osobní plán, jak v AI pokračovat po školení",
+  "Nastavené prostředí Claude Code a Cursor připravené k okamžitému použití",
+  "Vlastní pravidla a kontext projektu pro efektivnější práci s AI agenty",
+  "Zvládnuté základní i pokročilé techniky zadávání a review AI kódu",
+  "Osobní plán, jak vibe coding zapojit do dalšího vývoje",
 ];
 
-export default function JednodenniSkoleniAiPage() {
+export default function SkoleniVibeCodingPage() {
   return (
     <>
       <script
@@ -93,15 +83,13 @@ export default function JednodenniSkoleniAiPage() {
       />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
-        {/* Hero — stejný vzor jako audit / školení pro obchodníky */}
         <section
-          aria-labelledby="jednodenni-heading"
+          aria-labelledby="vibe-heading"
           className="relative overflow-hidden border-b border-slate-200 pb-16 pt-28 md:pb-24 md:pt-36"
         >
           <div className="absolute inset-0 -z-10">
             <div className="absolute left-1/4 top-16 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-            <div className="absolute right-1/4 top-24 h-64 w-64 rounded-full bg-amber-300/25 blur-3xl" />
-            <div className="absolute bottom-0 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-violet-400/15 blur-3xl" />
+            <div className="absolute right-1/4 top-24 h-64 w-64 rounded-full bg-violet-300/25 blur-3xl" />
           </div>
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn>
@@ -109,31 +97,29 @@ export default function JednodenniSkoleniAiPage() {
                 Služby
               </p>
               <h1
-                id="jednodenni-heading"
+                id="vibe-heading"
                 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl"
               >
-                Jednodenní školení — AI nalejvárna
+                Školení Vibe coding — Claude Code a Cursor
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">
-                Celodenní interaktivní bootcamp: z teorie rovnou do praxe, první návyky a nástroje, které použijete hned druhý den.
+                Programování s AI v páru. Naučíme vás Claude Code a Cursor od základů po každodenní použití — pro vývojáře i ty, kdo chtějí s kódem začít.
               </p>
             </FadeIn>
           </div>
         </section>
 
-        {/* Intro — stejný box jako audit / obchodníci */}
-        <section className="py-12 md:py-16" aria-label="O programu">
+        <section className="py-12 md:py-16" aria-label="O školení">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl border border-slate-200 bg-primary/5 p-6 shadow-sm md:p-8">
               <p className="text-base leading-relaxed text-slate-700 md:text-lg">
-                <strong className="text-text">Jedním dnem nestanete „AI-first“ firmou</strong> — ale můžete výrazně zkrátit cestu k tomu, aby lidé AI skutečně používali. Program{" "}
-                <strong className="text-text">AI nalejvárna</strong> kombinuje srozumitelné vstupy s prací na vašich reálných úkolech. Účastníci odcházejí s nastavenými nástroji a jasným plánem pro další týdny.
+                <strong className="text-text">AI agenti dnes umí psát a upravovat kód rychleji, než stihnete napsat zadání</strong> — pokud víte, jak s nimi pracovat. Školení{" "}
+                <strong className="text-text">Vibe coding</strong> vás naučí Claude Code a Cursor v praxi: od prvního promptu po produktivní každodenní workflow na vašich vlastních projektech.
               </p>
             </FadeIn>
           </div>
         </section>
 
-        {/* Program — stejná sekce jako „Program“ u obchodníků / mřížka jako audit */}
         <section
           aria-labelledby="program-heading"
           className="bg-gradient-to-b from-slate-50/60 via-transparent to-transparent py-16 md:py-24"
@@ -141,14 +127,14 @@ export default function JednodenniSkoleniAiPage() {
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <FadeIn className="mb-10">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-                Program dne
+                Program školení
               </p>
               <h2 id="program-heading" className="mt-2 text-3xl font-semibold text-text md:text-4xl">
-                Šest bloků. Praxe na vašich úkolech. Asistent a plán domů.
+                Čtyři bloky. Od základů po práci na vlastním projektu.
               </h2>
             </FadeIn>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2">
               {blocks.map((block, index) => {
                 const colors = blockColors[index % blockColors.length];
                 return (
@@ -171,12 +157,11 @@ export default function JednodenniSkoleniAiPage() {
           </div>
         </section>
 
-        {/* Doplňující box — jako „Používané nástroje“ u obchodníků (violet) */}
-        <section className="py-12 md:py-16" aria-label="Zaměření dne">
+        <section className="py-12 md:py-16" aria-label="Pro koho je školení">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl border border-slate-200 bg-violet-500/5 p-6 shadow-sm md:p-8">
               <h2 className="text-xl font-semibold text-text md:text-2xl">
-                Zaměření celého dne
+                Pro koho je školení
               </h2>
               <ul className="mt-4 space-y-3 text-sm text-slate-600">
                 {focusPoints.map((item) => (
@@ -190,16 +175,15 @@ export default function JednodenniSkoleniAiPage() {
           </div>
         </section>
 
-        {/* Výsledek — stejný vzor jako „Co obchodníci získají“ / audit */}
         <section className="py-12 md:py-20" aria-labelledby="vysledek-heading">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <FadeIn className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 via-white to-amber-500/5 p-6 shadow-sm md:p-8">
+            <FadeIn className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 via-white to-violet-500/5 p-6 shadow-sm md:p-8">
               <div className="flex items-center gap-3">
                 <span className="icon-glow-primary flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <CalendarDays className="h-6 w-6" aria-hidden="true" />
+                  <Code2 className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <h2 id="vysledek-heading" className="text-2xl font-semibold text-text md:text-3xl">
-                  Co si účastníci odnášejí
+                  Co si odnesete
                 </h2>
               </div>
               <ul className="mt-6 space-y-3">
@@ -217,15 +201,15 @@ export default function JednodenniSkoleniAiPage() {
         <section className="py-10 md:py-12" aria-label="Související">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 text-center text-sm text-slate-600 md:p-6">
-              Chcete navázat druhým dnem — týmová práce na projektech až k prototypu?{" "}
-              <Link href="/dvoudenni-skoleni-ai" className="font-semibold text-primary hover:underline">
-                Dvoudenní program →
+              <Bot className="mx-auto mb-2 h-5 w-5 text-primary" aria-hidden="true" />
+              Chcete kromě kódu i další AI nástroje pro celý tým?{" "}
+              <Link href="/jednodenni-skoleni-ai" className="font-semibold text-primary hover:underline">
+                Jednodenní AI nalejvárna →
               </Link>
             </FadeIn>
           </div>
         </section>
 
-        {/* CTA — stejný layout jako audit / obchodníci */}
         <section className="border-t border-slate-200 py-16 md:py-24" aria-labelledby="cta-heading">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-violet-600 px-6 py-12 text-white shadow-2xl md:px-12">
@@ -238,7 +222,7 @@ export default function JednodenniSkoleniAiPage() {
                     Domluvit termín
                   </h2>
                   <p className="mt-2 text-white/80">
-                    Napište nám počet účastníků a preferovaný termín — připravíme nabídku na míru.
+                    Napište nám počet účastníků a jejich úroveň — připravíme program na míru. Úvodní konzultace zdarma a nezávazně.
                   </p>
                 </div>
                 <Button

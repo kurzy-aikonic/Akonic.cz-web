@@ -6,29 +6,28 @@ import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
 import { ArrowRight, PieChart, CheckCircle2 } from "lucide-react";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kurz finanční gramotnosti ve firmě | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "Kurz finanční gramotnosti ve firmě",
   description:
     "Dvoudenní školení finanční gramotnosti pro firmy. Rozpočet, úvěry, investice a osobní finanční plán — to, co vám ve škole neřekli.",
   keywords: ["finanční gramotnost", "kurz financí pro firmy", "firemní finance", "školení financí", "AIKONIC"],
-  alternates: { canonical: "https://aikonic.cz/financni-gramotnost" },
-  openGraph: {
-    title: "Kurz finanční gramotnosti ve firmě | AIKONIC",
-    description: "Dvoudenní školení finanční gramotnosti. Rozpočet, úvěry, investice a osobní finanční plán.",
-    url: "https://aikonic.cz/financni-gramotnost",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Finanční gramotnost — AIKONIC" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kurz finanční gramotnosti ve firmě | AIKONIC",
-    description: "Dvoudenní školení finanční gramotnosti pro firmy.",
-    images: ["/og-image.png"],
-  },
-};
+  path: "/financni-gramotnost",
+  ogDescription: "Dvoudenní školení finanční gramotnosti. Rozpočet, úvěry, investice a osobní finanční plán.",
+});
+
+const jsonLd = [
+  serviceJsonLd({
+    name: "Kurz finanční gramotnosti ve firmě",
+    description: "Dvoudenní školení finanční gramotnosti pro firmy — rozpočet, úvěry, investice a osobní finanční plán.",
+    path: "/financni-gramotnost",
+  }),
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "Finanční gramotnost", path: "/financni-gramotnost" },
+  ]),
+];
 
 const day1Colors = [
   { card: "bg-emerald-500/5", num: "bg-emerald-500/10 text-emerald-600" },
@@ -73,6 +72,10 @@ const outcomes = [
 export default function FinancniGramotnostPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}

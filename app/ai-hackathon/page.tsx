@@ -17,9 +17,10 @@ import {
   Target,
   ExternalLink,
 } from "lucide-react";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Intenzivní AI Hackathon | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "Intenzivní AI Hackathon",
   description:
     "Firemní AI hackathon od 4 hodin po několik dní. Intenzivní praxe, reálné prototypy a jedinečné prostředí historického statku Aigeluvlom u Poličky — kapacita až 80 osob.",
   keywords: [
@@ -32,24 +33,21 @@ export const metadata: Metadata = {
     "firemní akce s ubytováním",
     "AIKONIC",
   ],
-  alternates: { canonical: "https://aikonic.cz/ai-hackathon" },
-  openGraph: {
-    title: "Intenzivní AI Hackathon | AIKONIC",
-    description:
-      "Hackathony od 4 hodin po libovolný počet dní. Intenzivní praxe s AI — tým odchází s funkčním prototypem. Historický statek Aigeluvlom u Poličky, kapacita 80 osob.",
-    url: "https://aikonic.cz/ai-hackathon",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Hackathon — AIKONIC" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Intenzivní AI Hackathon | AIKONIC",
-    description: "Hackathony od 4 hodin po libovolný počet dní. Intenzivní praxe s AI — historický statek u Poličky.",
-    images: ["/og-image.png"],
-  },
-};
+  path: "/ai-hackathon",
+  ogDescription: "Hackathony od 4 hodin po libovolný počet dní. Intenzivní praxe s AI — historický statek u Poličky.",
+});
+
+const jsonLd = [
+  serviceJsonLd({
+    name: "Intenzivní AI Hackathon",
+    description: "Firemní AI hackathon od 4 hodin po několik dní na statku Aigeluvlom u Poličky.",
+    path: "/ai-hackathon",
+  }),
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "AI Hackathon", path: "/ai-hackathon" },
+  ]),
+];
 
 const stepColors = [
   { card: "bg-primary/5",     num: "bg-primary/10 text-primary" },
@@ -152,6 +150,10 @@ const venueFeatures = [
 export default function AIHackathonPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
 

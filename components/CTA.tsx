@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
@@ -11,11 +12,18 @@ export function CTA() {
   return (
     <section className="py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <FadeIn
-          delay={0.1}
-          className="rounded-3xl bg-gradient-to-r from-primary via-blue-600 to-violet-600 px-6 py-12 text-white shadow-2xl md:px-12"
-        >
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <FadeIn delay={0.1} className="relative overflow-hidden rounded-3xl shadow-2xl">
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/gallery/ai-skoleni-skupina-01.webp"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 1152px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/75 to-primary/70" />
+          </div>
+          <div className="flex flex-col items-start justify-between gap-8 px-6 py-12 text-white md:flex-row md:items-center md:px-12">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
                 Konzultace zdarma
@@ -24,7 +32,7 @@ export function CTA() {
                 Jste připraveni získat náskok?
               </h2>
               <p className="mt-3 max-w-xl text-base text-white/80">
-                Konkurence už AI nasazuje. Domluvte si konzultaci a posuňte firmu vpřed.
+                Konkurence už AI nasazuje. Domluvte si konzultaci a posuňte firmu vpřed. Úvodní konzultace zdarma a nezávazně.
               </p>
             </div>
             <MagneticButton className="w-full md:w-auto">

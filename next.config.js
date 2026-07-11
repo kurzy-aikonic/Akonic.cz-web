@@ -5,6 +5,17 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   /* Bezpečnostní hlavičky a CSP: middleware.ts (výjimka /studio pro embed u Sanity) */
+  // Sjednocení domény: canonical je https://aikonic.cz — www přesměrovat na apex (301)
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.aikonic.cz" }],
+        destination: "https://aikonic.cz/:path*",
+        permanent: true,
+      },
+    ];
+  },
   // Override Next.js internal React with our canary version that has useEffectEvent
   // This is needed for Sanity Studio compatibility
   webpack: (config) => {

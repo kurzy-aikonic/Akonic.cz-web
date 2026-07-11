@@ -1,8 +1,5 @@
-"use client";
-
-import * as React from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
+import { ExternalLink, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 import { Trust } from "./Trust";
 
@@ -11,136 +8,98 @@ const testimonials = [
     name: "Simona Piperková",
     role: "Obchodní a Ekonomická ředitelka, Sareza",
     initials: "SP",
-    date: "",
     text: "Skvělé školení o umělé inteligenci! Lektor byl výborný – srozumitelný, inspirativní a plný energie. Praktické ukázky, užitečné tipy a spousta nových nápadů. Rozhodně doporučuji!",
   },
   {
     name: "Jaroslav Kovář",
     role: "Jednatel, Sareza Ostrava",
     initials: "JK",
-    date: "před 2 týdny",
     text: "Velmi podnětné školení, spousta zajímavých informací.",
   },
   {
     name: "Monika Bohacova",
     role: "Žaluzie Bohacova",
     initials: "MB",
-    date: "před 1 měsícem",
     text: "Školení bylo velmi přínosné a prakticky zaměřené. Lektor dokázal srozumitelně vysvětlit i složitější principy a ukázal konkrétní příklady z praxe. Oceňuji přehlednost a interaktivitu.",
   },
   {
     name: "Radek Bialek",
     role: "Žaluzie Bohacova",
     initials: "RB",
-    date: "před 3 týdny",
     text: "Školení probíhalo svižně a otevřelo mi oči v AI světě. Lektor se snažil vžít do fungování naší firmy a radit nám na míru. Super pro nováčky, ale i pro rozšíření obzorů pokročilých.",
   },
 ];
 
+const cardBg = ["bg-primary/5", "bg-emerald-500/5", "bg-violet-500/5", "bg-amber-500/5"];
+
 export function Testimonials() {
-  const [index, setIndex] = React.useState(0);
-  const t = testimonials[index];
-
-  const goPrev = () => setIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
-  const goNext = () => setIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
-
   return (
     <section id="reference" className="relative overflow-hidden py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/30 via-transparent to-transparent" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:px-6">
         <Trust />
 
-        <FadeIn>
-          <div className="rounded-3xl bg-gradient-to-r from-slate-800 via-violet-900/90 to-slate-800 p-5 text-white shadow-2xl md:p-6">
-            {/* Header: Reference + hodnocení */}
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+        <div>
+          <FadeIn className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
                 Reference
               </p>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-white md:text-base">
-                  Průměrné hodnocení 5.0/5
-                </span>
-                <div className="flex items-center gap-0.5 text-amber-300">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className="icon-glow-amber inline-flex rounded p-0.5">
-                      <Star className="h-4 w-4 fill-amber-300" />
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <h2 className="mt-2 text-3xl font-semibold text-text md:text-4xl">
+                Co říkají klienti
+              </h2>
             </div>
-
-            {/* Jeden citát – velký, čitelný */}
-            <div className="relative mt-5 min-h-0">
-              <blockquote className="text-base leading-relaxed text-white/95 md:text-lg md:leading-relaxed">
-                „{t.text}"
-              </blockquote>
-              <div className="mt-4 flex items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-xs font-semibold text-white">
-                  {t.initials}
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-white/70">
-                    {t.role}
-                    {t.date ? ` · ${t.date}` : ""}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Posouvání: šipky + tečky */}
-            <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={goPrev}
-                  aria-label="Předchozí reference"
-                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/20 text-white/90 transition hover:bg-white/10 hover:text-white"
-                >
-                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  onClick={goNext}
-                  aria-label="Další reference"
-                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/20 text-white/90 transition hover:bg-white/10 hover:text-white"
-                >
-                  <ChevronRight className="h-4 w-4" />
-                </button>
-              </div>
-              <div className="flex items-center gap-1.5" aria-label="Reference 1 až 4">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setIndex(i)}
-                    aria-label={`Reference ${i + 1}`}
-                    className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full transition-all"
-                    aria-current={i === index ? "true" : undefined}
-                  >
-                    <span className={`h-2 rounded-full transition-all pointer-events-none ${
-                      i === index ? "w-6 bg-amber-300" : "w-2 bg-white/40"
-                    }`} />
-                  </button>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-semibold text-text md:text-base">
+                Průměrné hodnocení 5.0/5
+              </span>
+              <div className="flex items-center gap-0.5 text-amber-400">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-amber-400" />
                 ))}
               </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
 
-        <FadeIn className="mt-2">
-          <Link
-            href="https://www.google.com/maps?q=Aikonic"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            Zobrazit všechny recenze na Google Maps
-            <ExternalLink className="h-4 w-4" />
-          </Link>
-        </FadeIn>
+          {/* Grid 2×2 — všechny recenze viditelné hned, i pro SEO (viz aikonic-navrh-uprav-2.md, 1.3) */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {testimonials.map((t, index) => (
+              <FadeIn key={t.name} delay={index * 0.06} className="h-full">
+                <div className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm ${cardBg[index % cardBg.length]}`}>
+                  <div className="flex items-center gap-0.5 text-amber-400">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-amber-400" />
+                    ))}
+                  </div>
+                  <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 md:text-base">
+                    „{t.text}"
+                  </blockquote>
+                  <div className="mt-4 flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+                      {t.initials}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-text">{t.name}</p>
+                      <p className="text-xs text-slate-500">{t.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn className="mt-6">
+            <Link
+              href="https://www.google.com/maps?q=Aikonic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              Zobrazit všechny recenze na Google Maps
+              <ExternalLink className="h-4 w-4" />
+            </Link>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

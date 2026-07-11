@@ -9,7 +9,7 @@ const steps = [
   },
   {
     title: "Návrh řešení",
-    description: "Řešení šité na míru vaším procesům.",
+    description: "Řešení šité na míru vašim procesům.",
     href: undefined,
   },
   {

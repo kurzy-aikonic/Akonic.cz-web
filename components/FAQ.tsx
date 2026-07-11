@@ -2,31 +2,8 @@
 
 import * as React from "react";
 import { ChevronDown } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
-
-const faqs = [
-  {
-    question: "Je implementace AI bezpečná pro naše data?",
-    answer:
-      "Ano. Pracujeme podle vašich bezpečnostních standardů a datová pravidla nastavíme na míru.",
-  },
-  {
-    question: "Jak dlouho trvá typický projekt?",
-    answer:
-      "Implementace obvykle několik týdnů. Přesný rozsah určíme po auditu.",
-  },
-  {
-    question: "Potřebujeme technické znalosti?",
-    answer:
-      "Ne. Vše srozumitelně vysvětlíme a tým proškolíme.",
-  },
-  {
-    question: "Kolik to stojí?",
-    answer:
-      "Vzdělávací kurz AI máme v ceníku: 60 000 Kč s DPH (8 hodin) nebo 115 000 Kč s DPH (2 dny, 16 hodin). Firemní AI audit od 35 000 Kč s DPH. Hackathon a finanční školení nabízíme jako individuální projekty — cenu sestavíme na míru podle rozsahu. Úvodní konzultace je zdarma.",
-  },
-];
+import { faqs } from "../lib/faq-data";
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(0);
@@ -54,30 +31,30 @@ export function FAQ() {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
                   className="flex min-h-[44px] w-full items-center justify-between text-left text-base font-semibold text-text"
                 >
                   {item.question}
                   <ChevronDown
-                    className={`h-5 w-5 transition ${
+                    className={`h-5 w-5 shrink-0 transition ${
                       isOpen ? "rotate-180 text-primary" : "text-slate-500"
                     }`}
                   />
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="mt-3 text-sm text-slate-600">
-                        {item.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/*
+                  Odpověď je vždy v DOM (grid-template-rows trik) — crawler ji vidí
+                  i bez kliknutí. Skryté jen vizuálně přes výšku/opacity (viz 1.4).
+                */}
+                <div
+                  className="grid overflow-hidden transition-all duration-300 ease-out"
+                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                >
+                  <div className={`min-h-0 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}>
+                    <p className="mt-3 text-sm text-slate-600">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
             );
           })}

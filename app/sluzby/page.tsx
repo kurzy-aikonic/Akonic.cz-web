@@ -6,29 +6,23 @@ import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
 import { ArrowRight, Briefcase, Building2, CalendarDays, CalendarRange, ClipboardCheck, Code2, Cpu, PieChart, Zap } from "lucide-react";
+import { pageMetadata, breadcrumbJsonLd } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Služby pro firmy | AIKONIC",
+export const metadata: Metadata = pageMetadata({
+  title: "Služby pro firmy",
   description:
     "Firemní AI audit, AI Hackathon, finanční gramotnost a automatizace na míru. Začněte auditem — pak vyberete konkrétní kroky.",
   keywords: ["AI služby pro firmy", "firemní AI audit", "AI hackathon", "automatizace", "AI školení", "AIKONIC"],
-  alternates: { canonical: "https://aikonic.cz/sluzby" },
-  openGraph: {
-    title: "Služby pro firmy | AIKONIC",
-    description: "Firemní AI audit, hackathon, finanční gramotnost a automatizace na míru.",
-    url: "https://aikonic.cz/sluzby",
-    siteName: "AIKONIC",
-    locale: "cs_CZ",
-    type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Služby AIKONIC pro firmy" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Služby pro firmy | AIKONIC",
-    description: "Firemní AI audit, hackathon, finanční gramotnost a automatizace na míru.",
-    images: ["/og-image.png"],
-  },
-};
+  path: "/sluzby",
+  ogDescription: "Firemní AI audit, hackathon, finanční gramotnost a automatizace na míru.",
+});
+
+const jsonLd = [
+  breadcrumbJsonLd([
+    { name: "Domů", path: "/" },
+    { name: "Služby", path: "/sluzby" },
+  ]),
+];
 
 const services = [
   {
@@ -77,7 +71,7 @@ const services = [
   {
     title: "Automatizace na míru",
     description: "Vlastní AI agenty a propojení systémů. Rutinu přenecháme strojům; vy se věnujete tomu, co přináší hodnotu.",
-    href: "/#contact",
+    href: "/automatizace",
     icon: Cpu,
     cardBg: "bg-rose-500/5",
     iconBg: "bg-rose-500/10 text-rose-600",
@@ -107,7 +101,7 @@ const services = [
   {
     title: "Školení Vibe coding — Claude Code, Cursor",
     description: "Programování s AI v páru. Claude Code a Cursor od základů po každodenní použití: rychlejší vývoj, méně rutiny, čistší kód.",
-    href: "/#contact",
+    href: "/skoleni-vibe-coding",
     icon: Code2,
     cardBg: "bg-violet-500/5",
     iconBg: "bg-violet-500/10 text-violet-600",
@@ -129,6 +123,10 @@ const services = [
 export default function SluzbyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
         {/* Hero */}

@@ -7,6 +7,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "AIKONIC",
+  legalName: "Aikonic training s.r.o.",
+  identifier: "24472590",
   url: "https://aikonic.cz",
   logo: "https://aikonic.cz/logo.png",
   description: "AI školení, hackathony a automatizace pro firmy. Polička & celá ČR.",
@@ -29,20 +31,25 @@ const jsonLd = {
     "https://www.facebook.com/profile.php?id=61581039984128",
     "https://www.instagram.com/aikonic_training/",
   ],
+  memberOf: {
+    "@type": "Organization",
+    name: "Kroužek umělé inteligence",
+    url: "https://krouzekumeleinteligence.cz",
+  },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aikonic.cz"),
-  title: "AIKONIC | AI Školení, Hackathony & Správa financí",
+  title: "Firemní AI školení a hackathony | AIKONIC",
   description:
-    "Zvyšte zisk firmy díky AI a automatizaci. Pořádáme intenzivní hackathony, školíme týmy a pomáháme s finančním řízením. Polička & Celá ČR.",
+    "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Jsem v kurzu. Stovky proškolených hodin po celé ČR.",
   keywords: [
-    "AI školení",
+    "firemní AI školení",
+    "AI kurzy pro firmy",
+    "AI vzdělávání zaměstnanců",
+    "AI hackathon",
     "Umělá inteligence",
-    "Hackathon",
-    "Správa financí",
     "Automatizace",
-    "Radek Aigel",
   ],
   alternates: {
     canonical: "https://aikonic.cz",
@@ -57,28 +64,19 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "AIKONIC | AI Školení, Hackathony & Správa financí",
+    title: "Firemní AI školení a hackathony | AIKONIC",
     description:
-      "Zvyšte zisk firmy díky AI a automatizaci. Pořádáme intenzivní hackathony, školíme týmy a pomáháme s finančním řízením. Polička & Celá ČR.",
+      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Jsem v kurzu. Stovky proškolených hodin po celé ČR.",
     url: "https://aikonic.cz",
     siteName: "AIKONIC",
     locale: "cs_CZ",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AIKONIC — AI Školení a Hackathony",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AIKONIC | AI Školení, Hackathony & Správa financí",
+    title: "Firemní AI školení a hackathony | AIKONIC",
     description:
-      "Zvyšte zisk firmy díky AI a automatizaci. Pořádáme intenzivní hackathony, školíme týmy a pomáháme s finančním řízením.",
-    images: ["/og-image.png"],
+      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Jsem v kurzu.",
   },
 };
 
