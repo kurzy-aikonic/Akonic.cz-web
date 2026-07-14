@@ -15,7 +15,7 @@ export function CTA() {
         <FadeIn delay={0.1} className="relative overflow-hidden rounded-3xl shadow-2xl">
           <div className="absolute inset-0 -z-10">
             <Image
-              src="/gallery/ai-skoleni-skupina-01.webp"
+              src="/gallery/ai-skoleni-skupina-04.webp"
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 1152px"

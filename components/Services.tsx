@@ -12,7 +12,7 @@ const pillars = [
     title: "Školení a hackathony",
     description: "Od jednodenní nalejvárny po vícedenní hackathon — vždy s praxí na vašich úkolech.",
     href: "/sluzby",
-    image: "/gallery/ai-skoleni-workshop-01.webp",
+    image: "/gallery/ai-skoleni-workshop-05.webp",
     icon: GraduationCap,
     benefits: [
       "Jednodenní i dvoudenní AI nalejvárna",
@@ -26,7 +26,7 @@ const pillars = [
     title: "AI audit a implementace",
     description: "Zjistíme, kde AI přinese největší hodnotu, a nasadíme ji přímo do vašich procesů.",
     href: "/audit",
-    image: "/gallery/ai-audit-konzultace-01.webp",
+    image: "/gallery/ai-skoleni-lektor-prezentace-01.webp",
     icon: ClipboardCheck,
     benefits: [
       "Systematická analýza procesů",

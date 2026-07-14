@@ -18,19 +18,7 @@ import { SavingsCalculator } from "../components/SavingsCalculator";
 import { FAQ } from "../components/FAQ";
 import { faqs } from "../lib/faq-data";
 import { faqPageJsonLd } from "../lib/seo";
-import fs from "fs";
-import path from "path";
-
-const galleryExtensions = new Set([".webp", ".jpg", ".jpeg", ".png"]);
-
-function getGalleryImages() {
-  const galleryDir = path.join(process.cwd(), "public", "gallery");
-  const files = fs.readdirSync(galleryDir);
-
-  return files
-    .filter((file) => galleryExtensions.has(path.extname(file).toLowerCase()))
-    .map((file) => `/gallery/${encodeURIComponent(file)}`);
-}
+import { getGalleryImages } from "../lib/get-gallery-images";
 
 const jsonLd = [faqPageJsonLd(faqs)];
 
