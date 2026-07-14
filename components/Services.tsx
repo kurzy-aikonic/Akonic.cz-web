@@ -54,7 +54,7 @@ const pillars = [
 
 const trainingTopics = [
   {
-    title: "AI LLM modely",
+    title: "Jazykové modely (LLM)",
     tools: ["ChatGPT", "Gemini", "Claude", "Copilot", "Perplexity"],
     description:
       "Špičkové LLM modely v praxi: promptování, ovládání rozhraní a nasazení tam, kde přinášejí největší hodnotu. Bez zbytečné teorie.",
@@ -101,7 +101,7 @@ export function Services() {
             Jak s vámi můžeme pracovat
           </h2>
           <p className="max-w-2xl text-base text-slate-600">
-            Tři cesty, jak s vámi můžeme pracovat. Detailní přehled všech služeb najdete{" "}
+            Vyberte si jednu ze tří hlavních cest ke spolupráci. Detailní přehled všech služeb najdete{" "}
             <Link href="/sluzby" className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 hover:text-blue-600">
               na stránce Služby
             </Link>
@@ -172,7 +172,7 @@ export function Services() {
                     AI Kroužek pro děti
                   </h3>
                   <p className="mt-3 max-w-xl text-base text-slate-600">
-                    Online AI kroužek pro děti 10–17 let — tvoří vlastní hry a appky s AI. Vede ho náš lektorský tým.
+                    Online AI kroužek pro děti 10–17 let — tvoří vlastní hry a aplikace s AI. Vede ho náš lektorský tým.
                   </p>
                   <ul className="mt-4 space-y-1.5 text-sm text-slate-600">
                     <li className="flex items-center gap-2">

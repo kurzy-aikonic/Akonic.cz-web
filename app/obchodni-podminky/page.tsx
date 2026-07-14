@@ -56,7 +56,7 @@ export default function ObchodniPodminky() {
                 uzavírá se společností Aikonic smlouvu.
               </li>
               <li>
-                <strong>Spotřebitel:</strong> Zákazník - fyzická osoba, která mimo
+                <strong>Spotřebitel:</strong> Zákazník – fyzická osoba, která mimo
                 rámec své podnikatelské činnosti uzavírá smlouvu s podnikatelem.
               </li>
               <li>
@@ -192,7 +192,7 @@ export default function ObchodniPodminky() {
 
             <h2>7. Duševní vlastnictví</h2>
             <p>
-              7.1. Veškeré obsah webových stránek, včetně textů, grafik, log,
+              7.1. Veškerý obsah webových stránek, včetně textů, grafik, log,
               ilustrací, fotografií, audiovizuálních děl, zdrojového kódu a
               databází, je chráněn autorským právem podle zákona č. 121/2000 Sb.,
               autorský zákon, a dalšími právními předpisy.

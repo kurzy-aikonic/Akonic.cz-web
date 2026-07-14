@@ -160,7 +160,7 @@ export function Footer() {
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Legální & Social
+            Právní informace
           </p>
           <ul className="mt-4 space-y-0 text-base">
             <li>

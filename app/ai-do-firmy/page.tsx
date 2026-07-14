@@ -301,7 +301,7 @@ export default function AiDoFirmyPage() {
                 Přínos
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-text md:text-4xl">
-                Čemu se soustředíme
+                Na co se soustředíme
               </h2>
             </FadeIn>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

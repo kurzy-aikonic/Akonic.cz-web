@@ -36,7 +36,7 @@ export function About() {
               Nehrajeme si na vizionáře. Doručujeme výsledky.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-slate-600 md:text-lg">
-              Svět AI je plný slibů. My se držíme čísel. Pro firmy i jednotlivce — nástroje, ne teorie. Školení a implementace, které měříte výsledky.
+              Svět AI je plný slibů. My se držíme čísel. Pro firmy i jednotlivce — nástroje, ne teorie. Školení a implementace s měřitelnými výsledky.
             </p>
           </FadeIn>
         </div>

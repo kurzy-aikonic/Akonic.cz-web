@@ -31,7 +31,7 @@ export default function OchranaUdaju() {
           {/* Lead / meta */}
           <div className="mb-12 rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm md:p-8">
             <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-              <strong>Pravidla a Zásady Zpracování společnosti Aikonic training s.r.o.</strong>
+              <strong>Pravidla a zásady zpracování osobních údajů společnosti Aikonic training s.r.o.</strong>
             </p>
           </div>
 
@@ -132,8 +132,8 @@ export default function OchranaUdaju() {
             <p>Vaše osobní údaje zpracováváme za účelem:</p>
             <ul>
               <li>
-                Vyřízení objednávek a poskytování služeb (firemní AI audit
-                příležitostí, firemní školení, správa financí)
+                Vyřízení objednávek a poskytování služeb (firemní AI audit,
+                firemní školení a hackathony, kurz finanční gramotnosti)
               </li>
               <li>Zasílání informačních e-mailů a newsletterů</li>
               <li>Analýzy návštěvnosti webu a zlepšování našich služeb</li>
