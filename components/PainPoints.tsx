@@ -33,7 +33,7 @@ export function PainPoints() {
             Typické situace
           </p>
           <h2 className="max-w-2xl text-3xl font-semibold text-text md:text-4xl">
-            Čtyři překážky, které brzdí nasazení AI ve firmě
+            Čtyři nejčastější překážky, které brzdí nasazení AI ve firmě
           </h2>
           <p className="max-w-2xl text-base text-slate-600">
             Každá má konkrétní řešení — a vždy začínáme tam, kde vás to aktuálně nejvíc bolí.
