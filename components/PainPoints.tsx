@@ -30,11 +30,14 @@ export function PainPoints() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="flex flex-col gap-4" animateOnMount>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Zní vám to povědomě?
+            Typické situace
           </p>
           <h2 className="max-w-2xl text-3xl font-semibold text-text md:text-4xl">
-            Nejste sami. Tohle řešíme nejčastěji.
+            Čtyři překážky, které brzdí nasazení AI ve firmě
           </h2>
+          <p className="max-w-2xl text-base text-slate-600">
+            Každá má konkrétní řešení — a vždy začínáme tam, kde vás to aktuálně nejvíc bolí.
+          </p>
         </FadeIn>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
