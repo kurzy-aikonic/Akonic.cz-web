@@ -43,6 +43,23 @@ export function Gallery({ images }: GalleryProps) {
     });
   };
 
+  const toggleShowAll = () => {
+    setShowAll((prev) => {
+      const next = !prev;
+      if (next) {
+        // Po rozbalení posunout k první nově zobrazené fotce
+        requestAnimationFrame(() => {
+          const container = trackRef.current;
+          if (!container) return;
+          const cards = container.querySelectorAll<HTMLElement>("[data-card]");
+          const firstNewCard = cards[INITIAL_VISIBLE];
+          firstNewCard?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+        });
+      }
+      return next;
+    });
+  };
+
   return (
     <section id="galerie" className="relative overflow-hidden py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-50/80 via-background to-transparent" />
@@ -82,8 +99,8 @@ export function Gallery({ images }: GalleryProps) {
           ref={trackRef}
           className="mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 scrollbar-hide"
         >
-          {visibleImages.map((src, index) => (
-            <FadeIn key={src} delay={index * 0.04}>
+          {visibleImages.map((src, index) => {
+            const card = (
               <motion.button
                 type="button"
                 layoutId={src}
@@ -102,18 +119,30 @@ export function Gallery({ images }: GalleryProps) {
                   />
                 </div>
               </motion.button>
-            </FadeIn>
-          ))}
+            );
+
+            // Fotky po rozbalení nesmí být ve FadeIn — v horizontálním scrollu
+            // IntersectionObserver nevidí prvky mimo viewport a zůstanou neviditelné.
+            if (index >= INITIAL_VISIBLE) {
+              return <React.Fragment key={src}>{card}</React.Fragment>;
+            }
+
+            return (
+              <FadeIn key={src} delay={index * 0.04}>
+                {card}
+              </FadeIn>
+            );
+          })}
         </div>
 
         {images.length > INITIAL_VISIBLE && (
           <FadeIn className="mt-6 flex justify-center">
             <button
               type="button"
-              onClick={() => setShowAll((v) => !v)}
+              onClick={toggleShowAll}
               className="inline-flex min-h-[44px] items-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-primary/30 hover:text-primary"
             >
-              {showAll ? "Zobrazit méně" : `Zobrazit více (${images.length - INITIAL_VISIBLE})`}
+              {showAll ? "Zobrazit méně" : "Zobrazit vše"}
             </button>
           </FadeIn>
         )}
