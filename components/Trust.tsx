@@ -1,33 +1,48 @@
+import Image from "next/image";
 import { FadeIn } from "./FadeIn";
 
-const companies = ["Sareza", "Chachar Catering", "Demaxie"];
+const companies = [
+  { name: "Sareza", src: "/logos/sareza.png" },
+  { name: "Chachar Catering", src: "/logos/chachar.png" },
+  { name: "Demaxie", src: "/logos/demaxie.png" },
+];
 
-/**
- * Statický řádek — u 3 firem by marquee jen opakoval stejná jména (viz
- * aikonic-navrh-uprav-2.md, 1.3). Marquee dává smysl až od ~6 log.
- * TODO: nahradit textové badge reálnými logy (public/logos/*.png), jakmile budou k dispozici.
- */
 export function Trust() {
+  const looped = [...companies, ...companies, ...companies];
+
   return (
     <div>
       <FadeIn>
-        <p className="text-center text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 md:text-left">
-          Školili jsme mimo jiné
-        </p>
-      </FadeIn>
-
-      <FadeIn delay={0.06}>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:justify-start">
-          {companies.map((name) => (
-            <div
-              key={name}
-              className="flex h-14 items-center justify-center rounded-full border border-slate-200 bg-white/80 px-6 text-sm font-semibold text-slate-600"
-            >
-              {name}
-            </div>
-          ))}
+        <div className="flex flex-col gap-2 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+            Důvěřují nám firmy z praxe
+          </p>
         </div>
       </FadeIn>
+
+      <div className="relative mt-6 overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
+        <div className="flex gap-6 whitespace-nowrap py-2">
+          <div className="flex gap-6 animate-marquee">
+            {looped.map((company, index) => (
+              <div
+                key={`${company.name}-${index}`}
+                className="flex h-14 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/80 px-6 grayscale transition-all hover:grayscale-0"
+              >
+                <Image
+                  src={company.src}
+                  alt={company.name}
+                  width={160}
+                  height={64}
+                  sizes="160px"
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

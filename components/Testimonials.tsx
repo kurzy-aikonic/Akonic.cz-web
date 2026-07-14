@@ -32,7 +32,16 @@ const testimonials = [
 
 const cardBg = ["bg-primary/5", "bg-emerald-500/5", "bg-violet-500/5", "bg-amber-500/5"];
 
+const AVERAGE_RATING = 5.0;
+
+function reviewCountLabel(count: number): string {
+  if (count === 1) return "1 recenze";
+  if (count >= 2 && count <= 4) return `${count} recenze`;
+  return `${count} recenzí`;
+}
+
 export function Testimonials() {
+  const reviewCount = testimonials.length;
   return (
     <section id="reference" className="relative overflow-hidden py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/30 via-transparent to-transparent" />
@@ -49,15 +58,20 @@ export function Testimonials() {
                 Co říkají klienti
               </h2>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-text md:text-base">
-                Průměrné hodnocení 5.0/5
-              </span>
-              <div className="flex items-center gap-0.5 text-amber-400">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400" />
-                ))}
+            <div className="flex flex-col items-start gap-1 sm:items-end">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-text md:text-base">
+                  Průměrné hodnocení {AVERAGE_RATING.toFixed(1)}/5
+                </span>
+                <div className="flex items-center gap-0.5 text-amber-400">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400" />
+                  ))}
+                </div>
               </div>
+              <p className="text-xs text-slate-500 md:text-sm">
+                z {reviewCountLabel(reviewCount)} účastníků
+              </p>
             </div>
           </FadeIn>
 
