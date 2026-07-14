@@ -33,6 +33,8 @@ const testimonials = [
 const cardBg = ["bg-primary/5", "bg-emerald-500/5", "bg-violet-500/5", "bg-amber-500/5"];
 
 const AVERAGE_RATING = 5.0;
+/** Celkový počet recenzí na Google — aktualizuj podle aktuálního stavu profilu. */
+const GOOGLE_REVIEW_COUNT = 40;
 
 function reviewCountLabel(count: number): string {
   if (count === 1) return "1 recenze";
@@ -41,7 +43,6 @@ function reviewCountLabel(count: number): string {
 }
 
 export function Testimonials() {
-  const reviewCount = testimonials.length;
   return (
     <section id="reference" className="relative overflow-hidden py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/30 via-transparent to-transparent" />
@@ -70,7 +71,7 @@ export function Testimonials() {
                 </div>
               </div>
               <p className="text-xs text-slate-500 md:text-sm">
-                z {reviewCountLabel(reviewCount)} účastníků
+                z {reviewCountLabel(GOOGLE_REVIEW_COUNT)} na Google
               </p>
             </div>
           </FadeIn>
@@ -109,7 +110,7 @@ export function Testimonials() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              Zobrazit všechny recenze na Google Maps
+              Zobrazit všech {GOOGLE_REVIEW_COUNT} recenzí na Google Maps
               <ExternalLink className="h-4 w-4" />
             </Link>
           </FadeIn>

@@ -63,7 +63,7 @@ export function Hero() {
             </span>
             <span className="font-semibold text-text">5.0 na Google</span>
             <span className="text-slate-400">·</span>
-            <span className="text-slate-600">reálné recenze klientů</span>
+            <span className="text-slate-600">40 recenzí klientů</span>
           </Link>
         </FadeIn>
       </div>
