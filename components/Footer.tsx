@@ -70,6 +70,14 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/dotace-na-skoleni"
+                className="block py-2.5 -my-2 transition hover:text-slate-900"
+              >
+                Dotované kurzy
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/#reference"
                 className="block py-2.5 -my-2 transition hover:text-slate-900"
               >

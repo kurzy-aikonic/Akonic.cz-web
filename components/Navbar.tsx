@@ -12,6 +12,7 @@ import { MagneticButton } from "./MagneticButton";
 const navItems = [
   { label: "Služby", href: "/sluzby" },
   { label: "Ceník", href: "/#cenik" },
+  { label: "Dotované kurzy", href: "/dotace-na-skoleni" },
   { label: "Blog", href: "/blog" },
   { label: "O nás", href: "/#about" },
   { label: "Reference", href: "/#reference" },
