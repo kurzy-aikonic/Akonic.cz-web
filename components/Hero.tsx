@@ -30,7 +30,7 @@ export function Hero() {
             Stovky proškolených hodin po celé ČR — od úvodního workshopu po AI hackathon.
             Pomůžeme i s{" "}
             <Link href="/dotace-na-skoleni" className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 hover:text-blue-600">
-              dotacemi „Jsem v kurzu“ a „Digi pro firmy“
+              dotací z programu „Vzdělávání pro firmy“
             </Link>
             .
           </p>

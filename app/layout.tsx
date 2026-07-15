@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://aikonic.cz"),
   title: "Firemní AI školení a hackathony | AIKONIC",
   description:
-    "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Jsem v kurzu. Stovky proškolených hodin po celé ČR.",
+    "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Vzdělávání pro firmy. Stovky proškolených hodin po celé ČR.",
   keywords: [
     "firemní AI školení",
     "AI kurzy pro firmy",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Firemní AI školení a hackathony | AIKONIC",
     description:
-      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Jsem v kurzu. Stovky proškolených hodin po celé ČR.",
+      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Vzdělávání pro firmy. Stovky proškolených hodin po celé ČR.",
     url: "https://aikonic.cz",
     siteName: "AIKONIC",
     locale: "cs_CZ",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Firemní AI školení a hackathony | AIKONIC",
     description:
-      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Jsem v kurzu.",
+      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Vzdělávání pro firmy.",
   },
 };
 
