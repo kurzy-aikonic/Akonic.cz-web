@@ -9,6 +9,7 @@ import { Button } from "../../../components/ui/button";
 import { ArrowLeft, ArrowRight, CalendarDays } from "lucide-react";
 import { client } from "../../../sanity/lib/client";
 import { NEWSLETTER_QUERY, NEWSLETTER_SLUGS_QUERY } from "../../../sanity/lib/queries";
+import { safeHref } from "../../../lib/safe-href";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -98,16 +99,24 @@ const ptComponents = {
         {children}
       </code>
     ),
-    link: ({ value, children }: { value?: { href: string; blank?: boolean }; children?: React.ReactNode }) => (
-      <a
-        href={value?.href}
-        target={value?.blank ? "_blank" : undefined}
-        rel={value?.blank ? "noopener noreferrer" : undefined}
-        className="text-primary underline decoration-primary/30 underline-offset-2 hover:text-blue-700"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ value, children }: { value?: { href: string; blank?: boolean }; children?: React.ReactNode }) => {
+      const href = safeHref(value?.href);
+      if (!href) {
+        return <span className="text-primary">{children}</span>;
+      }
+      const isExternal = /^https?:\/\//i.test(href);
+      const openBlank = Boolean(value?.blank) || isExternal;
+      return (
+        <a
+          href={href}
+          target={openBlank ? "_blank" : undefined}
+          rel={openBlank ? "noopener noreferrer nofollow" : undefined}
+          className="text-primary underline decoration-primary/30 underline-offset-2 hover:text-blue-700"
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
 

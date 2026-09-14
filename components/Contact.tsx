@@ -33,6 +33,14 @@ export function Contact() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    // Honeypot — boti vyplní skryté pole (Formspree _gotcha)
+    const honeypot = String(formData.get("_gotcha") ?? "").trim();
+    if (honeypot) {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      return;
+    }
+
     try {
       const response = await fetch(
         `https://formspree.io/f/${FORMSPREE_ID}`,
@@ -120,7 +128,7 @@ export function Contact() {
           </div>
         </FadeIn>
 
-        <FadeIn className="rounded-3xl bg-white/5 p-6 shadow-xl backdrop-blur md:p-8">
+        <FadeIn className="relative rounded-3xl bg-white/5 p-6 shadow-xl backdrop-blur md:p-8">
           {isSuccess ? (
             <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-6 text-emerald-100">
               <div className="flex items-center gap-3">
@@ -139,6 +147,17 @@ export function Contact() {
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleSubmit}>
+              {/* Honeypot — Formspree _gotcha + skryté pro uživatele */}
+              <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+                <label htmlFor="contact-gotcha">Web firmy</label>
+                <input
+                  id="contact-gotcha"
+                  name="_gotcha"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               <div className="space-y-2">
                 <label className="text-sm text-white/80" htmlFor="contact-name">
                   Jméno

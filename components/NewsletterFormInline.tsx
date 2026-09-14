@@ -7,6 +7,7 @@ type Status = "idle" | "loading" | "success" | "error";
 
 export function NewsletterFormInline() {
   const [email, setEmail] = React.useState("");
+  const [website, setWebsite] = React.useState("");
   const [status, setStatus] = React.useState<Status>("idle");
   const [message, setMessage] = React.useState("");
   const [particles, setParticles] = React.useState<{ id: number; x: number; y: number; emoji: string }[]>([]);
@@ -20,7 +21,7 @@ export function NewsletterFormInline() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({ email: email.trim(), website }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -84,11 +85,22 @@ export function NewsletterFormInline() {
   }
 
   return (
-    <div className="space-y-3">
+    <div className="relative space-y-3">
       <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:flex-row sm:items-center">
         <label htmlFor="newsletter-inline-email" className="sr-only">
           E-mail pro odběr newsletteru
         </label>
+        <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+          <label htmlFor="newsletter-inline-website">Web</label>
+          <input
+            id="newsletter-inline-website"
+            type="text"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
         <input
           id="newsletter-inline-email"
           type="email"

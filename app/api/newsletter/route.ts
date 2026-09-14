@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
 
 const ECOMAIL_API_URL = "https://api2.ecomailapp.cz";
+const MAX_BODY_BYTES = 4_096;
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 60_000;
 
 function isValidEmail(value: string): boolean {
+  if (value.length > 254) return false;
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-// Jednoduchý in-memory rate limiter (reset při restartu serveru)
+/** Jednoduchý in-memory rate limiter (na serverless jen částečně účinný). */
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 5;
-const RATE_WINDOW_MS = 60_000; // 1 minuta
 
 function isAllowedRequestOrigin(request: Request): boolean {
   if (process.env.NODE_ENV !== "production") return true;
@@ -45,18 +47,38 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+/** Periodicky vyčistí staré záznamy, aby Map nebobtnala. */
+function pruneRateLimitMap() {
+  if (rateLimitMap.size < 500) return;
+  const now = Date.now();
+  for (const [key, entry] of rateLimitMap) {
+    if (now > entry.resetAt) rateLimitMap.delete(key);
+  }
+}
+
 export async function POST(request: Request) {
   if (!isAllowedRequestOrigin(request)) {
     return NextResponse.json({ error: "Nepovolený požadavek." }, { status: 403 });
   }
+
+  const contentLength = request.headers.get("content-length");
+  if (contentLength && Number(contentLength) > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Požadavek je příliš velký." }, { status: 413 });
+  }
+
   const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    request.headers.get("x-real-ip")?.trim() ??
+    "unknown";
+
+  pruneRateLimitMap();
   if (isRateLimited(ip)) {
     return NextResponse.json(
       { error: "Příliš mnoho pokusů. Zkuste to za chvíli." },
       { status: 429 }
     );
   }
+
   try {
     const apiKey = process.env.ECOMAIL_API_KEY;
     const listId = process.env.ECOMAIL_LIST_ID;
@@ -69,14 +91,30 @@ export async function POST(request: Request) {
       );
     }
 
-    const body = await request.json();
+    const raw = await request.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: "Požadavek je příliš velký." }, { status: 413 });
+    }
+
+    let body: { email?: unknown; website?: unknown };
+    try {
+      body = JSON.parse(raw) as { email?: unknown; website?: unknown };
+    } catch {
+      return NextResponse.json({ error: "Neplatný požadavek." }, { status: 400 });
+    }
+
+    // Honeypot — boti často vyplní skryté pole
+    if (typeof body.website === "string" && body.website.trim() !== "") {
+      return NextResponse.json({
+        success: true,
+        message: "Odběr byl odeslán. Zkontrolujte e-mail a potvrďte odběr.",
+      });
+    }
+
     const email = typeof body.email === "string" ? body.email.trim() : "";
 
     if (!email) {
-      return NextResponse.json(
-        { error: "Zadejte e-mail." },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Zadejte e-mail." }, { status: 400 });
     }
 
     if (!isValidEmail(email)) {
@@ -100,14 +138,17 @@ export async function POST(request: Request) {
       }),
     });
 
-    const data = await res.json().catch(() => ({}));
+    const data = (await res.json().catch(() => ({}))) as {
+      already_subscribed?: boolean;
+    };
 
     if (!res.ok) {
-      const message =
-        typeof data.message === "string"
-          ? data.message
-          : "Odběr se nepodařil. Zkuste to později.";
-      return NextResponse.json({ error: message }, { status: res.status });
+      // Nepropouštět raw zprávy z Ecomailu klientovi
+      console.error("Ecomail subscribe failed", res.status);
+      return NextResponse.json(
+        { error: "Odběr se nepodařil. Zkuste to později." },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({

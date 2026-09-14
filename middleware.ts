@@ -8,13 +8,13 @@ function contentSecurityPolicyPublic(): string {
   const directives = [
     "default-src 'self'",
     "base-uri 'self'",
-    "form-action 'self'",
+    "form-action 'self' https://formspree.io",
     "frame-ancestors 'none'",
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https://cdn.sanity.io https://images.unsplash.com https://source.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com",
     "font-src 'self' data:",
-    "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.apicdn.sanity.io https://cdn.sanity.io",
+    "connect-src 'self' https://formspree.io https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.apicdn.sanity.io https://cdn.sanity.io",
     "frame-src 'self' https://www.googletagmanager.com",
     "object-src 'none'",
   ];
@@ -32,6 +32,25 @@ function contentSecurityPolicyStudio(): string {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isStudio = pathname.startsWith("/studio");
+
+  // Volitelná Basic Auth pro /studio — aktivní jen když je nastaveno STUDIO_BASIC_AUTH=user:pass
+  // Bez env se chování nemění (Sanity login zůstává).
+  if (isStudio) {
+    const studioAuth = process.env.STUDIO_BASIC_AUTH;
+    if (studioAuth && studioAuth.includes(":")) {
+      const header = request.headers.get("authorization");
+      const expected = "Basic " + btoa(studioAuth);
+      if (header !== expected) {
+        return new NextResponse("Authentication required", {
+          status: 401,
+          headers: {
+            "WWW-Authenticate": 'Basic realm="AIKONIC Studio"',
+            "Cache-Control": "no-store",
+          },
+        });
+      }
+    }
+  }
 
   const res = NextResponse.next();
 
