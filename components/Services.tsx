@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Bot, Check, ClipboardCheck, GraduationCap, MessageSquare, PieChart, Sparkles, Workflow, Cpu } from "lucide-react";
+import { Bot, Check, ClipboardCheck, GraduationCap, Megaphone, MessageSquare, PieChart, Sparkles, Workflow, Cpu } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 /**
@@ -155,6 +155,34 @@ export function Services() {
             );
           })}
         </div>
+
+        {/* Digitální marketing — nová vertikála (lehká zmínka, ne 4. pilíř) */}
+        <FadeIn delay={0.1} className="mt-8">
+          <Link
+            href="/digitalni-marketing"
+            className="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-gradient-to-br from-sky-50/80 via-white to-primary/5 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300/50 hover:shadow-md md:flex-row md:items-center md:justify-between md:p-6"
+          >
+            <div className="flex gap-4">
+              <span className="icon-glow-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-600">
+                <Megaphone className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+                  Nová vertikála
+                </p>
+                <h3 className="mt-1 text-lg font-semibold text-text md:text-xl">
+                  Digitální marketing a lokální viditelnost
+                </h3>
+                <p className="mt-1.5 max-w-2xl text-sm text-slate-600">
+                  Google Moje Firma, Reels, weby, kampaně a správa sociálních sítí — od základu po dlouhodobou péči.
+                </p>
+              </div>
+            </div>
+            <span className="inline-flex min-h-[44px] shrink-0 items-center text-sm font-semibold text-primary transition group-hover:translate-x-0.5 group-hover:text-blue-700">
+              Zjistit víc →
+            </span>
+          </Link>
+        </FadeIn>
 
         {/* Připravujeme: AI Kroužek */}
         <FadeIn delay={0.12} className="mt-12">

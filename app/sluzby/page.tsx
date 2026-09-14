@@ -5,16 +5,24 @@ import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { FadeIn } from "../../components/FadeIn";
 import { Button } from "../../components/ui/button";
-import { ArrowRight, Briefcase, Building2, CalendarDays, CalendarRange, ClipboardCheck, Code2, Cpu, PieChart, Zap } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, CalendarDays, CalendarRange, ClipboardCheck, Code2, Cpu, Megaphone, PieChart, Zap } from "lucide-react";
 import { pageMetadata, breadcrumbJsonLd } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Služby pro firmy",
   description:
-    "Firemní AI audit, AI Hackathon, finanční gramotnost a automatizace na míru. Začněte auditem — pak vyberete konkrétní kroky.",
-  keywords: ["AI služby pro firmy", "firemní AI audit", "AI hackathon", "automatizace", "AI školení", "AIKONIC"],
+    "Firemní AI audit, AI Hackathon, finanční gramotnost, automatizace a digitální marketing. Začněte auditem — pak vyberete konkrétní kroky.",
+  keywords: [
+    "AI služby pro firmy",
+    "firemní AI audit",
+    "AI hackathon",
+    "automatizace",
+    "AI školení",
+    "digitální marketing",
+    "AIKONIC",
+  ],
   path: "/sluzby",
-  ogDescription: "Firemní AI audit, hackathon, finanční gramotnost a automatizace na míru.",
+  ogDescription: "Firemní AI audit, hackathon, finanční gramotnost, automatizace a digitální marketing.",
 });
 
 const jsonLd = [
@@ -117,6 +125,17 @@ const services = [
     iconBg: "bg-emerald-500/10 text-emerald-600",
     iconGlow: "icon-glow-emerald",
     hoverBorder: "hover:border-emerald-400/30",
+  },
+  {
+    title: "Digitální marketing a lokální viditelnost",
+    description:
+      "Google Moje Firma, video a Reels, weby, kampaně a správa sociálních sítí. Od základu po dlouhodobou péči — nabídka na míru.",
+    href: "/digitalni-marketing",
+    icon: Megaphone,
+    cardBg: "bg-sky-500/5",
+    iconBg: "bg-sky-500/10 text-sky-600",
+    iconGlow: "icon-glow-primary",
+    hoverBorder: "hover:border-sky-400/30",
   },
 ];
 

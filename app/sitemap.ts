@@ -87,6 +87,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/digitalni-marketing`,
+      lastModified: new Date("2026-09-14"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: "weekly",
