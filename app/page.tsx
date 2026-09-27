@@ -3,7 +3,7 @@ import { Hero } from "../components/Hero";
 import { PainPoints } from "../components/PainPoints";
 import { About } from "../components/About";
 import { Team } from "../components/Team";
-import { Services } from "../components/Services";
+import { KidsProject, Services } from "../components/Services";
 import { Gallery } from "../components/Gallery";
 import { Testimonials } from "../components/Testimonials";
 import { CTA } from "../components/CTA";
@@ -73,6 +73,7 @@ export default function HomePage() {
         <CTA />
       </main>
       <Contact />
+      <KidsProject />
       <Footer />
       <StickyCTA />
     </>

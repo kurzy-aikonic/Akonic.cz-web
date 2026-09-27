@@ -184,48 +184,6 @@ export function Services() {
           </Link>
         </FadeIn>
 
-        {/* Připravujeme: AI Kroužek */}
-        <FadeIn delay={0.12} className="mt-12">
-          <div className="rounded-2xl border-2 border-dashed border-primary/30 bg-white/90 p-6 shadow-sm md:p-8">
-            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              <div className="flex gap-4">
-                <span className="icon-glow-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Sparkles className="h-7 w-7" />
-                </span>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                    Sesterský projekt
-                  </p>
-                  <h3 className="mt-1 text-xl font-semibold text-text md:text-2xl">
-                    AI Kroužek pro děti
-                  </h3>
-                  <p className="mt-3 max-w-xl text-base text-slate-600">
-                    Online AI kroužek pro děti 10–17 let — tvoří vlastní hry a aplikace s AI. Vede ho náš lektorský tým.
-                  </p>
-                  <ul className="mt-4 space-y-1.5 text-sm text-slate-600">
-                    <li className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      Online, jednou za 14 dní
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      Vlastní registrace na webu kroužku
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <a
-                href="https://krouzekumeleinteligence.cz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex shrink-0 justify-center rounded-xl bg-primary px-5 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-600 w-full md:w-auto min-h-[44px] items-center"
-              >
-                Přejít na web kroužku →
-              </a>
-            </div>
-          </div>
-        </FadeIn>
-
         <FadeIn delay={0.2} className="mt-12">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
             Nástroje
@@ -268,6 +226,55 @@ export function Services() {
             );
           })}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function KidsProject() {
+  return (
+    <section aria-label="Sesterský projekt" className="py-14 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <FadeIn>
+          <div className="rounded-2xl border-2 border-dashed border-primary/30 bg-white/90 p-6 shadow-sm md:p-8">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+              <div className="flex gap-4">
+                <span className="icon-glow-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Sparkles className="h-7 w-7" />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                    Sesterský projekt
+                  </p>
+                  <h3 className="mt-1 text-xl font-semibold text-text md:text-2xl">
+                    AI Kroužek pro děti
+                  </h3>
+                  <p className="mt-3 max-w-xl text-base text-slate-600">
+                    Online AI kroužek pro děti 10–17 let — tvoří vlastní hry a aplikace s AI. Vede ho náš lektorský tým.
+                  </p>
+                  <ul className="mt-4 space-y-1.5 text-sm text-slate-600">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      Online, jednou za 14 dní
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      Vlastní registrace na webu kroužku
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <a
+                href="https://krouzekumeleinteligence.cz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex shrink-0 justify-center rounded-xl bg-primary px-5 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-600 w-full md:w-auto min-h-[44px] items-center"
+              >
+                Přejít na web kroužku →
+              </a>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
