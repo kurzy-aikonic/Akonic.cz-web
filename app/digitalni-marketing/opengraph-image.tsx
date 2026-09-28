@@ -8,7 +8,7 @@ export const contentType = ogImageContentType;
 export default function OgImage() {
   return renderOgImage(
     "Digitální marketing",
-    "Google Moje Firma, Reels, weby, kampaně a správa sítí.",
-    ["Lokální SEO", "Reels", "Správa sítí"]
+    "START 13 900 Kč · Reels od 4 900 Kč · správa profilu 6 900 Kč/měs.",
+    ["Ceník 2026", "Lokální SEO", "Reels"]
   );
 }

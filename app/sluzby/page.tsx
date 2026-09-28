@@ -129,7 +129,7 @@ const services = [
   {
     title: "Digitální marketing a lokální viditelnost",
     description:
-      "Google Moje Firma, video a Reels, weby, kampaně a správa sociálních sítí. Od základu po dlouhodobou péči — nabídka na míru.",
+      "Google Moje Firma, Reels, weby a kampaně. Balíček START 13 900 Kč, ceny jsou konečné.",
     href: "/digitalni-marketing",
     icon: Megaphone,
     cardBg: "bg-sky-500/5",

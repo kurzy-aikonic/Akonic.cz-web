@@ -174,7 +174,7 @@ export function Services() {
                   Digitální marketing a lokální viditelnost
                 </h3>
                 <p className="mt-1.5 max-w-2xl text-sm text-slate-600">
-                  Google Moje Firma, Reels, weby, kampaně a správa sociálních sítí — od základu po dlouhodobou péči.
+                  Balíček START 13 900 Kč. Google Moje Firma, Reels, weby, kampaně a správa sociálních sítí.
                 </p>
               </div>
             </div>
