@@ -14,15 +14,17 @@ import {
   Share2,
   Video,
 } from "lucide-react";
-import { pageMetadata, serviceJsonLd, breadcrumbJsonLd } from "../../lib/seo";
+import { GoogleProfileStudies } from "../../components/GoogleProfileStudies";
+import { pageMetadata, serviceJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Digitální marketing a lokální viditelnost",
   description:
-    "Ceník digitálního marketingu: balíček START 13 900 Kč, Google Moje Firma, Reels od 4 900 Kč, weby a kampaně. Ceny jsou konečné — nejsme plátci DPH.",
+    "Ceník digitálního marketingu: START 13 900 Kč, správa Google profilu 6 900 Kč měsíčně. Případové studie ukazují nárůst interakcí, tras a prokliků na web.",
   keywords: [
     "digitální marketing",
     "Google Moje Firma",
+    "správa Google profilu",
     "lokální SEO",
     "Reels video",
     "správa sociálních sítí",
@@ -40,7 +42,7 @@ const jsonLd = [
   serviceJsonLd({
     name: "Digitální marketing a lokální viditelnost",
     description:
-      "Google Moje Firma, videoprodukce a Reels, weby, placené kampaně a správa sociálních sítí. Balíček START od 13 900 Kč.",
+      "Google Moje Firma, videoprodukce a Reels, weby, placené kampaně a správa sociálních sítí. Balíček START od 13 900 Kč. Případové studie z firemních profilů.",
     path: "/digitalni-marketing",
     minPrice: 4900,
   }),
@@ -193,6 +195,15 @@ const faqItems = [
     q: "Lze digitální marketing kombinovat s AI školením?",
     a: "Ano. Digitální služby jsou samostatná vertikála AIKONIC. Pokud dává smysl propojit je se školením AI nebo automatizací, rádi to navrhneme jako celek.",
   },
+  {
+    q: "Jak poznáme, že správa Google profilu funguje?",
+    a: "Sledujeme interakce s profilem, žádosti o trasu, prokliky na web a hovory. Jednorázové nastavení čísla zvedne. Bez pravidelných příspěvků, odpovědí na recenze a nových fotek křivka po vrcholu obvykle klesá. Měsíční správa má tento pokles brzdit.",
+  },
+];
+
+const structuredData = [
+  ...jsonLd,
+  faqPageJsonLd(faqItems.map((item) => ({ question: item.q, answer: item.a }))),
 ];
 
 export default function DigitalniMarketingPage() {
@@ -200,7 +211,7 @@ export default function DigitalniMarketingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Navbar />
       <main id="main-content" role="main" className="min-h-screen bg-background">
@@ -397,6 +408,8 @@ export default function DigitalniMarketingPage() {
             </FadeIn>
           </div>
         </section>
+
+        <GoogleProfileStudies />
 
         <section aria-labelledby="jak-heading" className="py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
