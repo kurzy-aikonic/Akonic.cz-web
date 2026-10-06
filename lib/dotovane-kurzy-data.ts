@@ -9,7 +9,7 @@ export const dotovaneKurzy = [
     title: "AI kurz pro firmy — 50 hodin",
     duration: "6,5 dne",
     hours: 50,
-    price: "350 000",
+    price: "299 000",
     priceNote: "Kč s DPH",
     includes: [
       "50 hodin prezenčního vzdělávání v oblasti IT a AI",
@@ -25,7 +25,7 @@ export const dotovaneKurzy = [
     title: "AI kurz pro firmy — 80 hodin",
     duration: "10 dní",
     hours: 80,
-    price: "550 000",
+    price: "479 000",
     priceNote: "Kč s DPH",
     includes: [
       "80 hodin prezenčního vzdělávání v oblasti IT a AI",

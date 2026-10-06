@@ -11,7 +11,7 @@ import { DOTACNI_PROGRAM_NAZEV, dotovaneKurzy } from "../../lib/dotovane-kurzy-d
 export const metadata: Metadata = pageMetadata({
   title: "Dotace na AI školení — Vzdělávání pro firmy",
   description:
-    "Dotované AI kurzy pro firmy v programu Vzdělávání pro firmy (Úřad práce ČR). 50 hodin za 350 000 Kč nebo 80 hodin za 550 000 Kč s DPH. S vyřízením dotace vám pomůžeme.",
+    "Dotované AI kurzy pro firmy v programu Vzdělávání pro firmy (Úřad práce ČR). 50 hodin za 299 000 Kč nebo 80 hodin za 479 000 Kč s DPH. S vyřízením dotace vám pomůžeme.",
   keywords: [
     "dotace na AI školení",
     "Vzdělávání pro firmy",
@@ -88,7 +88,7 @@ const faqItems = [
   },
   {
     q: "Kolik stojí dotované AI kurzy?",
-    a: "Nabízíme dva rozsahy: 50 hodin (6,5 dne) za 350 000 Kč s DPH a 80 hodin (10 dní) za 550 000 Kč s DPH. Konkrétní obsah a rozsah nastavíme individuálně podle potřeb vaší firmy.",
+    a: "Nabízíme dva rozsahy: 50 hodin (6,5 dne) za 299 000 Kč s DPH a 80 hodin (10 dní) za 479 000 Kč s DPH. Konkrétní obsah a rozsah nastavíme individuálně podle potřeb vaší firmy.",
   },
   {
     q: "Kdo má na dotaci nárok?",

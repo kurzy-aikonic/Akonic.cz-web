@@ -32,7 +32,7 @@ const jsonLd = [
     name: "Dvoudenní školení — AI nalejvárna a realizační den",
     description: "Dva dny: AI bootcamp a realizační den, kdy týmy dotahují konkrétní projekty k prototypu.",
     path: "/dvoudenni-skoleni-ai",
-    price: 115000,
+    price: 99000,
   }),
   breadcrumbJsonLd([
     { name: "Domů", path: "/" },
