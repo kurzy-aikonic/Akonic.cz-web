@@ -1,3 +1,4 @@
+import { editorialArticles, findEditorialArticle } from "../../../lib/editorial-articles";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -22,15 +23,15 @@ export async function generateStaticParams() {
     const slugs = await client
       .withConfig({ useCdn: false })
       .fetch(BLOG_POST_SLUGS_QUERY);
-    return (slugs ?? []).map((s: { slug: string }) => ({ slug: s.slug }));
+    return [...new Set([...editorialArticles.map(a => a.slug), ...(slugs ?? []).map((s: {slug:string})=>s.slug)])].map(slug => ({slug}));
   } catch {
-    return [];
+    return editorialArticles.map(a=>({slug:a.slug}));
   }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const item = await client.fetch(BLOG_POST_QUERY, { slug });
+  const item = findEditorialArticle(slug) ?? await client.fetch(BLOG_POST_QUERY, { slug });
   if (!item) return {};
   return pageMetadata({
     title: item.seoTitle ?? item.title,
@@ -114,7 +115,7 @@ const ptComponents = {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const item = await client.fetch(BLOG_POST_QUERY, { slug });
+  const item = findEditorialArticle(slug) ?? await client.fetch(BLOG_POST_QUERY, { slug });
 
   if (!item) notFound();
 
@@ -194,6 +195,8 @@ export default async function BlogPostPage({ params }: Props) {
                 {item.body && (
                   <PortableText value={item.body} components={ptComponents as Parameters<typeof PortableText>[0]["components"]} />
                 )}
+                <aside className="mt-10 rounded-2xl bg-blue-50 p-6"><h2 className="text-xl font-semibold">Další krok pro váš tým</h2><p className="mt-3">Prohlédněte si <Link href="/ai-skoleni-pro-firmy" className="text-primary underline">AI školení pro firmy</Link>, jeho formáty a ceny. Pokud potřebujete vybrat vhodné procesy, pomůže <Link href="/audit" className="text-primary underline">firemní AI audit</Link>. Pro realizaci navazuje <Link href="/automatizace" className="text-primary underline">implementace a automatizace</Link>.</p>{slug === "dotace-na-ai-skoleni-pro-firmy" && <p className="mt-3"><Link className="text-primary underline" href="/dotace-na-skoleni#dotacni-kalkulacka">Spočítat možnou dotaci</Link></p>}</aside>
+                {findEditorialArticle(slug)?.sources.length ? <aside className="mt-8"><h2 className="text-xl font-semibold">Zdroje a další informace</h2><ul className="mt-3 space-y-3">{findEditorialArticle(slug)!.sources.map(source=><li key={source.url}><a className="text-primary underline" href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ul><p className="mt-3 text-sm text-slate-500">Ověřeno 6. října 2026. Podmínky služeb a programů se mohou měnit.</p></aside> : null}
               </article>
             </FadeIn>
           </div>
@@ -216,7 +219,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
                 <Button size="lg" asChild className="min-h-[48px] shrink-0 bg-white text-text hover:bg-white/90">
                   <Link href="/#contact">
-                    Domluvit termín
+                    Domluvit 20min konzultaci
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>

@@ -1,3 +1,4 @@
+import { editorialArticles } from "../lib/editorial-articles";
 import type { MetadataRoute } from "next";
 import { client } from "../sanity/lib/client";
 import { NEWSLETTER_SLUGS_QUERY, BLOG_POST_SLUGS_QUERY } from "../sanity/lib/queries";
@@ -22,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/sluzby`,
-      lastModified: LAST_CONTENT_UPDATE,
+      lastModified: new Date("2026-10-06"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -118,6 +119,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  staticPages.push(...["/ai-skoleni-pro-firmy", "/reference"].map(path => ({url: `${baseUrl}${path}`, lastModified: new Date("2026-10-06"), changeFrequency: "monthly" as const, priority: 0.9})));
+
   // Dynamické newsletter stránky ze Sanity — zde má smysl reálné _updatedAt
   let newsletterPages: MetadataRoute.Sitemap = [];
   try {
@@ -146,5 +149,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sanity není dostupný při buildu — pokračujeme bez blog stránek
   }
 
-  return [...staticPages, ...newsletterPages, ...blogPages];
+  return [...staticPages, ...newsletterPages, ...blogPages.filter(p => !editorialArticles.some(a => p.url === `${baseUrl}/blog/${a.slug}`)), ...editorialArticles.map(a => ({url: `${baseUrl}/blog/${a.slug}`, lastModified: new Date(a.publishedAt), changeFrequency: "monthly" as const, priority: 0.7}))];
 }

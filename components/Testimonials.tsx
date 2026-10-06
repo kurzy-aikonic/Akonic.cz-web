@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { Trust } from "./Trust";
 import { ExternalLink, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
-
 
 const testimonials = [
   {
@@ -33,23 +31,11 @@ const testimonials = [
 
 const cardBg = ["bg-blue-50", "bg-white", "bg-white"];
 
-const AVERAGE_RATING = 5.0;
-/** Celkový počet recenzí na Google — aktualizuj podle aktuálního stavu profilu. */
-const GOOGLE_REVIEW_COUNT = 40;
-
-function reviewCountLabel(count: number): string {
-  if (count === 1) return "1 recenze";
-  if (count >= 2 && count <= 4) return `${count} recenze`;
-  return `${count} recenzí`;
-}
-
-export function Testimonials() {
+export function Testimonials({ compact = false }: { compact?: boolean }) {
   return (
     <section id="reference" className="relative overflow-hidden py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/30 via-transparent to-transparent" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:px-6">
-
-
         <div>
           <FadeIn className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -60,58 +46,67 @@ export function Testimonials() {
                 Co říkají lidé, kteří už s námi AI řešili
               </h2>
             </div>
-            <div className="flex flex-col items-start gap-1 sm:items-end">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-text md:text-base">
-                  Průměrné hodnocení {AVERAGE_RATING.toLocaleString("cs-CZ", { minimumFractionDigits: 1 })}/5
-                </span>
-                <div className="flex items-center gap-0.5 text-amber-400">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400" />
-                  ))}
-                </div>
-              </div>
-              <p className="text-xs text-slate-500 md:text-sm">
-                z {reviewCountLabel(GOOGLE_REVIEW_COUNT)} na Google
-              </p>
-            </div>
+            <a
+              className="text-sm text-primary underline"
+              href="https://www.google.com/maps?q=Aikonic"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Recenze na Google
+            </a>
           </FadeIn>
 
-          <div className="mt-8"><Trust /></div>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {testimonials.filter(t => t.name !== "Jaroslav Kovář").map((t, index) => (
-              <FadeIn key={t.name} delay={index * 0.06} className="h-full">
-                <div className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm ${cardBg[index % cardBg.length]}`}>
-                  <div className="flex items-center gap-0.5 text-amber-400">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-amber-400" />
-                    ))}
-                  </div>
-                  <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 md:text-base">
-                    „{t.text}“
-                  </blockquote>
-                  <div className="mt-4 flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
-                      {t.initials}
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-text">{t.name}</p>
-                      <p className="text-xs text-slate-500">{t.role}</p>
+            {testimonials
+              .filter((t) => t.name !== "Jaroslav Kovář")
+              .map((t, index) => (
+                <FadeIn key={t.name} delay={index * 0.06} className="h-full">
+                  <div
+                    className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm ${cardBg[index % cardBg.length]}`}
+                  >
+                    <div className="flex items-center gap-0.5 text-amber-400">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400" />
+                      ))}
+                    </div>
+                    <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 md:text-base">
+                      „
+                      {compact
+                        ? t.text
+                            .split(/(?<=[.!?])\s+/)
+                            .slice(0, 2)
+                            .join(" ")
+                        : t.text}
+                      “
+                    </blockquote>
+                    <div className="mt-4 flex items-center gap-3">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+                        {t.initials}
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-text">
+                          {t.name}
+                        </p>
+                        <p className="text-xs text-slate-500">{t.role}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              ))}
           </div>
 
           <FadeIn className="mt-6">
             <Link
-              href="https://www.google.com/maps?q=Aikonic"
-              target="_blank"
+              href={
+                compact ? "/reference" : "https://www.google.com/maps?q=Aikonic"
+              }
+              target={compact ? undefined : "_blank"}
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              Zobrazit všech {GOOGLE_REVIEW_COUNT} recenzí na Google Maps
+              {compact
+                ? "Zobrazit reference"
+                : "Zobrazit recenze na Google Maps"}
               <ExternalLink className="h-4 w-4" />
             </Link>
           </FadeIn>

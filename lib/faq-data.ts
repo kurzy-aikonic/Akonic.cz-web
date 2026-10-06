@@ -1,47 +1,9 @@
-/**
- * Jeden zdroj pravdy pro FAQ UI (`components/FAQ.tsx`) i FAQPage JSON-LD (`app/page.tsx`).
- * V samostatném (server-safe) modulu — `FAQ.tsx` má "use client", odkud nelze
- * plná data bezpečně importovat do server komponent (viz aikonic-navrh-uprav-2.md, 3.3).
- */
 export const faqs = [
-  {
-    question: "Je implementace AI bezpečná pro naše data?",
-    answer:
-      "Ano. Pracujeme podle vašich bezpečnostních standardů a datová pravidla nastavíme na míru.",
-  },
-  {
-    question: "Jak dlouho trvá typický projekt?",
-    answer:
-      "Implementace obvykle několik týdnů. Přesný rozsah určíme po auditu.",
-  },
-  {
-    question: "Potřebujeme technické znalosti?",
-    answer:
-      "Ne. Vše srozumitelně vysvětlíme a tým proškolíme.",
-  },
-  {
-    question: "Kolik to stojí?",
-    answer:
-      "Vzdělávací kurz AI máme v ceníku: 49 900 Kč s DPH (8 hodin) nebo 99 000 Kč s DPH (2 dny, 16 hodin). Firemní AI audit od 35 000 Kč s DPH. Dotované kurzy v programu „Vzdělávání pro firmy“: 50 hodin za 299 000 Kč s DPH nebo 80 hodin za 479 000 Kč s DPH — rozsah nastavíme individuálně. Program na míru a hackathon naceníme podle rozsahu. Úvodní konzultace je zdarma.",
-  },
-  {
-    question: "Jak fungují dotace na AI školení („Vzdělávání pro firmy“)?",
-    answer:
-      "Program „Vzdělávání pro firmy“ (Úřad práce ČR) podporuje školení zaměstnanců v IT dovednostech — včetně AI. Příspěvek se poskytuje za absolvované hodiny vzdělávání. Nabízíme dotované kurzy 50 hodin (299 000 Kč s DPH) a 80 hodin (479 000 Kč s DPH). S vyřízením dotace vám pomůžeme od žádosti po vyúčtování — nezávazně posoudíme nárok na úvodní konzultaci.",
-  },
-  {
-    question: "Jak velká skupina se školí najednou?",
-    answer:
-      "Typicky 4–15 lidí, aby zůstal prostor na individuální dotazy a praxi. Pro větší týmy rozdělíme školení do více běhů nebo paralelních skupin.",
-  },
-  {
-    question: "Školíte prezenčně, nebo online?",
-    answer:
-      "Obojí. Prezenční forma u vás ve firmě nebo v prostorách Aigeluvlomu u Poličky funguje nejlépe pro hackathony a vícedenní programy; jednodenní školení běžně probíhají i online.",
-  },
-  {
-    question: "Řešíte bezpečnost dat a mlčenlivost (NDA)?",
-    answer:
-      "Ano. Pracujeme podle vašich interních standardů a na vyžádání podepisujeme NDA před tím, než se dostaneme k reálným datům nebo procesům.",
-  },
+ {question:"Pro koho je AI školení vhodné?",answer:"Pro firemní týmy v obchodu, administrativě, marketingu, HR i managementu. Obsah přizpůsobíme úrovni účastníků a jejich práci."},
+ {question:"Kolik lidí může být ve skupině?",answer:"Obvykle pracujeme se 4–15 lidmi. Dotační kalkulačka počítá nejvýše s 15 účastníky v jedné skupině; větší tým rozdělíme."},
+ {question:"Školíte přímo ve firmě?",answer:"Ano, prezenčně po celé ČR i online. Formu vybereme podle pracovních úkolů a dostupnosti vašeho týmu."},
+ {question:"Jak dlouho školení trvá?",answer:"Nabízíme 8 nebo 16 hodin. Pro systematické vzdělávání jsou k dispozici také programy 50 a 80 hodin."},
+ {question:"Lze využít dotaci?",answer:"U způsobilého vzdělávání lze prověřit podporu z programu Vzdělávání pro firmy. Předem negarantujeme nárok; orientační výpočet najdete v kalkulačce."},
+ {question:"Pracujete i s našimi interními procesy?",answer:"Ano. Před školením vybereme konkrétní úkoly a bezpečné podklady. Citlivá data používáme pouze podle dohodnutých pravidel."},
+ {question:"Používáte ChatGPT, Copilot a Claude?",answer:"Ano. Nástroje vybíráme podle vašich licencí, pracovního prostředí a bezpečnostních požadavků."},
 ];

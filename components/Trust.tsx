@@ -13,7 +13,7 @@ export function Trust() {
   return (
     <div className="client-logos" aria-label="Naši klienti">
       <div className="mb-6 flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold text-slate-600">Důvěřují nám firmy z praxe</p>
+        <p className="text-sm font-semibold text-slate-600">Důvěřují nám firmy z praxe · Školíme po celé ČR</p>
         <button type="button" aria-pressed={paused} onClick={() => setPaused(!paused)} className="client-logos-toggle min-h-11 rounded-full border border-slate-200 px-4 text-sm text-slate-600 hover:bg-slate-50">
           {paused ? "Spustit pohyb log" : "Pozastavit pohyb log"}
         </button>

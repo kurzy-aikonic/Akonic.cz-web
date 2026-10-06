@@ -10,7 +10,7 @@ export function CTA() {
           Během úvodní konzultace projdeme vaši situaci, cíle a možnosti. Pokud
           AI nepřinese dostatečnou hodnotu, řekneme vám to.
         </p>
-        <LeadLink section="final-cta">Domluvit nezávaznou konzultaci</LeadLink>
+        <LeadLink section="final-cta">Domluvit 20min konzultaci</LeadLink>
         <p className="mt-3 text-sm text-slate-600">Úvodní konzultace zdarma</p>
       </div>
     </section>

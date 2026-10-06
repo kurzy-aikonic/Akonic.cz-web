@@ -348,7 +348,7 @@ export default function DvoudenniSkoleniAiPage() {
                     Další krok
                   </p>
                   <h2 id="cta-heading" className="text-2xl font-semibold md:text-3xl">
-                    Domluvit dvoudenní termín
+                    Poptat AI školení
                   </h2>
                   <p className="mt-2 text-white/80">
                     Napište počet účastníků, zda máte hotový audit a preferované termíny — připravíme nabídku na míru.
@@ -359,8 +359,8 @@ export default function DvoudenniSkoleniAiPage() {
                   asChild
                   className="min-h-[48px] w-full shrink-0 bg-white text-text hover:bg-white/90 sm:w-auto"
                 >
-                  <Link href="/#contact" className="inline-flex min-h-[48px] items-center justify-center">
-                    Kontaktovat nás
+                  <Link href="/?interest=AI školení#contact" className="inline-flex min-h-[48px] items-center justify-center">
+                    Poptat AI školení
                     <ArrowRight className="ml-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   </Link>
                 </Button>

@@ -25,7 +25,6 @@ export function LeadLink({
         const contact = document.getElementById("contact");
         if (
           contact &&
-          window.location.pathname === "/" &&
           !e.metaKey &&
           !e.ctrlKey &&
           !e.shiftKey &&

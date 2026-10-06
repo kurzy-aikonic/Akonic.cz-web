@@ -12,7 +12,7 @@ const plans: {
   {
     title: "AI audit",
     price: "od 35 000 Kč",
-    note: "s DPH",
+    note: "Konečná cena",
     points: [
       "Analýza procesů a rozhovory s týmem",
       "Report s prioritami a termíny",
@@ -24,7 +24,7 @@ const plans: {
   {
     title: "Firemní AI workshop",
     price: "49 900 Kč",
-    note: "s DPH · 1 den / 8 hodin",
+    note: "1 den / 8 hodin",
     points: [
       "AI školení pro firmy na skutečných úkolech",
       "Prezenčně nebo online",

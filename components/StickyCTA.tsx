@@ -24,7 +24,7 @@ export function StickyCTA() {
       className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-2 border-t border-slate-200 bg-white p-3 pb-safe lg:hidden"
     >
       <LeadLink className="flex-1" section="sticky">
-        Domluvit konzultaci
+        Domluvit 20min konzultaci
       </LeadLink>
       <button
         aria-label="Skrýt rychlý kontakt"

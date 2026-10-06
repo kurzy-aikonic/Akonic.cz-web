@@ -11,7 +11,7 @@ const jsonLd = {
   identifier: "24472590",
   url: "https://aikonic.cz",
   logo: "https://aikonic.cz/logo.png",
-  description: "AI školení, hackathony a automatizace pro firmy. Polička & celá ČR.",
+  description: "Praktické AI školení pro firmy, AI audit a implementace. Polička a celá ČR.",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+420-723-061-013",
@@ -31,11 +31,6 @@ const jsonLd = {
     "https://www.facebook.com/profile.php?id=61581039984128",
     "https://www.instagram.com/aikonic_training/",
   ],
-  memberOf: {
-    "@type": "Organization",
-    name: "Kroužek umělé inteligence",
-    url: "https://krouzekumeleinteligence.cz",
-  },
 };
 
 export const metadata: Metadata = {
@@ -52,7 +47,7 @@ export const metadata: Metadata = {
     "Automatizace",
   ],
   alternates: {
-    canonical: "https://aikonic.cz",
+    canonical: "https://aikonic.cz/",
   },
   icons: {
     icon: [
