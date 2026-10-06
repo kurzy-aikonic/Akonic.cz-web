@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SubsidyCalculator } from "../../components/SubsidyCalculator";
+import calculatorHtml from "../../lib/calculators/subsidy-html.json";
 import Link from "next/link";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
@@ -139,6 +141,8 @@ export default function DotaceNaSkoleniPage() {
             </FadeIn>
           </div>
         </section>
+
+        <SubsidyCalculator html={calculatorHtml.replace("__FORMSPREE_ID__", process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mbdalyzl")} />
 
         <section className="py-12 md:py-16" aria-label="O programu">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
