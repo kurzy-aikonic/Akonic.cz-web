@@ -19,17 +19,12 @@ const lecturers = [
     bio: "Specializuje se na audit procesů a nasazení AI nástrojů do reálného firemního provozu.",
     photo: null as string | null,
   },
-  {
-    role: "Lektorka",
-    focus: "Finanční gramotnost",
-    bio: "Připravuje a vede kurzy finanční gramotnosti pro firmy i jednotlivce se zaměřením na praktické dovednosti.",
-    photo: null as string | null,
-  },
+
 ];
 
 export function Team() {
   return (
-    <section id="lektori" className="relative py-14 md:py-20">
+    <section id="about" className="relative py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
@@ -39,11 +34,11 @@ export function Team() {
             Kdo vás bude školit
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            Za každým školením stojí konkrétní lidé s praxí — ne anonymní tým.
+            Firemní AI školení, audit a implementaci propojujeme podle potřeb vašeho týmu.
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {lecturers.map((lecturer, index) => (
             <FadeIn key={lecturer.focus} delay={index * 0.08}>
               <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white/80 p-6 text-center shadow-sm transition hover:border-primary/20 hover:shadow-md">

@@ -40,9 +40,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aikonic.cz"),
-  title: "Firemní AI školení a hackathony | AIKONIC",
+  title: "AI pro firmy: školení, audit a automatizace | AIKONIC",
   description:
-    "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Vzdělávání pro firmy. Stovky proškolených hodin po celé ČR.",
+    "Pomáháme firmám dostat AI do každodenní práce. Firemní AI školení, AI audit, automatizace a implementace. Domluvte si nezávaznou konzultaci.",
   keywords: [
     "firemní AI školení",
     "AI kurzy pro firmy",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Firemní AI školení a hackathony | AIKONIC",
+    title: "AI pro firmy: školení, audit a automatizace | AIKONIC",
     description:
-      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Vzdělávání pro firmy. Stovky proškolených hodin po celé ČR.",
+      "Pomáháme firmám dostat AI do každodenní práce. Firemní AI školení, AI audit, automatizace a implementace. Domluvte si nezávaznou konzultaci.",
     url: "https://aikonic.cz",
     siteName: "AIKONIC",
     locale: "cs_CZ",
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Firemní AI školení a hackathony | AIKONIC",
+    title: "AI pro firmy: školení, audit a automatizace | AIKONIC",
     description:
-      "Firemní AI školení na míru — od workshopu po hackathon. Audit, automatizace, dotace Vzdělávání pro firmy.",
+      "Umělá inteligence pro firmy: od AI auditu přes vzdělávání až po automatizace a implementaci. Úvodní konzultace zdarma.",
   },
 };
 

@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "Kolik to stojí?",
     answer:
-      "Vzdělávací kurz AI máme v ceníku: 49 900 Kč s DPH (8 hodin) nebo 99 000 Kč s DPH (2 dny, 16 hodin). Firemní AI audit od 35 000 Kč s DPH. Dotované kurzy v programu „Vzdělávání pro firmy“: 50 hodin za 299 000 Kč s DPH nebo 80 hodin za 479 000 Kč s DPH — rozsah nastavíme individuálně. Hackathon a finanční školení nabízíme jako individuální projekty. Úvodní konzultace je zdarma.",
+      "Vzdělávací kurz AI máme v ceníku: 49 900 Kč s DPH (8 hodin) nebo 99 000 Kč s DPH (2 dny, 16 hodin). Firemní AI audit od 35 000 Kč s DPH. Dotované kurzy v programu „Vzdělávání pro firmy“: 50 hodin za 299 000 Kč s DPH nebo 80 hodin za 479 000 Kč s DPH — rozsah nastavíme individuálně. Program na míru a hackathon naceníme podle rozsahu. Úvodní konzultace je zdarma.",
   },
   {
     question: "Jak fungují dotace na AI školení („Vzdělávání pro firmy“)?",

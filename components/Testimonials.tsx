@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ExternalLink, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
-import { Trust } from "./Trust";
+
 
 const testimonials = [
   {
@@ -30,7 +30,7 @@ const testimonials = [
   },
 ];
 
-const cardBg = ["bg-primary/5", "bg-emerald-500/5", "bg-violet-500/5", "bg-amber-500/5"];
+const cardBg = ["bg-blue-50", "bg-white", "bg-white"];
 
 const AVERAGE_RATING = 5.0;
 /** Celkový počet recenzí na Google — aktualizuj podle aktuálního stavu profilu. */
@@ -47,7 +47,7 @@ export function Testimonials() {
     <section id="reference" className="relative overflow-hidden py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/30 via-transparent to-transparent" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:px-6">
-        <Trust />
+
 
         <div>
           <FadeIn className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -56,13 +56,13 @@ export function Testimonials() {
                 Reference
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-text md:text-4xl">
-                Co říkají klienti
+                Co říkají lidé, kteří už s námi AI řešili
               </h2>
             </div>
             <div className="flex flex-col items-start gap-1 sm:items-end">
               <div className="flex items-center gap-2">
                 <span className="text-sm font-semibold text-text md:text-base">
-                  Průměrné hodnocení {AVERAGE_RATING.toFixed(1)}/5
+                  Průměrné hodnocení {AVERAGE_RATING.toLocaleString("cs-CZ", { minimumFractionDigits: 1 })}/5
                 </span>
                 <div className="flex items-center gap-0.5 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -77,8 +77,8 @@ export function Testimonials() {
           </FadeIn>
 
           {/* Grid 2×2 — všechny recenze viditelné hned, i pro SEO (viz aikonic-navrh-uprav-2.md, 1.3) */}
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {testimonials.map((t, index) => (
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {testimonials.filter(t => t.name !== "Jaroslav Kovář").map((t, index) => (
               <FadeIn key={t.name} delay={index * 0.06} className="h-full">
                 <div className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm ${cardBg[index % cardBg.length]}`}>
                   <div className="flex items-center gap-0.5 text-amber-400">
@@ -87,7 +87,7 @@ export function Testimonials() {
                     ))}
                   </div>
                   <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 md:text-base">
-                    „{t.text}"
+                    „{t.text}“
                   </blockquote>
                   <div className="mt-4 flex items-center gap-3">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">

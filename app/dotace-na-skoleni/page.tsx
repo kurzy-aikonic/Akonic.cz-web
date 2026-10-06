@@ -133,7 +133,7 @@ export default function DotaceNaSkoleniPage() {
                 Dotace na AI školení
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-slate-600 md:text-2xl">
-                Program <strong className="font-semibold text-text">„{DOTACNI_PROGRAM_NAZEV}"</strong> umožňuje
+                Program <strong className="font-semibold text-text">„{DOTACNI_PROGRAM_NAZEV}“</strong> umožňuje
                 čerpat příspěvek na školení zaměstnanců v IT — včetně AI. S vyřízením vám pomůžeme od žádosti po vyúčtování.
               </p>
             </FadeIn>

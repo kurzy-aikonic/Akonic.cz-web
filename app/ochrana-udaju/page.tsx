@@ -45,7 +45,7 @@ export default function OchranaUdaju() {
               rovněž dle Nařízení Evropského parlamentu a Rady (EU) 2016/679 ze dne
               27. dubna 2016 o ochraně fyzických osob v souvislosti se zpracováním
               osobních údajů a o volném pohybu těchto údajů (obecné nařízení o
-              ochraně osobních údajů, dále jen „GDPR").
+              ochraně osobních údajů, dále jen „GDPR“).
             </p>
             <p>
               V rámci poskytování služeb společností Aikonic training s.r.o. budou
@@ -57,7 +57,7 @@ export default function OchranaUdaju() {
               identifikační číslo, daňové identifikační číslo, adresa elektronické
               pošty, údaje poskytnuté účastníkem při prezenci včetně podpisu,
               telefonní číslo a informace o vyžádaných poptávkách a realizovaných
-              objednávkách (dále společně vše jen jako „osobní údaje").
+              objednávkách (dále společně vše jen jako „osobní údaje“).
             </p>
             <p>
               Kontaktní údaje klienta budou dále využity pro zasílání informací

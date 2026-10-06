@@ -1,71 +1,70 @@
 "use client";
-
-import * as React from "react";
-import Link from "next/link";
-import { Star } from "lucide-react";
-import { Button } from "./ui/button";
-import { FadeIn } from "./FadeIn";
-import { MagneticButton } from "./MagneticButton";
-
+import Image from "next/image";
+import { LeadLink } from "./cro/LeadLink";
+import { track } from "../lib/cro-events";
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-12 pt-24 md:pb-20 md:pt-32">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-12 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl md:h-[420px] md:w-[420px]" />
-        <div className="absolute right-10 top-24 h-48 w-48 rounded-full bg-blue-400/20 blur-3xl" />
-      </div>
-      <div className="mx-auto max-w-4xl px-4 text-center md:px-6">
-        <FadeIn delay={0.05} animateOnMount>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2.5 text-xs font-medium uppercase tracking-[0.2em] text-slate-600 backdrop-blur">
-            Školíme AI ve firmách
+    <section className="cro-hero">
+      <div className="cro-container grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p className="cro-eyebrow">
+            AI pro firmy · školení · automatizace · implementace
           </p>
-        </FadeIn>
-        <FadeIn delay={0.12} animateOnMount>
-          <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-6xl lg:text-7xl">
-            Firemní AI vzdělávání na míru.
+          <h1 className="mt-5 max-w-3xl text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-[4.1rem]">
+            AI, která ve vaší firmě skutečně{" "}
+            <span className="text-primary">šetří čas.</span>
           </h1>
-        </FadeIn>
-        <FadeIn delay={0.18} animateOnMount>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-snug text-slate-700 md:text-xl">
-            Stovky proškolených hodin po celé ČR — od úvodního workshopu po AI hackathon.
-            Pomůžeme i s{" "}
-            <Link href="/dotace-na-skoleni" className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 hover:text-blue-600">
-              dotací z programu „Vzdělávání pro firmy“
-            </Link>
-            .
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-700">
+            Zjistíme, kde má AI největší smysl, naučíme váš tým pracovat s ní na
+            skutečných úkolech a pomůžeme nejlepší řešení dostat do praxe.
           </p>
-        </FadeIn>
-
-        <FadeIn delay={0.24} animateOnMount>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <MagneticButton className="w-full sm:w-auto">
-              <Button size="lg" asChild className="w-full min-h-[52px] sm:w-auto">
-                <Link href="/#contact">Domluvit konzultaci</Link>
-              </Button>
-            </MagneticButton>
-            <MagneticButton className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" asChild className="w-full min-h-[52px] sm:w-auto">
-                <Link href="/#sluzby">Vybrat kurz</Link>
-              </Button>
-            </MagneticButton>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600">
+            Od prvního auditu přes firemní školení až po automatizace a AI
+            asistenty.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <LeadLink section="hero" event="hero_primary_cta">
+              Zjistit možnosti pro naši firmu
+            </LeadLink>
+            <a
+              href="#proces"
+              className="cro-button-secondary"
+              onClick={() => track("hero_secondary_cta", { section: "hero" })}
+            >
+              Jak spolupráce funguje ↓
+            </a>
           </div>
-        </FadeIn>
-
-        <FadeIn delay={0.3} animateOnMount>
-          <Link
-            href="/#reference"
-            className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm text-slate-700 backdrop-blur transition hover:border-primary/30 hover:bg-white"
+          <p className="mt-4 text-sm text-slate-600">
+            Úvodní konzultace zdarma · prezenčně po celé ČR i online
+          </p>
+          <a
+            href="#reference"
+            className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-slate-700"
           >
-            <span className="flex items-center gap-0.5 text-amber-400">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400" />
-              ))}
+            <span className="text-primary" aria-hidden="true">
+              ★★★★★
             </span>
-            <span className="font-semibold text-text">5.0 na Google</span>
-            <span className="text-slate-400">·</span>
-            <span className="text-slate-600">40 recenzí klientů</span>
-          </Link>
-        </FadeIn>
+            5,0 / 5 · 40 Google recenzí
+          </a>
+        </div>
+        <figure className="relative hidden lg:block">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
+            <Image
+              src="/gallery/ai-skoleni-workshop-05.webp"
+              alt="Praktická práce během firemního AI školení"
+              fill
+              priority
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="absolute bottom-6 left-6 right-6 rounded-xl bg-white p-5 text-sm text-slate-700">
+            <span className="mb-1 block font-semibold text-slate-950">
+              Skutečné úkoly. Váš tým. Praktická řešení.
+            </span>
+            Firemní AI školení a implementace v každodenní práci.
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
