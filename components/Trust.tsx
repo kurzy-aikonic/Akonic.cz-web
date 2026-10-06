@@ -1,48 +1,29 @@
 import Image from "next/image";
-import { FadeIn } from "./FadeIn";
-
-const companies = [
-  { name: "Sareza", src: "/logos/sareza.png" },
-  { name: "Chachar Catering", src: "/logos/chachar.png" },
-  { name: "Demaxie", src: "/logos/demaxie.png" },
-];
-
 export function Trust() {
-  const looped = [...companies, ...companies, ...companies];
-
   return (
-    <div>
-      <FadeIn>
-        <div className="flex flex-col gap-2 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Důvěřují nám firmy z praxe
-          </p>
-        </div>
-      </FadeIn>
-
-      <div className="relative mt-6 overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
-        <div className="flex gap-6 whitespace-nowrap py-2">
-          <div className="flex gap-6 animate-marquee">
-            {looped.map((company, index) => (
-              <div
-                key={`${company.name}-${index}`}
-                className="flex h-14 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/80 px-6 grayscale transition-all hover:grayscale-0"
-              >
-                <Image
-                  src={company.src}
-                  alt={company.name}
-                  width={160}
-                  height={64}
-                  sizes="160px"
-                  className="h-12 w-auto object-contain"
-                />
-              </div>
-            ))}
-          </div>
+    <section aria-label="Klienti" className="border-y border-slate-200 py-6">
+      <div className="cro-container flex flex-col items-center justify-between gap-5 md:flex-row">
+        <p className="text-sm font-medium text-slate-600">
+          Důvěřují nám týmy z firem
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          {[
+            { name: "Sareza", src: "sareza" },
+            { name: "Chachar Catering", src: "chachar" },
+            { name: "Demaxie", src: "demaxie" },
+          ].map((c) => (
+            <Image
+              key={c.src}
+              src={`/logos/${c.src}.png`}
+              alt={c.name}
+              width={160}
+              height={64}
+              sizes="120px"
+              className="h-11 w-28 object-contain grayscale"
+            />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

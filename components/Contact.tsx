@@ -1,245 +1,303 @@
 "use client";
-
-import * as React from "react";
-import { Check, Loader2, Mail, MapPin, Phone } from "lucide-react";
-import { Button } from "./ui/button";
-import { FadeIn } from "./FadeIn";
-import { MagneticButton } from "./MagneticButton";
-
+import { useEffect, useRef, useState } from "react";
+import { interests, track, type Interest } from "../lib/cro-events";
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mbdalyzl";
-
-
 export function Contact() {
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [isSuccess, setIsSuccess] = React.useState(false);
-  const [errorMsg, setErrorMsg] = React.useState("");
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (isSubmitting) return;
-
-    setIsSubmitting(true);
-    setIsSuccess(false);
-    setErrorMsg("");
-
-    if (!FORMSPREE_ID) {
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSuccess(true);
-      }, 1500);
+  const [interest, setInterest] = useState<Interest>(
+    "Nevím, potřebuji poradit",
+  );
+  const [step, setStep] = useState(1);
+  const [busy, setBusy] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+  const [subsidy, setSubsidy] = useState({ people: "", topic: "" });
+  const started = useRef(false);
+  const lock = useRef(false);
+  const heading = useRef<HTMLHeadingElement>(null);
+  const firstRender = useRef(true);
+  function start() {
+    if (!started.current) {
+      track("lead_form_started", { section: "contact" });
+      started.current = true;
+    }
+  }
+  useEffect(() => {
+    function choose(value: string | null) {
+      if (interests.includes(value as Interest)) setInterest(value as Interest);
+    }
+    choose(new URLSearchParams(window.location.search).get("interest"));
+    const receive = (e: Event) => {
+      const d = (
+        e as CustomEvent<{
+          interest: Interest;
+          people?: string;
+          topic?: string;
+        }>
+      ).detail;
+      choose(d.interest);
+      setSuccess(false);
+      setError("");
+      setStep(d.people ? 2 : 1);
+      setSubsidy({ people: d.people || "", topic: d.topic || "" });
+      if (d.people)
+        track("lead_form_step_2", { interest: d.interest, section: "subsidy" });
+    };
+    window.addEventListener("aikonic-lead", receive);
+    return () => window.removeEventListener("aikonic-lead", receive);
+  }, []);
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
       return;
     }
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    // Honeypot — boti vyplní skryté pole (Formspree _gotcha)
-    const honeypot = String(formData.get("_gotcha") ?? "").trim();
-    if (honeypot) {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      return;
+    heading.current?.focus({ preventScroll: true });
+  }, [step, success]);
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (lock.current) return;
+    const data = new FormData(e.currentTarget);
+    if (String(data.get("_gotcha") || "").trim()) return;
+    lock.current = true;
+    setBusy(true);
+    setError("");
+    data.set("interest", interest);
+    data.set("_subject", `AIKONIC: ${interest}`);
+    if (subsidy.people && interest === "Dotované vzdělávání") {
+      data.set("participants", subsidy.people);
+      data.set("training_topic", subsidy.topic);
     }
-
     try {
-      const response = await fetch(
-        `https://formspree.io/f/${FORMSPREE_ID}`,
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
-
-      if (response.ok) {
-        form.reset();
-        setIsSuccess(true);
-      } else {
-        setErrorMsg("Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na kurzy@aikonic.cz.");
-      }
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!response.ok) throw new Error("send");
+      setSuccess(true);
+      track("lead_form_submitted", { interest, section: "contact" });
     } catch {
-      setErrorMsg("Nepodařilo se spojit se serverem. Zkontrolujte připojení a zkuste znovu.");
+      setError(
+        "Zprávu se nepodařilo odeslat. Zkuste to znovu nebo napište na kurzy@aikonic.cz. Vyplněné údaje zůstaly zachované.",
+      );
     } finally {
-      setIsSubmitting(false);
+      lock.current = false;
+      setBusy(false);
     }
-  };
-
+  }
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-violet-950/80 py-14 md:py-20">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 text-white md:grid-cols-2 md:px-6">
-        <FadeIn className="space-y-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
-            Kontakt
-          </p>
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Napište nám. Rychle odpovíme a navrhneme další krok.
+    <section
+      id="contact"
+      tabIndex={-1}
+      className="cro-section bg-slate-950 text-white"
+    >
+      <div className="cro-container grid gap-10 lg:grid-cols-2">
+        <div>
+          <p className="cro-eyebrow !text-blue-300">Nezávazná konzultace</p>
+          <h2 className="cro-heading !text-white">
+            Co byste chtěli ve firmě změnit?
           </h2>
-          <p className="text-base text-white/70">
-            Konzultace zdarma. Stačí popsat, co potřebujete.
+          <p className="mt-5 max-w-md leading-relaxed text-slate-300">
+            Nemusíte mít hotové zadání. Popište nám svou situaci a společně
+            vybereme další krok.
           </p>
-          <div className="space-y-4 text-white/80">
-            <div className="flex items-start gap-3">
-              <span className="icon-glow-primary inline-flex rounded-full p-1.5">
-                <Mail className="mt-0.5 h-4 w-4 text-white/60" />
-              </span>
-              <div>
-                <span className="block text-xs uppercase tracking-[0.3em] text-white/50">
-                  Email
-                </span>
-                <a
-                  href="mailto:kurzy@aikonic.cz"
-                  className="text-white/90 hover:text-white"
-                >
-                  kurzy@aikonic.cz
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="icon-glow-primary inline-flex rounded-full p-1.5">
-                <Phone className="mt-0.5 h-4 w-4 text-white/60" />
-              </span>
-              <div>
-                <span className="block text-xs uppercase tracking-[0.3em] text-white/50">
-                  Telefon
-                </span>
-                <a
-                  href="tel:+420723061013"
-                  className="text-white/90 hover:text-white"
-                >
-                  +420 723 061 013
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="icon-glow-primary inline-flex rounded-full p-1.5">
-                <MapPin className="mt-0.5 h-4 w-4 text-white/60" />
-              </span>
-              <div>
-                <span className="block text-xs uppercase tracking-[0.3em] text-white/50">
-                  Adresa
-                </span>
-                <span className="text-white/90">
-                  Heydukova 115, 572 01 Polička (fakturační adresa)
-                </span>
-              </div>
-            </div>
+          <div className="mt-6 flex flex-col items-start gap-2">
+            <a
+              href="mailto:kurzy@aikonic.cz"
+              className="inline-flex min-h-11 items-center underline underline-offset-4"
+              onClick={() => track("email_click", { section: "contact" })}
+            >
+              kurzy@aikonic.cz
+            </a>
+            <a
+              href="tel:+420723061013"
+              className="inline-flex min-h-11 items-center underline underline-offset-4"
+              onClick={() => track("phone_click", { section: "contact" })}
+            >
+              +420 723 061 013
+            </a>
           </div>
-        </FadeIn>
-
-        <FadeIn className="relative rounded-3xl bg-white/5 p-6 shadow-xl backdrop-blur md:p-8">
-          {isSuccess ? (
-            <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-6 text-emerald-100">
-              <div className="flex items-center gap-3">
-                <span className="icon-glow-emerald flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
-                  <Check className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="text-base font-semibold">
-                    Děkujeme! Zpráva byla odeslána.
-                  </p>
-                  <p className="text-sm text-emerald-100/80">
-                    Ozveme se co nejdříve.
-                  </p>
-                </div>
-              </div>
+          <p className="mt-5 text-sm text-slate-400">
+            Heydukova 115, 572 01 Polička · fakturační adresa
+          </p>
+        </div>
+        <div className="rounded-2xl bg-white p-5 text-slate-950 sm:p-8">
+          {success ? (
+            <div role="status">
+              <p className="cro-eyebrow">Zpráva je u nás</p>
+              <h3
+                ref={heading}
+                tabIndex={-1}
+                className="mt-4 text-2xl font-semibold"
+              >
+                Díky. Ozveme se a navrhneme další krok.
+              </h3>
+              <p className="mt-4 leading-relaxed text-slate-600">
+                Projdeme vaše zadání a navážeme na téma{" "}
+                {interest.toLocaleLowerCase("cs-CZ")}. Pokud potřebujete něco
+                doplnit, napište nám na kurzy@aikonic.cz.
+              </p>
             </div>
           ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              {/* Honeypot — Formspree _gotcha + skryté pro uživatele */}
-              <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
-                <label htmlFor="contact-gotcha">Web firmy</label>
-                <input
-                  id="contact-gotcha"
-                  name="_gotcha"
-                  type="text"
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-white/80" htmlFor="contact-name">
-                  Jméno
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  required
-                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="Vaše jméno"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-white/80" htmlFor="contact-email">
-                  Email
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="email@firma.cz"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-white/80" htmlFor="contact-phone">
-                  Telefon
-                </label>
-                <input
-                  id="contact-phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="tel"
-                  className="w-full min-h-[48px] rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="+420 723 061 013"
-                />
-              </div>
-              <div className="space-y-2">
-                <label
-                  className="text-sm text-white/80"
-                  htmlFor="contact-message"
+            <form onSubmit={submit} onFocus={start}>
+              <p className="text-sm text-slate-500">Krok {step} ze 2</p>
+              <h3
+                ref={heading}
+                tabIndex={-1}
+                className="mb-6 mt-2 text-2xl font-semibold"
+              >
+                {step === 1
+                  ? "Co chcete ve firmě řešit?"
+                  : "Kam se vám máme ozvat?"}
+              </h3>
+              <div hidden={step !== 1}>
+                <fieldset>
+                  <legend className="sr-only">Oblast zájmu</legend>
+                  <div className="grid gap-2">
+                    {interests.map((i) => (
+                      <label
+                        key={i}
+                        className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border p-3 ${interest === i ? "border-primary bg-blue-50" : "border-slate-200"}`}
+                      >
+                        <input
+                          type="radio"
+                          name="interest-choice"
+                          value={i}
+                          checked={interest === i}
+                          onChange={() => setInterest(i)}
+                          className="accent-primary"
+                        />
+                        {i}
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+                <button
+                  type="button"
+                  className="cro-button mt-6 w-full"
+                  onClick={() => {
+                    start();
+                    setStep(2);
+                    track("lead_form_step_2", { interest, section: "contact" });
+                  }}
                 >
-                  Zpráva
+                  Pokračovat →
+                </button>
+              </div>
+              <div hidden={step !== 2}>
+                <p className="mb-4 text-sm text-slate-600">
+                  Téma: <strong>{interest}</strong>
+                  {subsidy.people && interest === "Dotované vzdělávání" && (
+                    <span className="block">
+                      {subsidy.people} lidí · {subsidy.topic}
+                    </span>
+                  )}
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {[
+                    {
+                      name: "company",
+                      label: "Firma",
+                      type: "text",
+                      auto: "organization",
+                    },
+                    {
+                      name: "name",
+                      label: "Jméno",
+                      type: "text",
+                      auto: "name",
+                    },
+                    {
+                      name: "email",
+                      label: "Firemní e-mail",
+                      type: "email",
+                      auto: "email",
+                    },
+                    {
+                      name: "phone",
+                      label: "Telefon – volitelný",
+                      type: "tel",
+                      auto: "tel",
+                    },
+                  ].map((f) => (
+                    <div key={f.name}>
+                      <label
+                        htmlFor={`lead-${f.name}`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        {f.label}
+                      </label>
+                      <input
+                        id={`lead-${f.name}`}
+                        name={f.name}
+                        type={f.type}
+                        autoComplete={f.auto}
+                        required={step === 2 && f.name !== "phone"}
+                        className="cro-input"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <label
+                  htmlFor="lead-message"
+                  className="mb-1 mt-4 block text-sm font-medium"
+                >
+                  Je něco, co bychom měli vědět?{" "}
+                  <span className="font-normal text-slate-500">
+                    (volitelné)
+                  </span>
                 </label>
                 <textarea
-                  id="contact-message"
+                  id="lead-message"
                   name="message"
-                  rows={4}
-                  required
-                  className="w-full min-h-[120px] resize-y rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="Popište nám stručně váš projekt."
+                  rows={3}
+                  className="cro-input"
                 />
-              </div>
-              {errorMsg && (
-                <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200" role="alert">
-                  {errorMsg}
-                </p>
-              )}
-              <MagneticButton className="inline-flex w-full">
-                <Button
+                <div className="absolute -left-[9999px]" aria-hidden="true">
+                  <label htmlFor="lead-gotcha">Nevyplňujte toto pole</label>
+                  <input
+                    id="lead-gotcha"
+                    name="_gotcha"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+                {error && (
+                  <p
+                    role="alert"
+                    className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-800"
+                  >
+                    {error}
+                  </p>
+                )}
+                <button
                   type="submit"
-                  size="lg"
-                  className="w-full bg-white text-slate-900"
-                  disabled={isSubmitting}
+                  disabled={busy}
+                  className="cro-button mt-5 w-full disabled:opacity-60"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      Odesílám...
-                    </>
-                  ) : (
-                    "Odeslat"
-                  )}
-                </Button>
-              </MagneticButton>
+                  {busy ? "Odesílám…" : "Domluvit nezávaznou konzultaci"}
+                </button>
+                <p className="mt-3 text-sm text-slate-600">
+                  Bez závazků. Nejdřív zjistíme, jestli a jak vám dokážeme
+                  pomoct.
+                </p>
+                <p className="mt-3 text-xs text-slate-500">
+                  Odesláním nám předáte údaje pro vyřízení poptávky.{" "}
+                  <a href="/ochrana-udaju" className="underline">
+                    Ochrana osobních údajů
+                  </a>
+                </p>
+                <button
+                  type="button"
+                  className="mt-3 min-h-11 text-sm text-primary"
+                  disabled={busy}
+                  onClick={() => setStep(1)}
+                >
+                  ← Změnit téma
+                </button>
+              </div>
             </form>
           )}
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

@@ -107,7 +107,6 @@ export function AiTypingDemo() {
       cancelled = true;
       clearTimers();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [qIdx]);
 
   const isVisible = phase !== "leaving";

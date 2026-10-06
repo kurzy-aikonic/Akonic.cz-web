@@ -20,11 +20,11 @@ function Confetti() {
   return (
     <div className="pointer-events-none fixed inset-0 z-[10000] overflow-hidden" aria-hidden="true">
       {Array.from({ length: 60 }).map((_, i) => {
-        const left  = Math.random() * 100;
-        const delay = Math.random() * 0.8;
-        const dur   = 1.8 + Math.random() * 1.2;
+        const left  = ((i * 37 + 11) % 100);
+        const delay = ((i * 13) % 8) / 10;
+        const dur   = 1.8 + ((i * 7) % 12) / 10;
         const color = colors[i % colors.length];
-        const size  = 6 + Math.random() * 8;
+        const size  = 6 + ((i * 3) % 8);
         return (
           <div
             key={i}
@@ -34,7 +34,7 @@ function Confetti() {
               top: "-20px",
               width: size,
               height: size,
-              borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+              borderRadius: i % 2 === 0 ? "50%" : "2px",
               background: color,
               animation: `confettiFall ${dur}s ${delay}s ease-in forwards`,
             }}

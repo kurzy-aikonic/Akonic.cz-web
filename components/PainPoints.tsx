@@ -48,7 +48,7 @@ export function PainPoints() {
                 <div className="flex h-full flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
                   <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                   <p className="text-sm font-medium leading-snug text-slate-500">
-                    „{item.problem}"
+                    „{item.problem}“
                   </p>
                   <p className="mt-auto text-base font-semibold leading-snug text-text">
                     {item.solution}
