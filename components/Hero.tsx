@@ -1,12 +1,11 @@
 "use client";
-import Image from "next/image";
 import { LeadLink } from "./cro/LeadLink";
 import { track } from "../lib/cro-events";
 export function Hero() {
   return (
     <section className="cro-hero">
-      <div className="cro-container grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
+      <div className="cro-container">
+        <div className="max-w-4xl">
           <p className="cro-eyebrow">
             AI pro firmy · školení · automatizace · implementace
           </p>
@@ -14,11 +13,11 @@ export function Hero() {
             AI, která ve vaší firmě skutečně{" "}
             <span className="text-primary">šetří čas.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-700">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-700">
             Zjistíme, kde má AI největší smysl, naučíme váš tým pracovat s ní na
             skutečných úkolech a pomůžeme nejlepší řešení dostat do praxe.
           </p>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
             Od prvního auditu přes firemní školení až po automatizace a AI
             asistenty.
           </p>
@@ -47,24 +46,6 @@ export function Hero() {
             5,0 / 5 · 40 Google recenzí
           </a>
         </div>
-        <figure className="relative hidden lg:block">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
-            <Image
-              src="/gallery/ai-skoleni-workshop-05.webp"
-              alt="Praktická práce během firemního AI školení"
-              fill
-              priority
-              sizes="(min-width: 1024px) 42vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="absolute bottom-6 left-6 right-6 rounded-xl bg-white p-5 text-sm text-slate-700">
-            <span className="mb-1 block font-semibold text-slate-950">
-              Skutečné úkoly. Váš tým. Praktická řešení.
-            </span>
-            Firemní AI školení a implementace v každodenní práci.
-          </figcaption>
-        </figure>
       </div>
     </section>
   );
