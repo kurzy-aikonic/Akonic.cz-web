@@ -1,6 +1,5 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { Trust } from "../components/Trust";
 import { ProblemSelector } from "../components/cro/ProblemSelector";
 import { DepartmentUseCases } from "../components/cro/DepartmentUseCases";
 import { Process } from "../components/Process";
@@ -32,7 +31,6 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <Trust />
         <ProblemSelector />
         <DepartmentUseCases />
         <Process />

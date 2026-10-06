@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Trust } from "./Trust";
 import { ExternalLink, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
@@ -76,7 +77,7 @@ export function Testimonials() {
             </div>
           </FadeIn>
 
-          {/* Grid 2×2 — všechny recenze viditelné hned, i pro SEO (viz aikonic-navrh-uprav-2.md, 1.3) */}
+          <div className="mt-8"><Trust /></div>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
             {testimonials.filter(t => t.name !== "Jaroslav Kovář").map((t, index) => (
               <FadeIn key={t.name} delay={index * 0.06} className="h-full">

@@ -223,3 +223,15 @@ body {
 [id] { scroll-margin-top: 6rem; }
 :focus-visible { outline: 3px solid #2563eb; outline-offset: 4px; }
 dialog::backdrop { background: rgb(15 23 42 / 0.35); }
+
+/* Seamless client logo loop; repeated groups are decorative. */
+.client-logos-track { display: flex; width: max-content; animation: client-logo-scroll 24s linear infinite; }
+.client-logos-group { display: flex; gap: 24px; padding-right: 24px; }
+@keyframes client-logo-scroll { to { transform: translateX(-25%); } }
+.client-logos:hover .client-logos-track,
+.client-logos:focus-within .client-logos-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .client-logos-track { animation: none; width: auto; }
+  .client-logos-group { flex-wrap: wrap; justify-content: center; padding-right: 0; width: 100%; }
+  .client-logos-group[aria-hidden="true"], .client-logos-toggle { display: none; }
+}
