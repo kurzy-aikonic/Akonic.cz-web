@@ -1,24 +1,18 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { ProblemSelector } from "../components/cro/ProblemSelector";
-import { DepartmentUseCases } from "../components/cro/DepartmentUseCases";
+import { Trust } from "../components/Trust";
+import { MainServices } from "../components/cro/MainServices";
+import { UseCaseSummary } from "../components/cro/UseCaseSummary";
+import { HomeSubsidy } from "../components/cro/HomeSubsidy";
 import { Process } from "../components/Process";
-import { CaseStudy, approvedCaseStudy } from "../components/cro/CaseStudy";
 import { Testimonials } from "../components/Testimonials";
-import { SavingsCalculator } from "../components/SavingsCalculator";
-import { SubsidyCTA } from "../components/cro/SubsidyCTA";
-import { HomePricing } from "../components/cro/HomePricing";
-import { Tools } from "../components/cro/Tools";
-import { Gallery } from "../components/Gallery";
 import { Team } from "../components/Team";
 import { FAQ } from "../components/FAQ";
-import { CTA } from "../components/CTA";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
-import { StickyCTA } from "../components/StickyCTA";
 import { faqs } from "../lib/faq-data";
 import { faqPageJsonLd } from "../lib/seo";
-import { getGalleryImages } from "../lib/get-gallery-images";
+import calculatorHtml from "../lib/calculators/subsidy-html.json";
 export default function HomePage() {
   return (
     <>
@@ -31,27 +25,24 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <ProblemSelector />
-        <DepartmentUseCases />
+        <div className="cro-container border-y border-slate-200 py-6">
+          <Trust />
+        </div>
+        <MainServices />
+        <UseCaseSummary />
         <Process />
-        <CaseStudy data={approvedCaseStudy} />
-        <Testimonials />
-        <SavingsCalculator />
-        <SubsidyCTA />
-        <HomePricing />
-        <Tools />
-        <Gallery
-          images={getGalleryImages().filter(
-            (image) => !image.includes("financni"),
+        <Testimonials compact />
+        <HomeSubsidy
+          html={calculatorHtml.replace(
+            "__FORMSPREE_ID__",
+            process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mbdalyzl",
           )}
         />
         <Team />
         <FAQ />
-        <CTA />
         <Contact />
       </main>
       <Footer />
-      <StickyCTA />
     </>
   );
 }

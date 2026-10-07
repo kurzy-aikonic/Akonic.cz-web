@@ -89,6 +89,7 @@ export default function SkoleniProObchodnikyPage() {
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-600 backdrop-blur">
                 Služby
               </p>
+              <Link href="/ai-skoleni-pro-firmy" className="mb-5 inline-flex min-h-11 items-center text-sm font-semibold text-primary">AI školení pro firmy · přehled formátů</Link>
               <h1 className="text-3xl font-semibold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
                 Školení AI pro obchodníky
               </h1>
@@ -208,8 +209,8 @@ export default function SkoleniProObchodnikyPage() {
                   </p>
                 </div>
                 <Button size="lg" asChild className="min-h-[48px] shrink-0 bg-white text-text hover:bg-white/90">
-                  <Link href="/#contact">
-                    Kontaktovat nás
+                  <Link href="/?interest=AI školení#contact">
+                    Poptat AI školení
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>

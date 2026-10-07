@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "jak-vybrat-ai-skoleni-pro-firmu",
+    "title": "Jak vybrat AI školení pro firmu",
+    "excerpt": "Dobré zadání školení začíná pracovními úkoly. Podle čeho porovnat nabídky a jak poznat, zda kurz přinese týmu použitelné postupy.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "Nejdřív pojmenujte výsledek",
+        "paragraphs": [
+          "Místo zadání „chceme školení ChatGPT“ vyberte tři opakované úkoly. Může jít o přípravu nabídky, zpracování zápisu ze schůzky a kontrolu reportu. U každého napište, kdo jej dělá, jak často a jak poznáte správný výsledek. Dodavatel pak může navrhnout praktická cvičení místo univerzální prezentace.",
+          "Zeptejte se účastníků na dosavadní zkušenosti. Úplní začátečníci potřebují prostor na základy; lidé, kteří AI používají denně, spíše potřebují zpětnou vazbu k vlastním postupům. Smíšená skupina má smysl, pokud program s rozdíly výslovně počítá."
+        ]
+      },
+      {
+        "heading": "Co má obsahovat nabídka",
+        "paragraphs": [
+          "Vyžádejte si rozsah v hodinách, velikost skupiny, osnovu a poměr cvičení k výkladu. Ujasněte si, které licence musí zajistit firma, zda účastníci potřebují vlastní počítač a co dostanou po skončení kurzu. Cena bez těchto údajů se obtížně porovnává.",
+          "Součástí programu má být ověřování výstupů a zacházení s firemními informacemi. Praktická ukázka by měla ukázat nejen první odpověď AI, ale také její opravu a kontrolu. Samotná efektní demonstrace neříká, zda zaměstnanec postup zvládne zopakovat."
+        ]
+      },
+      {
+        "heading": "Jak ověřit přínos po školení",
+        "paragraphs": [
+          "Vyberte malý společný úkol a nechte tým vyřešit jej před kurzem a znovu po něm. Sledujte čas i kvalitu: počet oprav, úplnost podkladů a schopnost vysvětlit postup. Výsledky porovnávejte na podobně náročných zadáních.",
+          "Dva týdny po kurzu se vraťte ke třem původním úkolům. Které postupy lidé skutečně používají? Kde je zastavují přístupy, interní pravidla nebo nekvalitní data? Takové překážky mohou vyžadovat navazující audit či implementaci, nikoli další obecné školení."
+        ]
+      }
+    ],
+    "sources": []
+  },
+  {
+    "slug": "kolik-stoji-ai-skoleni-pro-firmy",
+    "title": "Kolik stojí AI školení pro firmy",
+    "excerpt": "Přehled cen AIKONIC a rozdílů mezi jedním dnem, dvěma dny a delším firemním kurzem. Co porovnávat kromě celkové částky.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "Cena podle rozsahu",
+        "paragraphs": [
+          "Jednodenní praktické školení AIKONIC má 8 hodin a stojí 49 900 Kč. Dvoudenní varianta má 16 hodin a stojí 99 000 Kč. Delší firemní program stojí 299 000 Kč za 50 hodin nebo 479 000 Kč za 80 hodin a skupinu do 15 osob. AIKONIC není plátcem DPH; uvedené ceny jsou konečné.",
+          "Jednodenní formát je vhodný pro společné základy a první procvičení. Druhý den přidává prostor pro práci na vlastních úkolech. Delší kurz umožňuje rozdělit výuku do více setkání a vracet se k tomu, co účastníci vyzkoušeli v práci."
+        ]
+      },
+      {
+        "heading": "Porovnávejte stejné zadání",
+        "paragraphs": [
+          "Nabídka pro pět lidí a nabídka pro celé oddělení nemusí znamenat stejný rozsah péče. Ověřte počet účastníků, čas na vlastní cvičení, přípravu podkladů a následnou podporu. Zjistěte také, zda nabídka zahrnuje potřebné licence nebo další náklady.",
+          "U skupiny 15 účastníků vychází jednodenní cena orientačně na 3 327 Kč na osobu. Jde pouze o rozpočítání ceny, nikoli o nabídku samostatných míst. U menší skupiny je podíl na osobu vyšší. Pro posouzení přínosu sledujte i pracovní čas účastníků."
+        ]
+      },
+      {
+        "heading": "Jak do rozpočtu promítnout dotaci",
+        "paragraphs": [
+          "Dotační podpora může pomoci financovat delší vzdělávání, ale nenahrazuje rozhodnutí o vhodném programu. V kalkulačce oddělujeme cenu výuky, orientační podporu a administraci AIKONIC ve výši 12 % z celkové dotace.",
+          "Kladný zůstatek v kalkulačce není účetní zisk. Do výpočtu nejsou zahrnuté skutečně vyplacené mzdy ani všechny interní náklady firmy. Před objednáním si nechte potvrdit rozsah kurzu, složení skupin a podmínky financování."
+        ]
+      }
+    ],
+    "sources": []
+  },
+  {
+    "slug": "ai-skoleni-zamestnancu-a-ai-act",
+    "title": "AI školení zaměstnanců a AI Act",
+    "excerpt": "Jak spojit praktické AI vzdělávání s firemními pravidly. Co má tým umět a proč samotné potvrzení o účasti nenahrazuje bezpečný pracovní postup.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "AI gramotnost v každodenní práci",
+        "paragraphs": [
+          "Evropská komise věnuje AI gramotnosti samostatnou oblast a průběžně aktualizuje informace k AI Act. Při nastavování firemního programu vycházejte z aktuálního znění pravidel a z konkrétních způsobů používání AI. Obecný kurz není automatickým potvrzením souladu všech firemních systémů s právem.",
+          "Praktickým cílem je, aby zaměstnanec věděl, k čemu nástroj použít, jaká data do něj smí vložit a jak ověřit výstup. Jinou přípravu potřebuje člověk vytvářející návrh e-mailu a jinou tým používající AI při rozhodování o lidech."
+        ]
+      },
+      {
+        "heading": "Čtyři témata pro školení",
+        "paragraphs": [
+          "Začněte schválenými nástroji a účty: kdo je spravuje a kde se řeší přístupy. Navazuje práce s daty: jaké podklady může tým používat, co anonymizovat a co do nástroje nevkládat. Třetím tématem je ověřování tvrzení, výpočtů a zdrojů. Čtvrtým je odpovědnost za konečný výstup a postup při chybě.",
+          "Procvičte situaci, kdy AI vytvoří přesvědčivý, ale nesprávný výsledek. Účastník by měl chybu odhalit, dohledat podklad a vědět, komu problém předat. Podobné cvičení je užitečnější než seznam definic bez vazby na práci."
+        ]
+      },
+      {
+        "heading": "Co si evidovat a kdy přizvat specialistu",
+        "paragraphs": [
+          "Pro vlastní řízení vzdělávání si zaznamenejte obsah, účastníky, datum a praktické ověření znalostí. Přidejte interní pravidla, která při kurzu platila, a člověka odpovědného za jejich aktualizaci. Tento přehled pomůže při nástupu nových lidí i změně nástroje.",
+          "Pokud zavádíte AI do náboru, hodnocení zaměstnanců nebo jiného citlivého procesu, posuďte konkrétní použití s odpovědným právním a bezpečnostním specialistou. Školení má podpořit správné používání; nenahrazuje posouzení daného systému."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Evropská komise: AI talent, skills and literacy",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-talent-skills-and-literacy"
+      }
+    ]
+  },
+  {
+    "slug": "chatgpt-copilot-claude-pro-firmy",
+    "title": "ChatGPT vs. Copilot vs. Claude pro firmy",
+    "excerpt": "Vyberte nástroj podle pracovních úkolů, správy přístupů a pravidel pro data. Jednotné testovací zadání řekne více než univerzální žebříček.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "Začněte prostředím, ve kterém tým pracuje",
+        "paragraphs": [
+          "Pokud firma pracuje v Microsoft 365, prověřte napojení Copilotu na její pracovní obsah a oprávnění. Microsoft uvádí, že Copilot zpřístupňuje pouze data, ke kterým má uživatel odpovídající přístup. To zároveň znamená, že je potřeba předem zkontrolovat příliš široce sdílené dokumenty.",
+          "U ChatGPT a Claude vyzkoušejte stejné reálné úlohy: návrh obchodního e-mailu, rozbor anonymizovaného dokumentu a zpracování tabulky. Sledujte kvalitu výsledku, čas na opravy a to, jak snadno jej zaměstnanec dostane do svého pracovního postupu. Nevybírejte pouze podle první povedené odpovědi."
+        ]
+      },
+      {
+        "heading": "Firemní a osobní účet nejsou totéž",
+        "paragraphs": [
+          "OpenAI u firemních produktů a API uvádí, že ve výchozím nastavení nepoužívá firemní data k trénování modelů. Anthropic obdobně popisuje komerční produkty, ale upozorňuje na výjimky při dobrovolně odeslané zpětné vazbě. Microsoft uvádí, že prompty, odpovědi a data z Microsoft Graph nepoužívá k trénování základních modelů.",
+          "Tyto vlastnosti samy o sobě neřeší celou bezpečnost. Porovnejte konkrétní tarif, dobu uchovávání, správu uživatelů, připojené služby a firemní smluvní požadavky. Pravidla osobního účtu nepřenášejte automaticky na firemní produkt ani opačně."
+        ]
+      },
+      {
+        "heading": "Malý pilot místo plošného nákupu",
+        "paragraphs": [
+          "Pro pilot vyberte několik lidí s různými úkoly. Každému dejte stejné hodnoticí otázky: byl výsledek správný, kolik oprav vyžadoval, kolik času zabral a zda lze postup opakovat. Pro test použijte schválené nebo anonymizované podklady.",
+          "Po dvou týdnech vyhodnoťte i praktické náklady: licence, správu přístupů a podporu uživatelů. Výsledkem může být jeden společný nástroj nebo odůvodněná kombinace. Školení potom postavte na zvoleném prostředí a úkolech, které pilot skutečně ověřil."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: Business data",
+        "url": "https://openai.com/business-data/"
+      },
+      {
+        "title": "Microsoft: Data, privacy and security",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+      },
+      {
+        "title": "Anthropic: Model training and commercial data",
+        "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
+      }
+    ]
+  },
+  {
+    "slug": "dotace-na-ai-skoleni-pro-firmy",
+    "title": "Dotace na AI školení pro firmy",
+    "excerpt": "Jak číst orientační výpočet podpory, odlišit náklady a připravit firmu na posouzení žádosti v programu Vzdělávání pro firmy.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "Podpora má podmínky",
+        "paragraphs": [
+          "Program Úřadu práce Vzdělávání pro firmy podporuje zaměstnavatele a OSVČ. Příspěvek není nárokový a vyplácí se po splnění podmínek a doložení vzdělávání. Před zahájením je nutné mít účinnou dohodu s Úřadem práce; samotná kalkulačka žádost nenahrazuje.",
+          "Podle podmínek účinných od 1. července 2026 činí příspěvek po odečtení spoluúčasti 260,73 Kč na osobohodinu vzdělávání a 217,46 Kč na osobohodinu mzdového příspěvku. Mzdová část se vztahuje na způsobilé zaměstnance, nikoli na samotné OSVČ. Vždy rozhodují podmínky platné pro konkrétní žádost."
+        ]
+      },
+      {
+        "heading": "Příklad: 15 zaměstnanců a 50 hodin",
+        "paragraphs": [
+          "Při plně způsobilé účasti 15 zaměstnanců na 50 hodinách vychází vzdělávací část na 195 547,50 Kč a mzdová část na 163 095 Kč. Součet je 358 642,50 Kč. Jde o modelový výpočet při splnění podmínek, nikoli o příslib schválení.",
+          "Cena kurzu AIKONIC pro jednu skupinu je 299 000 Kč. Administrace činí 12 % z celkové podpory, v tomto příkladu 43 037,10 Kč. Rozdíl po těchto dvou položkách je 16 605,40 Kč. Skutečné mzdy ani další interní náklady firmy se v tomto rozdílu neodečítají."
+        ]
+      },
+      {
+        "heading": "Připravte účastníky a harmonogram",
+        "paragraphs": [
+          "Pro první posouzení si připravte počty zaměstnanců a OSVČ, téma vzdělávání, plánované termíny a přehled předchozí podpory. Rozdělte účastníky podle rolí a zkušeností. V nabídce AIKONIC má jedna skupina nejvýše 15 osob.",
+          "Nejdříve vybírejte smysluplný obsah kurzu, potom jeho financování. U delší výuky si ověřte dostupnost účastníků a odpovědnost za evidenci účasti. Kalkulačka na stránce dotací umožní porovnat 50 a 80 hodin i různé složení skupin."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Úřad práce: Vzdělávání pro firmy a aktuální podmínky",
+        "url": "https://up.gov.cz/vzdelavani-pro-firmy"
+      }
+    ]
+  },
+  {
+    "slug": "jak-pripravit-zamestnance-na-ai-skoleni",
+    "title": "Jak připravit zaměstnance na AI školení",
+    "excerpt": "Přístupy, pracovní podklady a jasné očekávání: jednoduchá příprava, která pomůže využít čas s lektorem na skutečnou praxi.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "Týden před kurzem vyberte úkoly",
+        "paragraphs": [
+          "Požádejte každého účastníka o jeden úkol, který pravidelně dělá a chtěl by si usnadnit. Užitečným zadáním je například „z těchto poznámek připravit zápis s odpovědnostmi“, nikoli obecné „zlepšit administrativu“. Vedoucí týmu vybere několik reprezentativních úloh.",
+          "Připravte ukázku vstupu i příklad dobrého výstupu. Lektor pak může vysvětlit, co je pro firmu přijatelné a co už vyžaduje opravu. Odstraňte osobní, obchodně citlivé a jiné údaje, jejichž použití nemáte schválené."
+        ]
+      },
+      {
+        "heading": "Ověřte technické podmínky",
+        "paragraphs": [
+          "Předem vyzkoušejte přihlášení do schválených nástrojů na počítačích účastníků. Ověřte potřebné licence, firemní síť, možnost nahrát povolený soubor a dostupnost společných podkladů. Nespoléhejte na to, že se přístupy vyřeší až během výuky.",
+          "Určete kontaktní osobu pro technické potíže a domluvte záložní cvičení bez citlivých dat. Když někdo nesmí použít konkrétní nástroj, potřebuje lektor tuto informaci předem. Kurz tím získá více času na procvičení."
+        ]
+      },
+      {
+        "heading": "Domluvte pokračování po školení",
+        "paragraphs": [
+          "Na konci kurzu si každý účastník vybere jeden postup, který do týdne vyzkouší v práci. Vedoucí týmu zajistí krátké sdílení výsledků: co fungovalo, kde AI chybovala a co je potřeba upravit.",
+          "Vytvořte společné místo pro ověřená zadání a příklady. Ke každému připojte účel, podmínky použití a způsob kontroly. Sbírka bez kontextu rychle zastará; několik udržovaných postupů má větší hodnotu než stovky náhodných promptů."
+        ]
+      }
+    ],
+    "sources": []
+  },
+  {
+    "slug": "jak-zavest-ai-do-firmy",
+    "title": "Jak zavést AI do firmy",
+    "excerpt": "Začněte jedním měřitelným procesem. Postup od výběru příležitosti přes pilot až po správu řešení v běžném provozu.",
+    "publishedAt": "2026-10-06",
+    "sections": [
+      {
+        "heading": "Vyberte proces, který lze ověřit",
+        "paragraphs": [
+          "Sepište opakované úkoly, jejich četnost, přibližný čas a důsledky chyby. Pro první pilot bývá vhodný proces s dostupnými podklady a jasným lidským kontrolním bodem. Příkladem je návrh zápisu ze schůzky, který před sdílením schválí účastník.",
+          "Nezačínejte automatizací nejasného procesu. Pokud každý člověk zpracovává stejný úkol jinak a není stanovený správný výsledek, nejprve domluvte společný postup. AI sama tuto nejasnost nevyřeší."
+        ]
+      },
+      {
+        "heading": "Před pilotem určete měřítka",
+        "paragraphs": [
+          "Změřte současný čas a chybovost na několika srovnatelných případech. Domluvte, jak velké zlepšení ospravedlní další práci a jaké chyby jsou nepřijatelné. Do hodnocení zahrňte i kontrolu výstupu, která může část úspory spotřebovat.",
+          "Určete vlastníka procesu, schválené nástroje a povolená data. Popište situace, kdy se výsledek musí předat člověku nebo kdy se AI nesmí použít. Pilot provozujte v omezeném rozsahu, aby šel jednoduše zastavit a vyhodnotit."
+        ]
+      },
+      {
+        "heading": "Školení, audit a implementace mají různé role",
+        "paragraphs": [
+          "Školení pomůže zaměstnancům používat nástroje samostatně. Audit porovná příležitosti a navrhne priority. Implementace propojí vybrané řešení s konkrétním pracovním postupem či systémem. Firma nemusí objednat všechny kroky najednou; měla by ale vědět, jaký problém právě řeší.",
+          "Pokud má tým dovednosti, ale neví, který proces vybrat, začněte auditem. Pokud je proces jasný a lidé potřebují zvládnout nástroje, dává smysl praktický kurz. Integraci připravujte až s vyjasněnými přístupy, odpovědnostmi a způsobem kontroly."
+        ]
+      },
+      {
+        "heading": "Přechod do provozu",
+        "paragraphs": [
+          "Po pilotu porovnejte skutečný přínos s náklady na licence, provoz a lidskou kontrolu. Zapište známá omezení a postup při výpadku. Jmenujte člověka, který bude sledovat kvalitu a řešit změny podkladů nebo nástroje.",
+          "Rozšiřujte řešení po jednotlivých procesech. Každé další oddělení může mít jiné podklady i rizika, proto původní úspěšný pilot nepovažujte automaticky za důkaz, že stejný postup funguje všude."
+        ]
+      }
+    ],
+    "sources": []
+  }
+]

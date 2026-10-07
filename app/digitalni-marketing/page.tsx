@@ -184,8 +184,8 @@ const faqItems = [
     a: "Ne. Můžete začít balíčkem START nebo jednou službou a postupně rozšiřovat. Navrhneme kombinaci podle vašich priorit a kapacity.",
   },
   {
-    q: "Jsou ceny s DPH?",
-    a: "Ne. Nejsme plátci DPH, uvedené ceny jsou konečné a nic se k nim nepřičítá. U placených kampaní se mediální rozpočet hradí zvlášť a do ceny správy nevstupuje.",
+    q: "Jsou ceny konečné?",
+    a: "Ano. Nejsme plátci DPH, uvedené ceny jsou konečné a nic se k nim nepřičítá. U placených kampaní se mediální rozpočet hradí zvlášť a do ceny správy nevstupuje.",
   },
   {
     q: "Jak se ceny fakturují?",

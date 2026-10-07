@@ -513,8 +513,8 @@ export default function AiDoFirmyPage() {
                   asChild
                   className="min-h-[48px] w-full shrink-0 bg-white text-text hover:bg-white/90 sm:w-auto"
                 >
-                  <Link href="/#contact" className="inline-flex min-h-[48px] items-center justify-center">
-                    Kontaktovat nás
+                  <Link href="/?interest=Automatizace#contact" className="inline-flex min-h-[48px] items-center justify-center">
+                    Probrat AI řešení
                     <ArrowRight className="ml-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   </Link>
                 </Button>

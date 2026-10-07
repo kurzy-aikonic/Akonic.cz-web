@@ -5,12 +5,12 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { LeadLink } from "./cro/LeadLink";
 const navItems = [
-  { label: "Jak pomáháme", href: "/#sluzby" },
-  { label: "Pro koho", href: "/#pro-koho" },
-  { label: "Reference", href: "/#reference" },
-  { label: "Dotace", href: "/#dotace" },
+  { label: "AI školení", href: "/ai-skoleni-pro-firmy" },
+  { label: "AI audit", href: "/audit" },
+  { label: "Automatizace", href: "/automatizace" },
+  { label: "Dotace", href: "/dotace-na-skoleni" },
+  { label: "Reference", href: "/reference" },
   { label: "O nás", href: "/#about" },
-  { label: "Služby", href: "/sluzby" },
 ];
 export function Navbar() {
   const dialog = useRef<HTMLDialogElement>(null);

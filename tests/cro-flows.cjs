@@ -92,10 +92,7 @@ const fill = () => {
       a.textContent.includes("Audit CTA"),
     ),
   );
-  assert.equal(
-    document.querySelector('input[name="interest-choice"]:checked').value,
-    "AI audit",
-  );
+  assert.ok(document.querySelector("form").textContent.includes("Téma: AI audit"));
   assert.equal(window.dataLayer, undefined, "no tracking without consent");
   window.localStorage.setItem(
     "aikonic-cookie-preferences",
@@ -105,11 +102,6 @@ const fill = () => {
       analytics: true,
       updatedAt: new Date().toISOString(),
     }),
-  );
-  await click(
-    [...document.querySelectorAll("button")].find(
-      (b) => b.textContent === "Pokračovat →" && b.closest("form"),
-    ),
   );
   assert.ok(
     document.querySelector("form").checkValidity() === false,
@@ -155,7 +147,7 @@ const fill = () => {
   await click(button("Pokračovat →"));
   await click(button("Kam vám můžeme poslat návrh?"));
   assert.ok(
-    document.querySelector("form").textContent.includes("1–15 lidí · Nevíme"),
+    document.querySelector("form").textContent.includes("Téma: Dotované vzdělávání"),
   );
   fill();
   await act(async () =>

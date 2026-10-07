@@ -13,15 +13,13 @@ import { DOTACNI_PROGRAM_NAZEV, dotovaneKurzy } from "../../lib/dotovane-kurzy-d
 export const metadata: Metadata = pageMetadata({
   title: "Dotace na AI školení — Vzdělávání pro firmy",
   description:
-    "Dotované AI kurzy pro firmy v programu Vzdělávání pro firmy (Úřad práce ČR). 50 hodin za 299 000 Kč nebo 80 hodin za 479 000 Kč s DPH. S vyřízením dotace vám pomůžeme.",
+    "Dotované AI kurzy pro firmy v programu Vzdělávání pro firmy (Úřad práce ČR). 50 hodin za 299 000 Kč nebo 80 hodin za 479 000 Kč. S vyřízením dotace vám pomůžeme.",
   keywords: [
     "dotace na AI školení",
     "Vzdělávání pro firmy",
     "dotace Úřad práce ČR",
     "dotace na vzdělávání zaměstnanců",
     "AI kurz pro firmy dotace",
-    "Jsem v kurzu",
-    "Digi pro firmy",
     "AIKONIC",
   ],
   path: "/dotace-na-skoleni",
@@ -65,16 +63,6 @@ const targetGroup = [
   "Fyzické osoby podnikající (OSVČ)",
 ];
 
-const otherPrograms = [
-  {
-    title: "Jsem v kurzu",
-    text: "Národní program na rekvalifikace a profesní vzdělávání zaměstnanců i OSVČ. Cílí na rozvoj digitálních dovedností — AI školení do něj typicky spadá.",
-  },
-  {
-    title: "Digi pro firmy",
-    text: "Program zaměřený na digitalizaci malých a středních podniků, včetně vzdělávání týmu v nových technologiích a AI nástrojích.",
-  },
-];
 
 const steps = [
   "Na nezávazné konzultaci posoudíme, zda a jak můžete program využít — podle velikosti firmy, počtu zaměstnanců a plánovaného rozsahu.",
@@ -90,10 +78,10 @@ const faqItems = [
   },
   {
     q: "Kolik stojí dotované AI kurzy?",
-    a: "Nabízíme dva rozsahy: 50 hodin (6,5 dne) za 299 000 Kč s DPH a 80 hodin (10 dní) za 479 000 Kč s DPH. Konkrétní obsah a rozsah nastavíme individuálně podle potřeb vaší firmy.",
+    a: "Nabízíme dva rozsahy: 50 hodin (6,5 dne) za 299 000 Kč a 80 hodin (10 dní) za 479 000 Kč. Konkrétní obsah a rozsah nastavíme individuálně podle potřeb vaší firmy.",
   },
   {
-    q: "Kdo má na dotaci nárok?",
+    q: "Kdo může o dotaci žádat?",
     a: "Obchodní korporace, státní podniky, OSVČ se zaměstnanci i bez nich a další právnické osoby vykonávající podnikatelskou činnost. Cílovou skupinou jsou zaměstnanci a fyzické osoby podnikající.",
   },
   {
@@ -144,6 +132,7 @@ export default function DotaceNaSkoleniPage() {
 
         <SubsidyCalculator html={calculatorHtml.replace("__FORMSPREE_ID__", process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mbdalyzl")} />
 
+        <section className="py-8"><div className="mx-auto max-w-4xl px-4 text-slate-600"><h2 className="text-2xl font-semibold text-slate-900">Jak číst výpočet</h2><p className="mt-4">Kalkulačka počítá 260,73 Kč na osobohodinu vzdělávání a 217,46 Kč na osobohodinu mzdového příspěvku pouze pro HPP. Cena školení je za skupinu do 15 osob. Administrace AIKONIC činí 12 % z celkové dotace; nejde o poplatek Úřadu práce.</p><p className="mt-3">Zůstatek je podpora minus školení a administrace. Neodečítá skutečné mzdy firmy. Příspěvek se vyplácí zpětně po splnění podmínek; výpočet nepředstavuje schválení dotace. Nejsme plátci DPH.</p><p className="mt-3">Podmínky ověřujte na stránce <a href="https://up.gov.cz/vzdelavani-pro-firmy" className="underline">Úřadu práce: Vzdělávání pro firmy</a>. Obsah kurzu najdete v přehledu <Link href="/ai-skoleni-pro-firmy" className="underline">AI školení pro firmy</Link>.</p></div></section>
         <section className="py-12 md:py-16" aria-label="O programu">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
             <FadeIn className="rounded-3xl border border-slate-200 bg-primary/5 p-6 shadow-sm md:p-8">
@@ -322,41 +311,6 @@ export default function DotaceNaSkoleniPage() {
           </div>
         </section>
 
-        {/* Další programy */}
-        <section
-          aria-labelledby="dalsi-programy-heading"
-          className="border-t border-slate-200 bg-gradient-to-b from-slate-50/40 to-transparent py-16 md:py-24"
-        >
-          <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <FadeIn className="mb-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-                Další možnosti
-              </p>
-              <h2 id="dalsi-programy-heading" className="mt-2 text-3xl font-semibold text-text md:text-4xl">
-                I další dotační programy
-              </h2>
-              <p className="mt-4 max-w-2xl text-base text-slate-600">
-                Kromě programu {DOTACNI_PROGRAM_NAZEV} pomáháme i s dalšími tituly pro vzdělávání zaměstnanců v digitálních dovednostech.
-              </p>
-            </FadeIn>
-
-            <div className="grid gap-6 sm:grid-cols-2">
-              {otherPrograms.map((program, index) => (
-                <FadeIn key={program.title} delay={index * 0.06}>
-                  <article
-                    className={`flex h-full flex-col rounded-2xl border border-slate-200 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
-                      index === 0 ? "bg-primary/5" : "bg-amber-500/5"
-                    }`}
-                  >
-                    <h3 className="text-lg font-semibold text-text">{program.title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{program.text}</p>
-                  </article>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <section className="py-12 md:py-16" aria-labelledby="faq-heading">
           <div className="mx-auto max-w-4xl px-4 md:px-6">
@@ -387,7 +341,7 @@ export default function DotaceNaSkoleniPage() {
                     Další krok
                   </p>
                   <h2 id="cta-heading" className="text-2xl font-semibold md:text-3xl">
-                    Zjistit, na co máte nárok
+                    Ověřte možnosti podpory
                   </h2>
                   <p className="mt-2 text-white/80">
                     Napište nám o vaší firmě a plánovaném školení — nezávazně posoudíme možnosti dotace a navrhneme
@@ -399,8 +353,8 @@ export default function DotaceNaSkoleniPage() {
                   asChild
                   className="min-h-[48px] w-full shrink-0 bg-white text-text hover:bg-white/90 sm:w-auto"
                 >
-                  <Link href="/#contact" className="inline-flex min-h-[48px] items-center justify-center">
-                    Kontaktovat nás
+                  <Link href="#dotacni-kalkulacka" className="inline-flex min-h-[48px] items-center justify-center">
+                    Spočítat možnou dotaci
                     <ArrowRight className="ml-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   </Link>
                 </Button>

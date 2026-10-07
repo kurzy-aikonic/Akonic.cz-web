@@ -1,3 +1,4 @@
+import { editorialArticles } from "../../lib/editorial-articles";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Newspaper } from "lucide-react";
@@ -30,7 +31,8 @@ type BlogListItem = {
 };
 
 export default async function BlogPage() {
-  const posts: BlogListItem[] = await client.fetch(BLOG_POSTS_QUERY);
+  const cmsPosts: BlogListItem[] = await client.fetch(BLOG_POSTS_QUERY).catch(() => []);
+  const posts = [...editorialArticles, ...cmsPosts.filter(post => !editorialArticles.some(local => local.slug === post.slug))];
 
   return (
     <>

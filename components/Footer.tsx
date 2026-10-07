@@ -33,7 +33,7 @@ function KonamiHint() {
 export function Footer() {
   return (
     <footer className="border-t-2 border-slate-200 bg-gradient-to-b from-white to-slate-50/80 pb-safe">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 md:px-6 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 text-base text-slate-600 sm:grid-cols-2 md:px-6 lg:grid-cols-6">
         <div className="space-y-4 lg:col-span-1">
           <Image
             src="/logo.png"
@@ -49,106 +49,118 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Rychlé odkazy
-          </p>
-          <ul className="mt-4 space-y-0">
+          <h2 className="text-sm font-semibold text-slate-700">Služby</h2>
+          <ul className="mt-3">
             <li>
-              <Link href="/" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Domů
+              <Link
+                href="/ai-skoleni-pro-firmy"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                AI školení
               </Link>
             </li>
             <li>
-              <Link href="/sluzby" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Služby
+              <Link
+                href="/audit"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                AI audit
               </Link>
             </li>
             <li>
-              <Link href="/#cenik" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Ceník
+              <Link
+                href="/automatizace"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                Automatizace
               </Link>
             </li>
             <li>
               <Link
                 href="/dotace-na-skoleni"
-                className="block py-2.5 -my-2 transition hover:text-slate-900"
+                className="block py-2 text-sm hover:text-primary"
               >
-                Dotované kurzy
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/digitalni-marketing"
-                className="block py-2.5 -my-2 transition hover:text-slate-900"
-              >
-                Digitální marketing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#reference"
-                className="block py-2.5 -my-2 transition hover:text-slate-900"
-              >
-                Reference
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/newsletter" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Newsletter
-              </Link>
-            </li>
-            <li>
-              <Link href="/#contact" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Kontakt
+                Dotace
               </Link>
             </li>
           </ul>
         </div>
-
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Pro koho
-          </p>
-          <ul className="mt-4 space-y-0">
+          <h2 className="text-sm font-semibold text-slate-700">
+            Specializovaná školení
+          </h2>
+          <ul className="mt-3">
             <li>
-              <Link href="/ai-do-firmy" className="block py-2.5 -my-2 transition hover:text-slate-900">
-                Pro firmy
+              <Link
+                href="/ai-hackathon"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                AI hackathon
               </Link>
             </li>
             <li>
               <Link
                 href="/skoleni-pro-obchodniky"
-                className="block py-2.5 -my-2 transition hover:text-slate-900"
+                className="block py-2 text-sm hover:text-primary"
               >
-                Pro obchodní týmy
+                AI pro obchodníky
               </Link>
             </li>
             <li>
               <Link
                 href="/skoleni-vibe-coding"
-                className="block py-2.5 -my-2 transition hover:text-slate-900"
+                className="block py-2 text-sm hover:text-primary"
               >
-                Pro vývojáře
+                Vibe coding
               </Link>
-            </li>
-            <li>
-              <a
-                href="https://krouzekumeleinteligence.cz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block py-2.5 -my-2 transition hover:text-slate-900"
-              >
-                Pro děti
-              </a>
             </li>
           </ul>
         </div>
-
+        <div>
+          <h2 className="text-sm font-semibold text-slate-700">Firma</h2>
+          <ul className="mt-3">
+            <li>
+              <Link
+                href="/reference"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                Reference
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#about"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                O nás
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#contact"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                Kontakt
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/sluzby#ostatni-programy"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                Ostatní programy
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Kontakt
@@ -170,7 +182,9 @@ export function Footer() {
                 +420 723 061 013
               </a>
             </li>
-            <li className="py-2.5 -my-2">Heydukova 115, 572 01 Polička (fakturační adresa)</li>
+            <li className="py-2.5 -my-2">
+              Heydukova 115, 572 01 Polička (fakturační adresa)
+            </li>
           </ul>
         </div>
 
@@ -250,11 +264,22 @@ export function Footer() {
       <div className="border-t border-slate-200">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-center text-sm text-slate-500 md:flex-row md:text-left md:px-6">
           <span>
-            © 2026 Aikonic training s.r.o., IČO 24472590. Všechna práva vyhrazena.
+            © 2026 Aikonic training s.r.o., IČO 24472590. Nejsme plátci DPH.
           </span>
           <KonamiHint />
           <span>kurzy@aikonic.cz</span>
         </div>
+      </div>
+      <div className="border-t border-slate-200 px-4 py-5 text-center text-sm text-slate-500">
+        Sesterský projekt:{" "}
+        <a
+          href="https://krouzekumeleinteligence.cz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          AI Kroužek pro děti
+        </a>
       </div>
     </footer>
   );
