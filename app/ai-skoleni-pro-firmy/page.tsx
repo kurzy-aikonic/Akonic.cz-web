@@ -44,14 +44,14 @@ const formats = [
   {
     id: "50-hodin",
     title: "AI kurz pro firmy",
-    duration: "50 hodin",
+    duration: "50 hodin · Dotovaný kurz",
     price: "299 000 Kč",
     text: "Systematické vzdělávání s možností dotační podpory. Cena za skupinu do 15 osob.",
   },
   {
     id: "80-hodin",
     title: "Rozšířený AI kurz pro firmy",
-    duration: "80 hodin",
+    duration: "80 hodin · Dotovaný kurz",
     price: "479 000 Kč",
     text: "Více času pro procvičení a vlastní projekty. Možnost dotace; cena za skupinu do 15 osob.",
   },

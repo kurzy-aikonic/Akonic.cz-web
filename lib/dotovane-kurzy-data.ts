@@ -6,7 +6,7 @@ export const DOTACNI_PROGRAM_NAZEV = "Vzdělávání pro firmy";
 
 export const dotovaneKurzy = [
   {
-    title: "AI kurz pro firmy — 50 hodin",
+    title: "Dotovaný AI kurz pro firmy — 50 hodin",
     duration: "6,5 dne",
     hours: 50,
     price: "299 000",
@@ -22,7 +22,7 @@ export const dotovaneKurzy = [
     featured: false,
   },
   {
-    title: "AI kurz pro firmy — 80 hodin",
+    title: "Dotovaný AI kurz pro firmy — 80 hodin",
     duration: "10 dní",
     hours: 80,
     price: "479 000",
