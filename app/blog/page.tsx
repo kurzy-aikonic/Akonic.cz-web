@@ -1,5 +1,7 @@
-import { editorialArticles } from "../../lib/editorial-articles";
+import { editorialArticles, visibleEditorialArticles } from "../../lib/editorial-articles";
+import { formatBlogDate, isArticlePublished } from "../../lib/blog-date";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Newspaper } from "lucide-react";
 import { Navbar } from "../../components/Navbar";
@@ -28,11 +30,15 @@ type BlogListItem = {
   publishedAt: string;
   excerpt: string;
   tags?: string[];
+  image?: string;
+  imageAlt?: string;
 };
 
 export default async function BlogPage() {
   const cmsPosts: BlogListItem[] = await client.fetch(BLOG_POSTS_QUERY).catch(() => []);
-  const posts = [...editorialArticles, ...cmsPosts.filter(post => !editorialArticles.some(local => local.slug === post.slug))];
+  const posts = [...visibleEditorialArticles(), ...cmsPosts.filter(post => !editorialArticles.some(local => local.slug === post.slug))]
+    .filter((post) => isArticlePublished(post.publishedAt))
+    .sort((a, b) => b.publishedAt.slice(0, 10).localeCompare(a.publishedAt.slice(0, 10)));
 
   return (
     <>
@@ -87,15 +93,22 @@ export default async function BlogPage() {
                   <FadeIn key={item._id} delay={index * 0.05}>
                     <Link
                       href={`/blog/${item.slug}`}
-                      className="group flex h-full flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/20 hover:shadow-lg"
+                      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm transition hover:-translate-y-1 hover:border-primary/20 hover:shadow-lg"
                     >
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt={item.imageAlt || item.title}
+                          width={1200}
+                          height={675}
+                          unoptimized
+                          className="aspect-[16/9] w-full bg-slate-50 object-cover"
+                        />
+                      ) : null}
+                      <div className="flex flex-1 flex-col p-6">
                       <div className="mb-4 flex flex-wrap items-center gap-2">
                         <span className="text-xs text-slate-500">
-                          {new Date(item.publishedAt).toLocaleDateString("cs-CZ", {
-                            day: "numeric",
-                            month: "long",
-                            year: "numeric",
-                          })}
+                          {formatBlogDate(item.publishedAt)}
                         </span>
                         {item.tags?.slice(0, 2).map((tag) => (
                           <span
@@ -116,6 +129,7 @@ export default async function BlogPage() {
                         Číst článek
                         <ArrowRight className="ml-1 h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
                       </span>
+                      </div>
                     </Link>
                   </FadeIn>
                 ))}

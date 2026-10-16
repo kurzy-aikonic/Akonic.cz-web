@@ -1,0 +1,37 @@
+{
+  "slug": "ai-skoleni-zamestnancu-a-ai-act",
+  "title": "AI školení zaměstnanců a AI Act",
+  "excerpt": "Jak spojit praktické AI vzdělávání s firemními pravidly. Co má tým umět a proč samotné potvrzení o účasti nenahrazuje bezpečný pracovní postup.",
+  "publishedAt": "2026-10-06",
+  "sections": [
+    {
+      "heading": "AI gramotnost v každodenní práci",
+      "paragraphs": [
+        "Evropská komise věnuje AI gramotnosti samostatnou oblast a průběžně aktualizuje informace k AI Act. Při nastavování firemního programu vycházejte z aktuálního znění pravidel a z konkrétních způsobů používání AI. Obecný kurz není automatickým potvrzením souladu všech firemních systémů s právem.",
+        "Praktickým cílem je, aby zaměstnanec věděl, k čemu nástroj použít, jaká data do něj smí vložit a jak ověřit výstup. Jinou přípravu potřebuje člověk vytvářející návrh e-mailu a jinou tým používající AI při rozhodování o lidech."
+      ]
+    },
+    {
+      "heading": "Čtyři témata pro školení",
+      "paragraphs": [
+        "Začněte schválenými nástroji a účty: kdo je spravuje a kde se řeší přístupy. Navazuje práce s daty: jaké podklady může tým používat, co anonymizovat a co do nástroje nevkládat. Třetím tématem je ověřování tvrzení, výpočtů a zdrojů. Čtvrtým je odpovědnost za konečný výstup a postup při chybě.",
+        "Procvičte situaci, kdy AI vytvoří přesvědčivý, ale nesprávný výsledek. Účastník by měl chybu odhalit, dohledat podklad a vědět, komu problém předat. Podobné cvičení je užitečnější než seznam definic bez vazby na práci."
+      ]
+    },
+    {
+      "heading": "Co si evidovat a kdy přizvat specialistu",
+      "paragraphs": [
+        "Pro vlastní řízení vzdělávání si zaznamenejte obsah, účastníky, datum a praktické ověření znalostí. Přidejte interní pravidla, která při kurzu platila, a člověka odpovědného za jejich aktualizaci. Tento přehled pomůže při nástupu nových lidí i změně nástroje.",
+        "Pokud zavádíte AI do náboru, hodnocení zaměstnanců nebo jiného citlivého procesu, posuďte konkrétní použití s odpovědným právním a bezpečnostním specialistou. Školení má podpořit správné používání; nenahrazuje posouzení daného systému."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Evropská komise: AI talent, skills and literacy",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-talent-skills-and-literacy"
+    }
+  ],
+  "sort": 3,
+  "sourceNote": "Ověřeno 6. října 2026. Podmínky služeb a programů se mohou měnit."
+}

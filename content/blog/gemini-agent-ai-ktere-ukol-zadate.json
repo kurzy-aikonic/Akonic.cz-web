@@ -1,0 +1,52 @@
+{
+  "slug": "gemini-agent-ai-ktere-ukol-zadate",
+  "title": "Gemini agent: AI, které úkol zadáte a ono ho dotáhne",
+  "excerpt": "Google 8. října představil Gemini agenta pro práci. Co se mění pro obchod, administrativu, marketing a HR a jak se na to firma může připravit.",
+  "publishedAt": "2026-10-20",
+  "tags": ["AI pro firmy", "nástroje"],
+  "image": "/blog/gemini-agent.svg",
+  "imageAlt": "Ilustrace AIKONIC: z úkolu se stává hotový výsledek. Text na obrázku zní Zadejte výsledek, ne kroky.",
+  "sourceNote": "Zdroj z 8. října 2026. Ceny ani dostupnost pro Česko neuvádí. Část funkcí je v preview.",
+  "sections": [
+    {
+      "paragraphs": [
+        "Google na konferenci Gemini at Work 2026 představil Gemini agenta. Označuje ho jako „jednotného, univerzálního agenta pro práci“. Nejde o další chat. Agentovi nezadáváte jednotlivé kroky, zadáváte mu výsledek. Google to shrnuje větou: „You give it objectives, not instructions.“"
+      ]
+    },
+    {
+      "heading": "Co je nového",
+      "paragraphs": [
+        "Gemini pracuje přímo v Gmailu, Disku, Dokumentech, Tabulkách, Prezentacích, Chatu a Kalendáři. Úkoly můžete naplánovat nebo je spouštět událostí. Práce běží v cloudu, i když zavřete notebook. Tým si navíc může vytvořit „coworker agenta“. Ten dostane vlastní účet, e-mail a kalendář a vidí jen to, co mu nasdílíte. Firma může nastavit limity útraty a každý krok agenta se zapisuje do auditního záznamu."
+      ]
+    },
+    {
+      "heading": "Co to znamená prakticky",
+      "list": [
+        "**Obchod:** podklady před schůzkou nebo domluvení termínu s obvyklým týmem bez vypisování adres.",
+        "**Administrativa:** opakované přehledy a reporty, které se samy spouštějí v daný den.",
+        "**Marketing:** agent v týmovém chatu připraví první verzi dokumentu ke spuštění kampaně.",
+        "**HR:** třídění podkladů a příprava onboardingu z interních dokumentů."
+      ]
+    },
+    {
+      "heading": "Na co si dát pozor",
+      "paragraphs": [
+        "Agent je tak dobrý, jak dobré je zadání a podklady. Výstupy vždy kontroluje člověk, který zná váš kontext. Předem si určete, k jakým datům agent smí a k jakým ne. Část funkcí je zatím v preview. Dostupnost proto ověřujte podle vaší licence."
+      ]
+    },
+    {
+      "heading": "Kde začít",
+      "paragraphs": [
+        "Nečekejte na plné nasazení. Vyberte jeden opakující se úkol s jasnými pravidly. Popište, jak má vypadat hotový výsledek. Vyzkoušejte to na bezpečných podkladech a změřte, kolik času to ušetří. Teprve pak rozšiřujte.",
+        "Stejný postup používáme na školeních i při auditu. Nevybíráme nástroje podle trendu, ale podle vašich licencí, dat a pracovních úkolů.",
+        "Nevíte, jestli se vám vyplatí Gemini, Copilot nebo ChatGPT? Probereme to spolu. Domluvte si 20minutovou konzultaci zdarma a bez závazků."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google Cloud Blog: Welcome to Gemini at Work 2026",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+    }
+  ]
+}

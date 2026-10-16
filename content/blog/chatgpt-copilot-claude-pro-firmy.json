@@ -1,0 +1,45 @@
+{
+  "slug": "chatgpt-copilot-claude-pro-firmy",
+  "title": "ChatGPT vs. Copilot vs. Claude pro firmy",
+  "excerpt": "Vyberte nástroj podle pracovních úkolů, správy přístupů a pravidel pro data. Jednotné testovací zadání řekne více než univerzální žebříček.",
+  "publishedAt": "2026-10-06",
+  "sections": [
+    {
+      "heading": "Začněte prostředím, ve kterém tým pracuje",
+      "paragraphs": [
+        "Pokud firma pracuje v Microsoft 365, prověřte napojení Copilotu na její pracovní obsah a oprávnění. Microsoft uvádí, že Copilot zpřístupňuje pouze data, ke kterým má uživatel odpovídající přístup. To zároveň znamená, že je potřeba předem zkontrolovat příliš široce sdílené dokumenty.",
+        "U ChatGPT a Claude vyzkoušejte stejné reálné úlohy: návrh obchodního e-mailu, rozbor anonymizovaného dokumentu a zpracování tabulky. Sledujte kvalitu výsledku, čas na opravy a to, jak snadno jej zaměstnanec dostane do svého pracovního postupu. Nevybírejte pouze podle první povedené odpovědi."
+      ]
+    },
+    {
+      "heading": "Firemní a osobní účet nejsou totéž",
+      "paragraphs": [
+        "OpenAI u firemních produktů a API uvádí, že ve výchozím nastavení nepoužívá firemní data k trénování modelů. Anthropic obdobně popisuje komerční produkty, ale upozorňuje na výjimky při dobrovolně odeslané zpětné vazbě. Microsoft uvádí, že prompty, odpovědi a data z Microsoft Graph nepoužívá k trénování základních modelů.",
+        "Tyto vlastnosti samy o sobě neřeší celou bezpečnost. Porovnejte konkrétní tarif, dobu uchovávání, správu uživatelů, připojené služby a firemní smluvní požadavky. Pravidla osobního účtu nepřenášejte automaticky na firemní produkt ani opačně."
+      ]
+    },
+    {
+      "heading": "Malý pilot místo plošného nákupu",
+      "paragraphs": [
+        "Pro pilot vyberte několik lidí s různými úkoly. Každému dejte stejné hodnoticí otázky: byl výsledek správný, kolik oprav vyžadoval, kolik času zabral a zda lze postup opakovat. Pro test použijte schválené nebo anonymizované podklady.",
+        "Po dvou týdnech vyhodnoťte i praktické náklady: licence, správu přístupů a podporu uživatelů. Výsledkem může být jeden společný nástroj nebo odůvodněná kombinace. Školení potom postavte na zvoleném prostředí a úkolech, které pilot skutečně ověřil."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI: Business data",
+      "url": "https://openai.com/business-data/"
+    },
+    {
+      "title": "Microsoft: Data, privacy and security",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+    },
+    {
+      "title": "Anthropic: Model training and commercial data",
+      "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
+    }
+  ],
+  "sort": 4,
+  "sourceNote": "Ověřeno 6. října 2026. Podmínky služeb a programů se mohou měnit."
+}

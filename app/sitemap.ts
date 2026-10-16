@@ -1,4 +1,5 @@
-import { editorialArticles } from "../lib/editorial-articles";
+import { editorialArticles, visibleEditorialArticles } from "../lib/editorial-articles";
+import { isArticlePublished } from "../lib/blog-date";
 import type { MetadataRoute } from "next";
 import { client } from "../sanity/lib/client";
 import { NEWSLETTER_SLUGS_QUERY, BLOG_POST_SLUGS_QUERY } from "../sanity/lib/queries";
@@ -95,8 +96,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: LAST_CONTENT_UPDATE,
+      lastModified: new Date("2026-10-16"),
       changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/o-nas`,
+      lastModified: new Date("2026-10-16"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/kontakt`,
+      lastModified: new Date("2026-10-16"),
+      changeFrequency: "yearly",
       priority: 0.6,
     },
     {
@@ -138,8 +151,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamické blog stránky ze Sanity
   let blogPages: MetadataRoute.Sitemap = [];
   try {
-    const slugs: { slug: string; updatedAt?: string }[] = await client.fetch(BLOG_POST_SLUGS_QUERY);
-    blogPages = slugs.map((s) => ({
+    const slugs: { slug: string; updatedAt?: string; publishedAt?: string }[] = await client.fetch(BLOG_POST_SLUGS_QUERY);
+    blogPages = slugs.filter((s) => isArticlePublished(s.publishedAt)).map((s) => ({
       url: `${baseUrl}/blog/${s.slug}`,
       lastModified: s.updatedAt ? new Date(s.updatedAt) : LAST_CONTENT_UPDATE,
       changeFrequency: "monthly" as const,
@@ -149,5 +162,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sanity není dostupný při buildu — pokračujeme bez blog stránek
   }
 
-  return [...staticPages, ...newsletterPages, ...blogPages.filter(p => !editorialArticles.some(a => p.url === `${baseUrl}/blog/${a.slug}`)), ...editorialArticles.map(a => ({url: `${baseUrl}/blog/${a.slug}`, lastModified: new Date(a.publishedAt), changeFrequency: "monthly" as const, priority: 0.7}))];
+  return [...staticPages, ...newsletterPages, ...blogPages.filter(p => !editorialArticles.some(a => p.url === `${baseUrl}/blog/${a.slug}`)), ...visibleEditorialArticles().map(a => ({url: `${baseUrl}/blog/${a.slug}`, lastModified: new Date(a.publishedAt), changeFrequency: "monthly" as const, priority: 0.7}))];
 }

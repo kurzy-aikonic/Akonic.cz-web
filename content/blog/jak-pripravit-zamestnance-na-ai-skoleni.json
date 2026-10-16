@@ -1,0 +1,31 @@
+{
+  "slug": "jak-pripravit-zamestnance-na-ai-skoleni",
+  "title": "Jak připravit zaměstnance na AI školení",
+  "excerpt": "Přístupy, pracovní podklady a jasné očekávání: jednoduchá příprava, která pomůže využít čas s lektorem na skutečnou praxi.",
+  "publishedAt": "2026-10-06",
+  "sections": [
+    {
+      "heading": "Týden před kurzem vyberte úkoly",
+      "paragraphs": [
+        "Požádejte každého účastníka o jeden úkol, který pravidelně dělá a chtěl by si usnadnit. Užitečným zadáním je například „z těchto poznámek připravit zápis s odpovědnostmi“, nikoli obecné „zlepšit administrativu“. Vedoucí týmu vybere několik reprezentativních úloh.",
+        "Připravte ukázku vstupu i příklad dobrého výstupu. Lektor pak může vysvětlit, co je pro firmu přijatelné a co už vyžaduje opravu. Odstraňte osobní, obchodně citlivé a jiné údaje, jejichž použití nemáte schválené."
+      ]
+    },
+    {
+      "heading": "Ověřte technické podmínky",
+      "paragraphs": [
+        "Předem vyzkoušejte přihlášení do schválených nástrojů na počítačích účastníků. Ověřte potřebné licence, firemní síť, možnost nahrát povolený soubor a dostupnost společných podkladů. Nespoléhejte na to, že se přístupy vyřeší až během výuky.",
+        "Určete kontaktní osobu pro technické potíže a domluvte záložní cvičení bez citlivých dat. Když někdo nesmí použít konkrétní nástroj, potřebuje lektor tuto informaci předem. Kurz tím získá více času na procvičení."
+      ]
+    },
+    {
+      "heading": "Domluvte pokračování po školení",
+      "paragraphs": [
+        "Na konci kurzu si každý účastník vybere jeden postup, který do týdne vyzkouší v práci. Vedoucí týmu zajistí krátké sdílení výsledků: co fungovalo, kde AI chybovala a co je potřeba upravit.",
+        "Vytvořte společné místo pro ověřená zadání a příklady. Ke každému připojte účel, podmínky použití a způsob kontroly. Sbírka bez kontextu rychle zastará; několik udržovaných postupů má větší hodnotu než stovky náhodných promptů."
+      ]
+    }
+  ],
+  "sources": [],
+  "sort": 6
+}

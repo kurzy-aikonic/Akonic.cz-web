@@ -83,7 +83,8 @@ export const BLOG_POST_QUERY = defineQuery(`
 export const BLOG_POST_SLUGS_QUERY = defineQuery(`
   *[_type == "blogPost" && defined(slug.current)] {
     "slug": slug.current,
-    "updatedAt": _updatedAt
+    "updatedAt": _updatedAt,
+    publishedAt
   }
 `);
 

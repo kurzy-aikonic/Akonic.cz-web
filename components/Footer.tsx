@@ -108,6 +108,14 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/jednodenni-skoleni-ai"
+                className="block py-2 text-sm hover:text-primary"
+              >
+                AI nalejvárna
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/skoleni-vibe-coding"
                 className="block py-2 text-sm hover:text-primary"
               >
@@ -129,7 +137,7 @@ export function Footer() {
             </li>
             <li>
               <Link
-                href="/#about"
+                href="/o-nas"
                 className="block py-2 text-sm hover:text-primary"
               >
                 O nás
@@ -145,7 +153,7 @@ export function Footer() {
             </li>
             <li>
               <Link
-                href="/#contact"
+                href="/kontakt"
                 className="block py-2 text-sm hover:text-primary"
               >
                 Kontakt
