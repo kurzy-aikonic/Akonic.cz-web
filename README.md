@@ -25,7 +25,7 @@ Volitelná pole:
 | Pole | Význam |
 |---|---|
 | `tags` | Štítky, nejvýše dva se ukážou na kartě. Bez pole se použije „AI pro firmy“. |
-| `image` | Cesta k obrázku z `public/`, například `/blog/nazev.svg`. |
+| `image` | Cesta k obrázku z `public/`, například `/blog/nazev.png`. Velká a malá písmena musí sedět s názvem souboru. |
 | `imageAlt` | Popis obrázku. Povinný, jakmile je `image`. |
 | `sources` | Odkazy na konci: `{ "title": "…", "url": "https://…" }`. |
 | `sourceNote` | Krátká věta pod zdroji. Datum ověření a omezení zdroje. |
@@ -34,7 +34,22 @@ V odstavci i odrážce funguje `**tučný text**` a odkaz `[text](https://exampl
 
 ### Obrázky
 
-Soubor uložte do `public/blog/`. Hodí se SVG ve stylu webu: světlé pozadí, modrá `#2563EB`, text `#0F172A`, zaoblené karty. Bez vymyšlených čísel a bez cizích log. Na kartě článku se použije `image`. Náhled pro sdílení (OG) se složí sám z nadpisu, data a štítků.
+Soubor uložte do `public/blog/` jako **PNG nebo WebP**. V článku uveďte cestu od kořene webu, například `"image": "/blog/nazev.png"`. Název v cestě musí být stejný jako soubor, včetně velkých a malých písmen. Server na Linuxu je rozlišuje.
+
+SVG na kartu nepoužívejte. Prohlížeč ho bere jako XML v UTF-8. Když se diakritika uloží jako Windows-1250, adresa sice vrátí 200 a `image/svg+xml`, ale obrázek je neplatný a na stránce zůstane prázdný rámeček. Stejně dopadne SVG bez hlavičky `<?xml version="1.0" encoding="UTF-8"?>`, když soubor není opravdu UTF-8.
+
+Před commitem soubor otevřete v prohlížeči. Má se zobrazit kresba, ne prázdné okno. Kontrola z příkazové řádky:
+
+```bash
+file public/blog/nazev.png
+curl -sI https://aikonic.cz/blog/nazev.png | head
+```
+
+`file` má u PNG napsat `PNG image data`. Po nasazení má `curl` ukázat `HTTP/2 200` a `content-type: image/png` (u WebP `image/webp`).
+
+Vzhled: světlé pozadí, modrá `#2563EB`, text `#0F172A`, zaoblené karty. Bez vymyšlených čísel a bez cizích log.
+
+Náhled pro sdílení (OG) se složí sám z nadpisu, data a štítků. Je to PNG na adrese `/blog/vas-slug/opengraph-image`. Karta článku používá pole `image`.
 
 ### Datum a skrytí
 

@@ -1,7 +1,6 @@
 import { editorialArticles, visibleEditorialArticles } from "../../lib/editorial-articles";
 import { formatBlogDate, isArticlePublished } from "../../lib/blog-date";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Newspaper } from "lucide-react";
 import { Navbar } from "../../components/Navbar";
@@ -96,14 +95,17 @@ export default async function BlogPage() {
                       className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm transition hover:-translate-y-1 hover:border-primary/20 hover:shadow-lg"
                     >
                       {item.image ? (
-                        <Image
-                          src={item.image}
-                          alt={item.imageAlt || item.title}
-                          width={1200}
-                          height={675}
-                          unoptimized
-                          className="aspect-[16/9] w-full bg-slate-50 object-cover"
-                        />
+                        <>
+                          {/* next/image u neplatného SVG schová alt a nechá prázdný rámeček */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={item.image}
+                            alt={item.imageAlt || item.title}
+                            width={1200}
+                            height={675}
+                            className="aspect-[16/9] w-full bg-slate-50 object-cover"
+                          />
+                        </>
                       ) : null}
                       <div className="flex flex-1 flex-col p-6">
                       <div className="mb-4 flex flex-wrap items-center gap-2">

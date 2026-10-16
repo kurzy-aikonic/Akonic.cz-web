@@ -1,7 +1,6 @@
 import { editorialArticles, findEditorialArticle } from "../../../lib/editorial-articles";
 import { formatBlogDate, isArticlePublished } from "../../../lib/blog-date";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
@@ -189,14 +188,17 @@ export default async function BlogPostPage({ params }: Props) {
                 </p>
               )}
               {item.image ? (
-                <Image
-                  src={item.image}
-                  alt={item.imageAlt || item.title}
-                  width={1200}
-                  height={675}
-                  unoptimized
-                  className="mt-8 aspect-[16/9] h-auto w-full rounded-3xl border border-slate-200 bg-slate-50 object-cover"
-                />
+                <>
+                  {/* next/image u neplatného SVG schová alt a nechá prázdný rámeček */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt || item.title}
+                    width={1200}
+                    height={675}
+                    className="mt-8 aspect-[16/9] h-auto w-full rounded-3xl border border-slate-200 bg-slate-50 object-cover"
+                  />
+                </>
               ) : null}
             </FadeIn>
           </div>
