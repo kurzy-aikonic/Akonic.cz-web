@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
@@ -35,6 +36,11 @@ export function Team() {
           </h2>
           <p className="mt-4 text-base text-slate-600">
             Firemní AI školení, audit a implementaci propojujeme podle potřeb vašeho týmu.
+          </p>
+          <p className="mt-4">
+            <Link href="/o-nas" className="font-semibold text-primary">
+              Více o firmě →
+            </Link>
           </p>
         </FadeIn>
 

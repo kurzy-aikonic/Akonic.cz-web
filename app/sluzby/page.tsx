@@ -27,6 +27,11 @@ const groups = [
     id: "dalsi-formaty",
     links: [
       [
+        "AI nalejvárna",
+        "/jednodenni-skoleni-ai",
+        "Jednodenní školení. Šest bloků praxe na vašich úkolech.",
+      ],
+      [
         "AI hackathon",
         "/ai-hackathon",
         "Týmová práce na konkrétním prototypu.",

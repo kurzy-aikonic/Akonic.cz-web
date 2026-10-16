@@ -1,5 +1,7 @@
 import { editorialArticles, findEditorialArticle } from "../../../lib/editorial-articles";
+import { formatBlogDate, isArticlePublished } from "../../../lib/blog-date";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
@@ -23,16 +25,21 @@ export async function generateStaticParams() {
     const slugs = await client
       .withConfig({ useCdn: false })
       .fetch(BLOG_POST_SLUGS_QUERY);
-    return [...new Set([...editorialArticles.map(a => a.slug), ...(slugs ?? []).map((s: {slug:string})=>s.slug)])].map(slug => ({slug}));
+    const visible = new Set(editorialArticles.filter((article) => isArticlePublished(article.publishedAt)).map((article) => article.slug));
+    const remote = (slugs ?? [])
+      .filter((entry: { slug: string; publishedAt?: string }) => isArticlePublished(entry.publishedAt) && !editorialArticles.some((article) => article.slug === entry.slug))
+      .map((entry: { slug: string }) => entry.slug);
+    return [...visible, ...remote].map((slug) => ({ slug }));
   } catch {
-    return editorialArticles.map(a=>({slug:a.slug}));
+    return editorialArticles.filter((article) => isArticlePublished(article.publishedAt)).map((article) => ({ slug: article.slug }));
   }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const item = findEditorialArticle(slug) ?? await client.fetch(BLOG_POST_QUERY, { slug });
-  if (!item) return {};
+  const editorial = findEditorialArticle(slug);
+  const item = editorial ?? await client.fetch(BLOG_POST_QUERY, { slug });
+  if (!item || !isArticlePublished(item.publishedAt)) return {};
   return pageMetadata({
     title: item.seoTitle ?? item.title,
     description: item.seoDescription ?? item.excerpt,
@@ -115,15 +122,12 @@ const ptComponents = {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const item = findEditorialArticle(slug) ?? await client.fetch(BLOG_POST_QUERY, { slug });
+  const editorial = findEditorialArticle(slug);
+  const item = editorial ?? await client.fetch(BLOG_POST_QUERY, { slug });
 
-  if (!item) notFound();
+  if (!item || !isArticlePublished(item.publishedAt)) notFound();
 
-  const formattedDate = new Date(item.publishedAt).toLocaleDateString("cs-CZ", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const formattedDate = formatBlogDate(item.publishedAt);
 
   const jsonLd = [
     breadcrumbJsonLd([
@@ -184,6 +188,16 @@ export default async function BlogPostPage({ params }: Props) {
                   {item.excerpt}
                 </p>
               )}
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt || item.title}
+                  width={1200}
+                  height={675}
+                  unoptimized
+                  className="mt-8 aspect-[16/9] h-auto w-full rounded-3xl border border-slate-200 bg-slate-50 object-cover"
+                />
+              ) : null}
             </FadeIn>
           </div>
         </section>
@@ -196,7 +210,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <PortableText value={item.body} components={ptComponents as Parameters<typeof PortableText>[0]["components"]} />
                 )}
                 <aside className="mt-10 rounded-2xl bg-blue-50 p-6"><h2 className="text-xl font-semibold">Další krok pro váš tým</h2><p className="mt-3">Prohlédněte si <Link href="/ai-skoleni-pro-firmy" className="text-primary underline">AI školení pro firmy</Link>, jeho formáty a ceny. Pokud potřebujete vybrat vhodné procesy, pomůže <Link href="/audit" className="text-primary underline">firemní AI audit</Link>. Pro realizaci navazuje <Link href="/automatizace" className="text-primary underline">implementace a automatizace</Link>.</p>{slug === "dotace-na-ai-skoleni-pro-firmy" && <p className="mt-3"><Link className="text-primary underline" href="/dotace-na-skoleni#dotacni-kalkulacka">Spočítat možnou dotaci</Link></p>}</aside>
-                {findEditorialArticle(slug)?.sources.length ? <aside className="mt-8"><h2 className="text-xl font-semibold">Zdroje a další informace</h2><ul className="mt-3 space-y-3">{findEditorialArticle(slug)!.sources.map(source=><li key={source.url}><a className="text-primary underline" href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ul><p className="mt-3 text-sm text-slate-500">Ověřeno 6. října 2026. Podmínky služeb a programů se mohou měnit.</p></aside> : null}
+                {item.sources?.length ? <aside className="mt-8"><h2 className="text-xl font-semibold">Zdroje a další informace</h2><ul className="mt-3 space-y-3">{item.sources.map((source: { title: string; url: string })=><li key={source.url}><a className="text-primary underline" href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a><span className="mt-1 block break-all text-sm text-slate-500">{source.url}</span></li>)}</ul>{item.sourceNote ? <p className="mt-3 text-sm text-slate-500">{item.sourceNote}</p> : null}</aside> : null}
               </article>
             </FadeIn>
           </div>
@@ -218,7 +232,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </p>
                 </div>
                 <Button size="lg" asChild className="min-h-[48px] shrink-0 bg-white text-text hover:bg-white/90">
-                  <Link href="/#contact">
+                  <Link href="/kontakt">
                     Domluvit 20min konzultaci
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>

@@ -1,0 +1,37 @@
+{
+  "slug": "dotace-na-ai-skoleni-pro-firmy",
+  "title": "Dotace na AI školení pro firmy",
+  "excerpt": "Jak číst orientační výpočet podpory, odlišit náklady a připravit firmu na posouzení žádosti v programu Vzdělávání pro firmy.",
+  "publishedAt": "2026-10-06",
+  "sections": [
+    {
+      "heading": "Podpora má podmínky",
+      "paragraphs": [
+        "Program Úřadu práce Vzdělávání pro firmy podporuje zaměstnavatele a OSVČ. Příspěvek není nárokový a vyplácí se po splnění podmínek a doložení vzdělávání. Před zahájením je nutné mít účinnou dohodu s Úřadem práce; samotná kalkulačka žádost nenahrazuje.",
+        "Podle podmínek účinných od 1. července 2026 činí příspěvek po odečtení spoluúčasti 260,73 Kč na osobohodinu vzdělávání a 217,46 Kč na osobohodinu mzdového příspěvku. Mzdová část se vztahuje na způsobilé zaměstnance, nikoli na samotné OSVČ. Vždy rozhodují podmínky platné pro konkrétní žádost."
+      ]
+    },
+    {
+      "heading": "Příklad: 15 zaměstnanců a 50 hodin",
+      "paragraphs": [
+        "Při plně způsobilé účasti 15 zaměstnanců na 50 hodinách vychází vzdělávací část na 195 547,50 Kč a mzdová část na 163 095 Kč. Součet je 358 642,50 Kč. Jde o modelový výpočet při splnění podmínek, nikoli o příslib schválení.",
+        "Cena kurzu AIKONIC pro jednu skupinu je 299 000 Kč. Administrace činí 12 % z celkové podpory, v tomto příkladu 43 037,10 Kč. Rozdíl po těchto dvou položkách je 16 605,40 Kč. Skutečné mzdy ani další interní náklady firmy se v tomto rozdílu neodečítají."
+      ]
+    },
+    {
+      "heading": "Připravte účastníky a harmonogram",
+      "paragraphs": [
+        "Pro první posouzení si připravte počty zaměstnanců a OSVČ, téma vzdělávání, plánované termíny a přehled předchozí podpory. Rozdělte účastníky podle rolí a zkušeností. V nabídce AIKONIC má jedna skupina nejvýše 15 osob.",
+        "Nejdříve vybírejte smysluplný obsah kurzu, potom jeho financování. U delší výuky si ověřte dostupnost účastníků a odpovědnost za evidenci účasti. Kalkulačka na stránce dotací umožní porovnat 50 a 80 hodin i různé složení skupin."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Úřad práce: Vzdělávání pro firmy a aktuální podmínky",
+      "url": "https://up.gov.cz/vzdelavani-pro-firmy"
+    }
+  ],
+  "sort": 5,
+  "sourceNote": "Ověřeno 6. října 2026. Podmínky služeb a programů se mohou měnit."
+}

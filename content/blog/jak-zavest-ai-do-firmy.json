@@ -1,0 +1,38 @@
+{
+  "slug": "jak-zavest-ai-do-firmy",
+  "title": "Jak zavést AI do firmy",
+  "excerpt": "Začněte jedním měřitelným procesem. Postup od výběru příležitosti přes pilot až po správu řešení v běžném provozu.",
+  "publishedAt": "2026-10-06",
+  "sections": [
+    {
+      "heading": "Vyberte proces, který lze ověřit",
+      "paragraphs": [
+        "Sepište opakované úkoly, jejich četnost, přibližný čas a důsledky chyby. Pro první pilot bývá vhodný proces s dostupnými podklady a jasným lidským kontrolním bodem. Příkladem je návrh zápisu ze schůzky, který před sdílením schválí účastník.",
+        "Nezačínejte automatizací nejasného procesu. Pokud každý člověk zpracovává stejný úkol jinak a není stanovený správný výsledek, nejprve domluvte společný postup. AI sama tuto nejasnost nevyřeší."
+      ]
+    },
+    {
+      "heading": "Před pilotem určete měřítka",
+      "paragraphs": [
+        "Změřte současný čas a chybovost na několika srovnatelných případech. Domluvte, jak velké zlepšení ospravedlní další práci a jaké chyby jsou nepřijatelné. Do hodnocení zahrňte i kontrolu výstupu, která může část úspory spotřebovat.",
+        "Určete vlastníka procesu, schválené nástroje a povolená data. Popište situace, kdy se výsledek musí předat člověku nebo kdy se AI nesmí použít. Pilot provozujte v omezeném rozsahu, aby šel jednoduše zastavit a vyhodnotit."
+      ]
+    },
+    {
+      "heading": "Školení, audit a implementace mají různé role",
+      "paragraphs": [
+        "Školení pomůže zaměstnancům používat nástroje samostatně. Audit porovná příležitosti a navrhne priority. Implementace propojí vybrané řešení s konkrétním pracovním postupem či systémem. Firma nemusí objednat všechny kroky najednou; měla by ale vědět, jaký problém právě řeší.",
+        "Pokud má tým dovednosti, ale neví, který proces vybrat, začněte auditem. Pokud je proces jasný a lidé potřebují zvládnout nástroje, dává smysl praktický kurz. Integraci připravujte až s vyjasněnými přístupy, odpovědnostmi a způsobem kontroly."
+      ]
+    },
+    {
+      "heading": "Přechod do provozu",
+      "paragraphs": [
+        "Po pilotu porovnejte skutečný přínos s náklady na licence, provoz a lidskou kontrolu. Zapište známá omezení a postup při výpadku. Jmenujte člověka, který bude sledovat kvalitu a řešit změny podkladů nebo nástroje.",
+        "Rozšiřujte řešení po jednotlivých procesech. Každé další oddělení může mít jiné podklady i rizika, proto původní úspěšný pilot nepovažujte automaticky za důkaz, že stejný postup funguje všude."
+      ]
+    }
+  ],
+  "sources": [],
+  "sort": 7
+}

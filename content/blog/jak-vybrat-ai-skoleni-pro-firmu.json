@@ -1,0 +1,31 @@
+{
+  "slug": "jak-vybrat-ai-skoleni-pro-firmu",
+  "title": "Jak vybrat AI školení pro firmu",
+  "excerpt": "Dobré zadání školení začíná pracovními úkoly. Podle čeho porovnat nabídky a jak poznat, zda kurz přinese týmu použitelné postupy.",
+  "publishedAt": "2026-10-06",
+  "sections": [
+    {
+      "heading": "Nejdřív pojmenujte výsledek",
+      "paragraphs": [
+        "Místo zadání „chceme školení ChatGPT“ vyberte tři opakované úkoly. Může jít o přípravu nabídky, zpracování zápisu ze schůzky a kontrolu reportu. U každého napište, kdo jej dělá, jak často a jak poznáte správný výsledek. Dodavatel pak může navrhnout praktická cvičení místo univerzální prezentace.",
+        "Zeptejte se účastníků na dosavadní zkušenosti. Úplní začátečníci potřebují prostor na základy; lidé, kteří AI používají denně, spíše potřebují zpětnou vazbu k vlastním postupům. Smíšená skupina má smysl, pokud program s rozdíly výslovně počítá."
+      ]
+    },
+    {
+      "heading": "Co má obsahovat nabídka",
+      "paragraphs": [
+        "Vyžádejte si rozsah v hodinách, velikost skupiny, osnovu a poměr cvičení k výkladu. Ujasněte si, které licence musí zajistit firma, zda účastníci potřebují vlastní počítač a co dostanou po skončení kurzu. Cena bez těchto údajů se obtížně porovnává.",
+        "Součástí programu má být ověřování výstupů a zacházení s firemními informacemi. Praktická ukázka by měla ukázat nejen první odpověď AI, ale také její opravu a kontrolu. Samotná efektní demonstrace neříká, zda zaměstnanec postup zvládne zopakovat."
+      ]
+    },
+    {
+      "heading": "Jak ověřit přínos po školení",
+      "paragraphs": [
+        "Vyberte malý společný úkol a nechte tým vyřešit jej před kurzem a znovu po něm. Sledujte čas i kvalitu: počet oprav, úplnost podkladů a schopnost vysvětlit postup. Výsledky porovnávejte na podobně náročných zadáních.",
+        "Dva týdny po kurzu se vraťte ke třem původním úkolům. Které postupy lidé skutečně používají? Kde je zastavují přístupy, interní pravidla nebo nekvalitní data? Takové překážky mohou vyžadovat navazující audit či implementaci, nikoli další obecné školení."
+      ]
+    }
+  ],
+  "sources": [],
+  "sort": 1
+}

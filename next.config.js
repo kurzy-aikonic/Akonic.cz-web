@@ -31,6 +31,11 @@ const nextConfig = {
     };
     return config;
   },
+  outputFileTracingIncludes: {
+    "/blog": ["./content/blog/**/*.json"],
+    "/blog/[slug]": ["./content/blog/**/*.json"],
+    "/sitemap.xml": ["./content/blog/**/*.json"],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 2592000, // 30 dní

@@ -6,11 +6,12 @@ import { Menu, X } from "lucide-react";
 import { LeadLink } from "./cro/LeadLink";
 const navItems = [
   { label: "AI školení", href: "/ai-skoleni-pro-firmy" },
+  { label: "AI nalejvárna", href: "/jednodenni-skoleni-ai" },
   { label: "AI audit", href: "/audit" },
   { label: "Automatizace", href: "/automatizace" },
   { label: "Dotace", href: "/dotace-na-skoleni" },
   { label: "Reference", href: "/reference" },
-  { label: "O nás", href: "/#about" },
+  { label: "O nás", href: "/o-nas" },
 ];
 export function Navbar() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -35,12 +36,12 @@ export function Navbar() {
         </Link>
         <nav
           aria-label="Hlavní navigace"
-          className="hidden items-center gap-5 text-sm lg:flex"
+          className="hidden min-w-0 items-center gap-x-2 text-[13px] lg:flex xl:gap-x-4 xl:text-sm"
         >
-          {navItems.map((n, i) => (
+          {navItems.map((n) => (
             <a
               key={n.href}
-              className={`inline-flex min-h-11 items-center hover:text-primary ${i === 5 ? "text-slate-500" : "font-medium text-slate-800"}`}
+              className="inline-flex min-h-11 items-center font-medium text-slate-800 hover:text-primary"
               href={n.href}
             >
               {n.label}
